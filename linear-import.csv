@@ -1,0 +1,579 @@
+Title,Description,Priority,Labels,Assignee,Due Date,Estimate,ISO Control,Owner Role
+"GAP-001: Enable MFA on AWS root account","**Root Cause**: AWS root account (992382542028) does not have MFA enabled - CRITICAL security risk.
+
+**Impact**:
+- RISK-003 (score 20) - Unauthorized root access
+- AWS FTR blocker (security requirement)
+- ISO 27001 Annex A.5.17 (Authentication information) non-conformity
+
+**Implementation**:
+1. Login AWS root account (992382542028)
+2. Navigate: IAM → Security Credentials → MFA
+3. Register hardware MFA device (Yubikey or AWS Virtual MFA)
+4. Test MFA login
+5. Document MFA serial number in SGSI-ASSETS-001
+
+**Validation**:
+```bash
+aws iam get-account-summary | grep AccountMFAEnabled
+# Expected: 1
+```
+
+**Evidence**: Screenshot of MFA enabled + AWS Config rule compliance
+
+**GitHub Issue**: https://github.com/bekaa-trusted-advisors/TWYN-ISO27001/issues/1
+
+**Related Docs**:
+- docs/06-implementation-guides/gap-001-enable-mfa-root.md
+- SGSI-POLICY-002 (Access Control Policy)
+- SGSI-CAR-001 (CAR-001)","Urgent","critical,gap,car-001,devops,ftr-blocker",resper@bekaa.eu,2026-06-01,1,A.5.17,DevOps Lead
+"GAP-002: Rotate IAM access key older than 90 days","**Root Cause**: IAM user ""tmpsaasboost"" has access key last rotated >90 days ago (violates AWS FTR requirement).
+
+**Impact**:
+- RISK-006 (score 16) - Long-lived credentials exposure
+- AWS FTR blocker (CIS AWS 1.4)
+- ISO 27001 Annex A.5.18 (Access rights) non-conformity
+
+**Implementation**:
+1. Identify key: `aws iam list-access-keys --user-name tmpsaasboost`
+2. Create new key: `aws iam create-access-key --user-name tmpsaasboost`
+3. Update secrets in Secrets Manager (if automated deployments use this key)
+4. Test new key functionality
+5. Deactivate old key: `aws iam update-access-key --access-key-id OLD_KEY --status Inactive --user-name tmpsaasboost`
+6. Wait 7 days → delete old key permanently
+
+**Validation**:
+```bash
+aws iam list-access-keys --user-name tmpsaasboost
+# Check CreateDate <90 days
+```
+
+**Evidence**: AWS IAM credential report showing rotation date
+
+**GitHub Issue**: https://github.com/bekaa-trusted-advisors/TWYN-ISO27001/issues/2
+
+**Related Docs**:
+- docs/06-implementation-guides/gap-002-rotate-iam-key.md
+- SGSI-CAR-001 (CAR-002)
+- SOP-004 (Secrets Management)","High","high,gap,car-002,devops,ftr-blocker",resper@bekaa.eu,2026-06-08,2,A.5.18,DevOps Lead
+"GAP-003: Implement AWS Config + CIS AWS Foundations Benchmark","**Root Cause**: AWS Config not enabled → no automated compliance monitoring for CIS Benchmarks (AWS FTR blocker).
+
+**Impact**:
+- RISK-011 (score 16) - Configuration drift
+- AWS FTR blocker (8 CIS controls failing)
+- ISO 27001 Annex A.8.9 (Configuration management) non-conformity
+
+**Implementation**:
+**Phase 1: Enable AWS Config**
+1. AWS Console → Config → Get started
+2. Enable all regions
+3. S3 bucket: `twyn-aws-config-logs` (encryption: AES-256)
+4. SNS topic: `twyn-config-alerts`
+5. Record all resources
+
+**Phase 2: Enable CIS Conformance Pack**
+```bash
+aws configservice put-conformance-pack \
+  --conformance-pack-name cis-aws-foundations-benchmark \
+  --template-s3-uri s3://aws-config-conformance-packs/cis-aws-foundations-benchmark-v1.4.0.yaml
+```
+
+**Phase 3: Remediate 8 failing controls**
+- CIS 1.4: Access keys ≤90 days (GAP-002)
+- CIS 1.12: Root MFA (GAP-001)
+- CIS 2.1.1: S3 block public access (already compliant ✅)
+- CIS 3.1: CloudTrail enabled (already compliant ✅)
+- Others: See implementation guide
+
+**Cost**: ~€50/month (AWS Config recording + rules)
+
+**Validation**: AWS Config dashboard showing >90% compliance
+
+**Evidence**: Config compliance report screenshot
+
+**GitHub Issue**: https://github.com/bekaa-trusted-advisors/TWYN-ISO27001/issues/3
+
+**Related Docs**:
+- docs/06-implementation-guides/gap-003-aws-config-cis.md
+- SGSI-CAR-001 (CAR-003)
+- TRAINING-PROGRAM.md (Module 10: CIS Benchmark)","Urgent","critical,gap,car-003,devops,ftr-blocker,infrastructure",resper@bekaa.eu,2026-06-08,8,A.8.9,DevOps Lead
+"GAP-004: Test backup restoration (DR testing)","**Root Cause**: Backups exist (RDS snapshots, S3 versioning) but restoration has NEVER been tested → RTO/RPO unknown.
+
+**Impact**:
+- RISK-017 (score 12) - Backup/DR failure
+- AWS FTR blocker (RES_004)
+- ISO 27001 Annex A.5.29-5.30 (Backup, DR) non-conformity
+
+**Implementation**:
+**Test 1: RDS Snapshot Restoration**
+1. Identify latest snapshot: `aws rds describe-db-snapshots`
+2. Restore to test instance:
+```bash
+aws rds restore-db-instance-from-db-snapshot \
+  --db-instance-identifier twyn-prod-test-restore \
+  --db-snapshot-identifier <snapshot-id>
+```
+3. Measure RTO (time to restore: target <8h)
+4. Validate data integrity (sample queries)
+5. Delete test instance
+
+**Test 2: S3 Cross-Region Replication**
+1. Verify replication: Check us-west-2 bucket
+2. Simulate disaster: Delete object in primary region
+3. Restore from replica: Copy back to us-east-1
+4. Measure RPO (data loss: target <4h)
+
+**Test 3: EKS Cluster State**
+1. Restore from Terraform state
+2. Measure time to rebuild cluster
+
+**Schedule**: Quarterly (next: Jun 5, Sep 5, Dec 5, Mar 5)
+
+**Evidence**: DR test report with RTO/RPO measurements
+
+**GitHub Issue**: https://github.com/bekaa-trusted-advisors/TWYN-ISO27001/issues/4
+
+**Related Docs**:
+- docs/06-implementation-guides/gap-004-backup-testing.md
+- SGSI-POLICY-005 (Backup & Recovery Policy)
+- SGSI-CAR-001 (CAR-004)","High","high,gap,car-004,devops,ftr-blocker,infrastructure",resper@bekaa.eu,2026-06-05,6,A.5.29,DevOps Lead
+"GAP-005: AWS Support plan decision","**Root Cause**: Currently on AWS Developer Support (~$29/month) but AWS FTR recommends Business Support for production workloads.
+
+**Impact**:
+- AWS FTR blocker (SUP_001)
+- Slower incident response (no 24/7 phone support)
+- No access to AWS Trusted Advisor full checks
+
+**Decision Required**:
+**Option A**: Upgrade to Business Support
+- Cost: $100+/month (3% of AWS spend, min $100)
+- Benefits:
+  - 24/7 phone/chat/email
+  - <1h response for production down
+  - Full Trusted Advisor checks
+  - Architecture guidance
+  - Third-party software support
+
+**Option B**: Stay on Developer Support + document justification
+- Cost: $29/month
+- Justification: ""TWYN has 24/7 on-call DevOps rotation, AWS TAM not required for current scale""
+- Risk: AWS FTR may still flag as non-compliant
+
+**Recommendation**: Option A (upgrade) - cost is justified for production biometric data platform.
+
+**Implementation**:
+1. AWS Console → Support → Change support plan → Business
+2. Update budget (add €100/month = €1,200/year)
+3. Configure support contacts (DevOps Lead, Gestor SGSI)
+
+**Evidence**: Screenshot of Business Support active
+
+**GitHub Issue**: https://github.com/bekaa-trusted-advisors/TWYN-ISO27001/issues/5
+
+**Related**: SGSI-OBJ-001 (Objective 2: AWS FTR)","High","high,gap,ftr-blocker,management",resper@bekaa.eu,2026-06-05,1,N/A,CEO
+"GAP-006: CEO signature on Information Security Policy","**Root Cause**: Information Security Policy (SGSI-POLICY-001) is complete but NOT signed by CEO - ABSOLUTE BLOCKER for ISO 27001 certification.
+
+**Impact**:
+- ISO 27001 Clause 5.2 non-conformity (MAJOR finding)
+- Auditor will FAIL Stage 1 audit without this
+- Demonstrates lack of top management commitment
+
+**Implementation**:
+1. Schedule 30-min meeting with CEO
+2. Present:
+   - This status report (show progress)
+   - Information Security Policy document
+   - Importance of CEO signature (auditor requirement)
+3. CEO reviews policy (10 pages)
+4. CEO signs:
+   - Physical: Print, sign, scan to PDF
+   - Digital: DocuSign or Adobe Sign (legally binding)
+5. Save signed version: `docs/02-policies/information-security-policy-SIGNED.pdf`
+6. Update SGSI-POLICY-001 metadata (approval date, signature)
+
+**Timeline**: URGENT - must complete before Stage 1 audit (Jul 31)
+
+**Evidence**: Signed policy document with CEO signature + date
+
+**GitHub Issue**: https://github.com/bekaa-trusted-advisors/TWYN-ISO27001/issues/6
+
+**Related Docs**:
+- SGSI-POLICY-001 (Information Security Policy)
+- TRAINING-PROGRAM.md (Module 15: Management Review prep)","Urgent","critical,blocker,management,iso-27001",resper@bekaa.eu,2026-06-02,1,5.2,Gestor SGSI
+"GAP-007: ISO 27001 certification for Gestor SGSI (Ricardo)","**Root Cause**: Gestor SGSI (Ricardo Esper) needs formal ISO 27001 Lead Implementer certification to manage ISMS effectively and handle surveillance audits (years 2-3).
+
+**Impact**:
+- RISK-015 mitigation (SPOF risk)
+- Enables internal audit capability (reduce €10k-15k external consultant costs)
+- Required for maintaining certification post-Stage 2
+
+**Implementation**:
+1. Select training provider:
+   - PECB (€2,400) - recommended
+   - BSI Group (€2,600)
+   - TÜV SÜD (€2,500)
+2. Register for 5-day course:
+   - Format: Online (live instructor) or presencial (Lisboa)
+   - Dates: Jul 08-12, 2026 (Q2 2026)
+3. Study materials provided (ISO 27001:2022 standard, case studies)
+4. Pass certification exam (70% pass rate, 3h written exam)
+5. Receive certificate (valid 3 years)
+
+**Optional Add-on**: LGPD DPO Training (2 days, €800) - recommended
+
+**Budget**: €3,200 total (Lead Implementer + DPO)
+
+**Evidence**: ISO 27001 Lead Implementer certificate + LGPD DPO certificate
+
+**GitHub Issue**: https://github.com/bekaa-trusted-advisors/TWYN-ISO27001/issues/7
+
+**Related Docs**:
+- TRAINING-PROGRAM.md (Track 4, Module 13-14)
+- SGSI-COMP-001 (Competence Records)","Medium","medium,gap,training,iso-27001",resper@bekaa.eu,2026-07-01,40,7.2,Gestor SGSI
+"GAP-008: Hire Junior DevOps / SRE","**Root Cause**: DevOps Lead is single point of failure (SPOF) - only person who can deploy, respond to incidents, manage AWS.
+
+**Impact**:
+- RISK-015 (score 12) - SPOF risk
+- Business continuity threat (if DevOps Lead unavailable)
+- Incident response capability limited to 1 person
+
+**Implementation**:
+**Phase 1: Job Description & Hiring**
+1. Write JD: Junior DevOps Engineer / SRE
+2. Required skills: AWS, Kubernetes, CI/CD, Linux, Python/Bash
+3. Post on: LinkedIn, AngelList, Portugal Startups
+4. Interview process: Technical + cultural fit
+5. Salary range: €40k-50k/year (Portugal market rate)
+
+**Phase 2: Onboarding (see SOP-001)**
+1. Week 1: Access provisioning, training (Track 1 + Track 3)
+2. Week 2-4: Shadow DevOps Lead (runbooks, deployments)
+3. Week 5-8: Hands-on tasks (monitoring, small deployments)
+4. Week 12: Independent on-call rotation capability
+
+**Phase 3: Knowledge Transfer**
+1. Document runbooks (deploy, rollback, incident response, DR)
+2. Pair programming sessions (infrastructure as code)
+3. Cross-train: Junior can execute 80% of DevOps tasks
+
+**Success Criteria**:
+- Junior DevOps can execute 3/5 critical operations independently
+- On-call rotation distributed (2 people vs 1)
+
+**Budget**: €50k/year (salary + benefits + training)
+
+**Evidence**: Hire confirmation + 90-day competence assessment
+
+**GitHub Issue**: https://github.com/bekaa-trusted-advisors/TWYN-ISO27001/issues/8
+
+**Related Docs**:
+- SOP-001 (Onboarding)
+- TRAINING-PROGRAM.md (Track 3: Operations)
+- SGSI-COMP-001 (Competence Records)","Medium","medium,gap,people,management",resper@bekaa.eu,2026-08-31,80,7.2,CEO
+"SOP-001: Onboarding and Offboarding Procedure","**Purpose**: Standard Operating Procedure for securely onboarding new employees and offboarding departing employees.
+
+**Scope**: All TWYN employees (full-time, contractors, interns)
+
+**Key Activities**:
+
+**ONBOARDING (Day 1 - Week 4)**
+- Day 1:
+  - Welcome email (Gestor SGSI)
+  - MFA setup (MANDATORY before access)
+  - Sign Information Security Policy acceptance
+  - Receive laptop (encrypted disk, screen lock <5min)
+- Week 1:
+  - Complete Universal Training (Track 1: 4h)
+  - Access provisioning (AWS IAM, GitHub, Slack, email)
+  - Manager assigns buddy (shadow sessions)
+- Week 2-4:
+  - Role-specific training (Track 2 or 3)
+  - Hands-on tasks (supervised)
+  - 30-day checklist review (HR + Gestor SGSI)
+
+**OFFBOARDING (Last Day - 30 days)**
+- Last day (within 4 hours):
+  - Disable all accounts (AWS, GitHub, Slack, email, VPN)
+  - Revoke MFA devices
+  - Collect laptop + hardware MFA tokens
+  - Delete local credentials
+- If access to secrets:
+  - Rotate affected passwords (AWS RDS, API keys)
+  - Document in NCR if rotation delayed
+- 7 days:
+  - Remove from access control lists
+  - Archive user data (Google Drive, Slack DMs) if LGPD-compliant retention
+- 30 days:
+  - Final access review (confirm no lingering access)
+  - Update SGSI-COMP-001 (mark as ""departed"")
+
+**Evidence**: Onboarding/offboarding checklist + access review logs
+
+**GitHub Issue**: https://github.com/bekaa-trusted-advisors/TWYN-ISO27001/issues/9
+
+**Related Docs**:
+- docs/03-procedures/sop-001-onboarding-offboarding.md
+- SGSI-POLICY-002 (Access Control)
+- TRAINING-PROGRAM.md (integrated)","Medium","medium,sop,procedure,policy",resper@bekaa.eu,2026-06-15,8,A.6.1,Gestor SGSI
+"SOP-002: Change Management Procedure","**Purpose**: Control changes to production systems to prevent unauthorized or untested changes that could cause incidents.
+
+**Scope**: All production infrastructure (AWS), Face ID Platform API code, critical dependencies
+
+**Key Activities**:
+
+**1. Change Request**
+- Requester submits: What, why, impact analysis, rollback plan
+- Approval required: DevOps Lead (technical) + Gestor SGSI (risk)
+- Emergency changes: Post-approval within 24h (incident response)
+
+**2. Change Types**
+- **Standard**: Pre-approved (e.g., code deploy via CI/CD, security patches)
+- **Normal**: Requires approval (e.g., infrastructure changes, dependency upgrades)
+- **Emergency**: Immediate (e.g., security hotfix, P0 incident remediation)
+
+**3. Testing Requirements**
+- Dev environment testing (mandatory)
+- Staging environment validation (for infrastructure changes)
+- Rollback plan documented + tested
+
+**4. Implementation**
+- Execute during maintenance window (if downtime expected)
+- Monitor: CloudWatch metrics, error rates, GuardDuty alerts
+- Validate: Smoke tests, health checks
+
+**5. Post-Implementation Review**
+- Success/failure documented
+- If failure: RCA (root cause analysis) + CAR
+- Update change calendar
+
+**Evidence**: Change log (GitHub commits, Terraform plans, approval emails)
+
+**GitHub Issue**: https://github.com/bekaa-trusted-advisors/TWYN-ISO27001/issues/10
+
+**Related Docs**:
+- docs/03-procedures/sop-002-change-management.md
+- SGSI-POLICY-003 (Incident Response)","Medium","medium,sop,procedure,devops",resper@bekaa.eu,2026-06-20,6,A.8.32,DevOps Lead
+"SOP-003: Remote Work Security Procedure","**Purpose**: Ensure secure remote work practices to protect TWYN data and systems when employees work from home/coworking spaces.
+
+**Scope**: All employees working remotely (majority of TWYN workforce)
+
+**Key Activities**:
+
+**1. Device Security**
+- Disk encryption: MANDATORY (BitLocker Windows, FileVault Mac)
+- Screen lock: <5 min inactivity (automatic)
+- OS updates: Install within 7 days of release
+- Antivirus: Enabled + updated (Windows Defender, macOS XProtect)
+
+**2. Network Security**
+- Wi-Fi: Avoid public Wi-Fi without VPN
+- VPN: Use when accessing corporate resources on untrusted networks
+- Home router: Change default password, enable WPA3 encryption
+
+**3. Physical Security**
+- Clear desk policy: Lock laptop when leaving desk
+- Clear screen policy: Privacy screen filter (optional but recommended)
+- No sensitive documents visible on video calls
+
+**4. Data Handling**
+- Backup: Automatic (Time Machine, OneDrive, Google Drive encrypted)
+- USB drives: Encrypt if used (VeraCrypt)
+- Print: Avoid printing sensitive docs; if necessary, shred after use
+
+**5. Lost/Stolen Device**
+- Report IMMEDIATELY to Gestor SGSI (security@twyn.com)
+- Remote wipe: Gestor SGSI triggers (Google Admin, Intune, Jamf)
+- Police report: File within 24h
+- Incident investigation: NCR + CAR if policy violation
+
+**Evidence**: Device inventory (encrypted disk status), VPN connection logs
+
+**GitHub Issue**: https://github.com/bekaa-trusted-advisors/TWYN-ISO27001/issues/11
+
+**Related Docs**:
+- docs/03-procedures/sop-003-remote-work-security.md
+- SGSI-POLICY-001 (Section 15: Remote Work)","Medium","medium,sop,procedure,policy",resper@bekaa.eu,2026-06-25,4,A.6.7,Gestor SGSI
+"SOP-004: Secrets Management Procedure","**Purpose**: Securely store, rotate, and access secrets (passwords, API keys, certificates) to prevent credential leaks.
+
+**Scope**: All secrets used by TWYN systems (AWS, GitHub, third-party APIs)
+
+**Key Activities**:
+
+**1. Storage**
+- MANDATORY: AWS Secrets Manager or Parameter Store (never hardcode in code)
+- .env files: MUST be gitignored, encrypted at-rest
+- Never commit secrets to Git (use pre-commit hooks: gitleaks, detect-secrets)
+
+**2. Access Control**
+- IAM policies: Least privilege (e.g., only Lambda can read specific secret)
+- Audit: CloudTrail logs all secret access
+- Humans: Use IAM temporary credentials (STS AssumeRole), not long-lived access keys
+
+**3. Rotation**
+- RDS passwords: Every 90 days (automated via Secrets Manager)
+- API keys: Every 90 days (manual or automated)
+- IAM access keys: Every 90 days (enforced via AWS Config - CIS 1.4)
+- Certificates: 30 days before expiry (ACM auto-renews)
+
+**4. Emergency Rotation**
+- If secret leaked (committed to Git, exposed in logs):
+  1. Rotate IMMEDIATELY (<1 hour)
+  2. Audit logs: Who accessed with leaked secret?
+  3. Revoke old secret
+  4. NCR + CAR (root cause analysis)
+
+**5. Pre-Commit Hooks**
+- Install gitleaks:
+```bash
+brew install gitleaks  # Mac
+pip install detect-secrets  # Python
+pre-commit install  # Enable hooks
+```
+- Hooks scan for: AWS keys, private keys, passwords, tokens
+
+**Evidence**: Secrets Manager inventory, rotation logs, pre-commit hook config
+
+**GitHub Issue**: https://github.com/bekaa-trusted-advisors/TWYN-ISO27001/issues/12
+
+**Related Docs**:
+- docs/03-procedures/sop-004-secrets-management.md
+- TRAINING-PROGRAM.md (Module 8: Secrets Management)","Medium","medium,sop,procedure,devops",resper@bekaa.eu,2026-06-30,5,A.8.3,DevOps Lead
+"SOP-005: IAM Access Recertification Procedure","**Purpose**: Quarterly review of IAM access rights to ensure least privilege and remove orphaned accounts.
+
+**Scope**: All AWS IAM users, roles, policies
+
+**Key Activities**:
+
+**Quarterly Review (Q1: Jan, Q2: Apr, Q3: Jul, Q4: Oct)**
+
+**1. Preparation (Day 1)**
+- Export IAM credential report: `aws iam generate-credential-report`
+- Download: `aws iam get-credential-report > iam-report-$(date +%Y-%m-%d).csv`
+
+**2. Review Process (Days 2-5)**
+- For each IAM user:
+  - Still employed? (cross-check with HR)
+  - MFA enabled? (MANDATORY)
+  - Access keys used <90 days? (rotate if older)
+  - Permissions still needed? (least privilege)
+- For each IAM role:
+  - Still in use? (check CloudTrail last-accessed)
+  - Permissions appropriate? (no *:* wildcards)
+  - Trust policy correct? (who can assume?)
+
+**3. Remediation (Days 6-7)**
+- Remove: Orphaned users/roles (departed employees)
+- Rotate: Access keys >90 days
+- Reduce: Overly permissive policies
+- Enforce: MFA on all users
+
+**4. Documentation (Day 7)**
+- Recertification report: Who reviewed, what changed, evidence
+- Update SGSI-COMP-001: Access rights per person
+- NCR if policy violations found
+
+**5. Approval**
+- Gestor SGSI signs off: ""Access rights recertified as of [date]""
+- Evidence for auditor: Quarterly reports
+
+**Evidence**: IAM credential reports, recertification sign-off emails, remediation tickets
+
+**GitHub Issue**: https://github.com/bekaa-trusted-advisors/TWYN-ISO27001/issues/13
+
+**Related Docs**:
+- docs/03-procedures/sop-005-iam-recertification.md
+- SGSI-POLICY-002 (Access Control Policy)","Medium","medium,sop,procedure,devops",resper@bekaa.eu,2026-07-05,6,A.5.18,DevOps Lead
+"CERT-001: Contract ISO 27001 certification auditor","**Purpose**: Hire accredited external auditor to perform Stage 1 + Stage 2 audits and issue ISO 27001:2022 certificate.
+
+**Timeline**:
+- By Jun 30: Auditor contracted
+- Jul 31: Stage 1 audit (documentation review)
+- Aug 31: Stage 2 audit (on-site assessment)
+- Sep 30: Certificate issued (if pass)
+
+**Requirements**:
+- Auditor MUST be accredited by:
+  - IPAC (Instituto Português de Acreditação) - Portugal
+  - Or INMETRO - Brazil
+  - Or IAF member (International Accreditation Forum)
+- Experience with tech startups / cloud-native companies
+- Fluent in Portuguese (team interviews)
+
+**Vendor Options**:
+1. **APCER** (Portugal) - €15k-18k
+   - Website: https://www.apcer.pt
+   - Pros: Local (Lisboa), tech experience
+2. **TÜV SÜD** (Global) - €18k-22k
+   - Pros: International recognition, rigorous
+3. **BSI Group** (UK/Portugal) - €17k-20k
+   - Pros: Invented ISO 27001, premium brand
+4. **SGS Portugal** - €15k-19k
+   - Pros: Competitive pricing, global presence
+
+**Process**:
+1. Request quotes (RFQ) from 3 vendors
+2. Compare: Price, timeline, auditor experience
+3. Select vendor + sign contract
+4. Pay deposit (typically 30% upfront)
+5. Schedule Stage 1 (Jul 31) + Stage 2 (Aug 31)
+
+**Budget**: €15k-20k (certification year 1), €3k-5k/year (surveillance audits years 2-3)
+
+**Evidence**: Signed contract, auditor accreditation certificate, quote comparison
+
+**GitHub Issue**: https://github.com/bekaa-trusted-advisors/TWYN-ISO27001/issues/14
+
+**Related Docs**:
+- SGSI-OBJ-001 (Objective 1: ISO 27001 Certification)","High","high,milestone,management,iso-27001",resper@bekaa.eu,2026-06-30,8,N/A,Gestor SGSI
+"TRAIN-001: Deploy Security Awareness Training platform","**Purpose**: Implement comprehensive security awareness training program to train 100% of employees and reduce human-error risks.
+
+**Platform**: KnowBe4 Security Awareness Training (recommended)
+
+**Implementation**:
+
+**Phase 1: Platform Setup (Week 1)**
+1. Contract KnowBe4: €20/user/year × 10 users = €200/year
+2. Admin setup: Gestor SGSI as admin
+3. Enroll users: Import from HR list (email addresses)
+4. Configure SSO (optional): Google Workspace or Microsoft 365
+
+**Phase 2: Training Tracks (Week 2-3)**
+1. Universal Training (all employees - 4h):
+   - ISO 27001 Awareness
+   - LGPD Data Protection
+   - Password & MFA Security
+   - Phishing Awareness
+   - Remote Work Security
+2. Role-specific training:
+   - Developers: OWASP Top 10, API Security, Secrets (7h)
+   - DevOps: AWS Security, CIS Benchmark, EKS, Incident Response (12h)
+   - Leadership: ISO 27001 Lead Implementer (40h external certification)
+
+**Phase 3: Phishing Simulations (Month 2+)**
+1. Configure monthly simulations (automated)
+2. Baseline: Measure initial click rate (expect 15-30%)
+3. Target: <5% click rate by Q4 2026
+4. Remedial training: Auto-assigned to users who fail
+
+**Phase 4: Tracking & Reporting (Ongoing)**
+1. Dashboard: Completion rates, phishing results
+2. Quarterly report: Management Review input
+3. Evidence: Completion certificates for auditor
+
+**Success Metrics**:
+- 100% completion rate (Universal Training)
+- <5% phishing click rate (Q4 2026)
+- Zero security incidents caused by human error
+
+**Budget**:
+- Year 1: €3,500 (KnowBe4 €200 + certifications €3,200 + internal time)
+- Recurring: €5,133/year
+
+**Evidence**: KnowBe4 dashboard screenshots, completion certificates
+
+**GitHub Issue**: https://github.com/bekaa-trusted-advisors/TWYN-ISO27001/issues/15
+
+**Related Docs**:
+- TRAINING-PROGRAM.md (complete 21-page program)
+- SGSI-COMP-001 (Competence Records)
+- SGSI-OBJ-001 (Objective 4: Security Awareness Training)","Medium","medium,milestone,training,iso-27001",resper@bekaa.eu,2026-07-31,20,A.6.3,Gestor SGSI
