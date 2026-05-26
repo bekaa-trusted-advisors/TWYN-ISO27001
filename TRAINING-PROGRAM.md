@@ -1,7 +1,7 @@
 ---
 document_id: SGSI-TRAIN-001
 title: Security Awareness Training Programme 2026
-version: 1.0
+version: 2.0
 date: 2026-05-26
 iso_clause: "7.2, 7.3"
 annex_a_controls: "A.6.3"
@@ -18,12 +18,13 @@ next_review: 2027-01-31
 | Field | Value |
 |-------|-------|
 | Document ID | SGSI-TRAIN-001 |
-| Version | 1.0 |
+| Version | 2.0 |
 | Status | Draft |
 | Classification | Internal |
 | Owner | Gestor SGSI (Ricardo Esper) |
 | Approved By | CEO (Pendente) |
 | Date Created | 2026-05-26 |
+| Last Updated | 2026-05-26 |
 | Next Review | 2027-01-31 (Anual) |
 | ISO 27001:2022 Clause | 7.2 (Competence), 7.3 (Awareness) |
 | Annex A Control | A.6.3 (Information security awareness, education and training) |
@@ -36,10 +37,9 @@ Este documento define o **Security Awareness Training Programme** da TWYN para 2
 - **Objetivo**: Treinar 100% da equipe em segurança da informação até Q2 2026
 - **Compliance**: Atender requisitos ISO 27001:2022 (Cláusula 7.2/7.3) e Anexo A.6.3
 - **Redução de Risco**: Mitigar RISK-002 (Insider threat), RISK-013 (Insecure code), RISK-014 (Phishing)
-- **Investimento**: €3,500-5,000/ano (plataforma + certificações + tempo de equipe)
 - **Timeline**: Implementação em 6 semanas (kick-off 03/06/2026)
 
-**Meta-chave**: <5% de falha em phishing simulations (baseline: unknown)
+**Meta-chave**: <5% de falha em phishing simulations
 
 ---
 
@@ -87,9 +87,9 @@ O programa é dividido em **4 tracks** conforme função:
 - Onboarding (todos os novos contratados - ver SOP-001)
 - Refresh anual (todos - campanhas em janeiro)
 
-**Platform**: KnowBe4 Security Awareness Training (ver seção 7.1)
+**Platform**: Ness (plataforma de treinamento TWYN)
 
-**Cost per person**: ~€20/ano
+**Content Creation**: Gestor SGSI (Ricardo Esper)
 
 ---
 
@@ -117,9 +117,9 @@ O programa é dividido em **4 tracks** conforme função:
 - Onboarding (obrigatório)
 - Refresh anual (todos - campanhas em janeiro)
 
-**Platform**: KnowBe4 GDPR/LGPD module (customizado para Brasil)
+**Platform**: Ness
 
-**Cost per person**: Incluído no €20/ano
+**Content Creation**: Gestor SGSI (Ricardo Esper)
 
 **Compliance Notes**:
 - LGPD Art. 50 (boas práticas de governança) exige treinamento
@@ -150,9 +150,9 @@ O programa é dividido em **4 tracks** conforme função:
 - Onboarding (Day 1 - ver SOP-001)
 - Refresh anual
 
-**Platform**: In-house (tutorial interno) + KnowBe4
+**Platform**: Ness
 
-**Cost**: Tempo interno (~€50 para criar tutorial)
+**Content Creation**: Gestor SGSI (Ricardo Esper)
 
 ---
 
@@ -182,9 +182,11 @@ O programa é dividido em **4 tracks** conforme função:
 - Phishing simulations **mensais** (automated via KnowBe4)
 - Remedial training para quem falha em simulation (obrigatório)
 
-**Platform**: KnowBe4 Phishing Security Test (PST)
+**Platform**:
+- Training content: Ness
+- Phishing simulations: **KnowBe4 Phishing Security Test (PST)**
 
-**Cost per person**: Incluído no €20/ano
+**Content Creation**: Gestor SGSI (Ricardo Esper)
 
 **Success Metrics** (tracked via SGSI-COMP-001):
 - Q1 2026: Baseline (desconhecido)
@@ -216,9 +218,9 @@ O programa é dividido em **4 tracks** conforme função:
 
 **Frequency**: Onboarding + refresh anual
 
-**Platform**: KnowBe4 + SOP-003 (Remote Work Security Policy)
+**Platform**: Ness + SOP-003 (Remote Work Security Policy)
 
-**Cost**: Incluído no €20/ano
+**Content Creation**: Gestor SGSI (Ricardo Esper)
 
 ---
 
@@ -252,7 +254,7 @@ O programa é dividido em **4 tracks** conforme função:
 - Fix vulnerabilities em sample code
 - Peer code review com security checklist
 
-**Format**: Instructor-led (online ou presencial) + labs práticos
+**Format**: Workshop prático + labs
 
 **Pass Criteria**:
 - 85% no quiz final
@@ -263,12 +265,10 @@ O programa é dividido em **4 tracks** conforme função:
 - Refresh bi-anual (atualizar para OWASP Top 10 mais recente)
 
 **Platform**:
-- OWASP WebGoat (self-hosted labs)
-- Ou vendor: Secure Code Warrior, HackerOne, Pluralsight
+- Training content: Ness
+- Labs: OWASP WebGoat (self-hosted)
 
-**Cost**:
-- Free (OWASP WebGoat)
-- Ou €300/pessoa (Secure Code Warrior annual)
+**Content Creation**: Gestor SGSI + DevOps Lead
 
 **Duration**: 4 horas (2h teoria + 2h labs)
 
@@ -312,9 +312,11 @@ O programa é dividido em **4 tracks** conforme função:
 
 **Frequency**: Onboarding + anual
 
-**Platform**: OWASP crAPI (vulnerable API for training)
+**Platform**:
+- Training content: Ness
+- Labs: OWASP crAPI (vulnerable API for training)
 
-**Cost**: Free (self-hosted)
+**Content Creation**: Gestor SGSI + DevOps Lead
 
 **Duration**: 2 horas
 
@@ -349,9 +351,9 @@ O programa é dividido em **4 tracks** conforme função:
 
 **Frequency**: Onboarding + quando necessário
 
-**Platform**: Tutorial interno + AWS docs
+**Platform**: Ness
 
-**Cost**: Tempo interno (~€100 criar tutorial)
+**Content Creation**: Gestor SGSI + DevOps Lead
 
 **Duration**: 1 hora
 
@@ -401,19 +403,17 @@ O programa é dividido em **4 tracks** conforme função:
 - Criar IAM policy granular para dev environment
 - Simular incident response (GuardDuty finding → containment)
 
-**Format**: AWS Training & Certification (oficial)
+**Format**: Hands-on workshop
 
-**Pass Criteria**: Pass AWS Certified Security - Specialty (opcional mas recomendado)
+**Pass Criteria**: Complete 3/5 labs
 
 **Frequency**: Onboarding + atualização quando AWS lança novos serviços
 
-**Platform**: AWS Training (free) + A Cloud Guru / Udemy (€40)
+**Platform**: Ness + AWS Training (documentation oficial)
 
-**Cost**:
-- Training: €40 (Udemy course)
-- Certification (opcional): $300 USD (~€280)
+**Content Creation**: DevOps Lead
 
-**Duration**: 4 horas (self-paced)
+**Duration**: 4 horas
 
 **Related Risks**: RISK-003, RISK-006, RISK-011, RISK-016
 
@@ -457,9 +457,9 @@ O programa é dividido em **4 tracks** conforme função:
 
 **Frequency**: Onboarding + trimestral (review compliance drift)
 
-**Platform**: CIS Benchmark PDF (free) + AWS Config
+**Platform**: Ness + CIS Benchmark PDF (free)
 
-**Cost**: AWS Config (~€50/mês - já orçado)
+**Content Creation**: DevOps Lead
 
 **Duration**: 3 horas
 
@@ -512,13 +512,9 @@ O programa é dividido em **4 tracks** conforme função:
 
 **Frequency**: Onboarding + atualização quando Kubernetes/EKS lança novas features
 
-**Platform**:
-- EKS Best Practices Guide (AWS - free)
-- Kubernetes Security Specialist (CKS) certification prep (opcional)
+**Platform**: Ness + EKS Best Practices Guide (AWS)
 
-**Cost**:
-- Free (AWS docs + hands-on)
-- CKS certification (opcional): $395 USD (~€370)
+**Content Creation**: DevOps Lead
 
 **Duration**: 3 horas
 
@@ -561,9 +557,9 @@ O programa é dividido em **4 tracks** conforme função:
 
 **Frequency**: Onboarding + bi-anual (refresher)
 
-**Platform**: Tutorial interno + SGSI-POLICY-003 (Incident Response Policy)
+**Platform**: Ness + SGSI-POLICY-003 (Incident Response Policy)
 
-**Cost**: Tempo interno (~€200 criar runbooks)
+**Content Creation**: DevOps Lead + Gestor SGSI
 
 **Duration**: 2 horas
 
@@ -595,7 +591,7 @@ O programa é dividido em **4 tracks** conforme função:
   - Risk treatment strategies (mitigate, accept, transfer, avoid)
 - ✅ **Day 4: Implementation**
   - Gap analysis
-  - Project planning (timeline, resources, budget)
+  - Project planning (timeline, resources)
   - Control implementation (prioritization)
   - Change management (stakeholder buy-in)
 - ✅ **Day 5: Audit & Certification**
@@ -619,21 +615,16 @@ O programa é dividido em **4 tracks** conforme função:
 - CEO: Recomendado (awareness de 2 dias é suficiente)
 - Recertification: a cada 3 anos
 
-**Platform**: Certified Training Organizations (CTOs):
-- **PECB** (Recommended) - €2,400
-- **BSI Group** - €2,600
-- **TÜV SÜD** - €2,500
-- **IRCA** - €2,300
-
-**Cost**:
-- Lead Implementer (5 dias): **€2,400**
-- Exam fee: Incluído
-- Travel (se presencial): €500 (Lisboa ou São Paulo)
+**Certified Training Organizations (CTOs)**:
+- **PECB** (Recommended)
+- **BSI Group**
+- **TÜV SÜD**
+- **IRCA**
 
 **Duration**: 40 horas (5 dias full-time)
 
 **ROI**:
-- Reduz custo de consultoria externa (€10k-15k)
+- Reduz custo de consultoria externa
 - Gestor SGSI interno garante continuidade pós-certificação
 - Required para manter certificação (surveillance audits anos 2-3)
 
@@ -670,7 +661,7 @@ O programa é dividido em **4 tracks** conforme função:
   - Comunicação de incidente (modelo de notificação)
   - Evidências e investigação
 
-**Certification**: Certificado de conclusão (não há exame oficial ANPD)
+**Certification**: Certificado de conclusão
 
 **Format**: Online (2 dias)
 
@@ -678,12 +669,10 @@ O programa é dividido em **4 tracks** conforme função:
 
 **Frequency**: Obrigatório para Gestor SGSI (Q2 2026)
 
-**Platform**:
-- **Exin Privacy & Data Protection Foundation** - €800
-- **IAPP CIPP/E** (adaptado para LGPD) - €1,200
-- Ou curso nacional brasileiro (SENAC, FGV) - R$ 2,000-3,000 (~€350-500)
-
-**Cost**: **€800** (Exin)
+**Training Providers**:
+- **Exin Privacy & Data Protection Foundation**
+- **IAPP CIPP/E** (adaptado para LGPD)
+- Cursos nacionais brasileiros (SENAC, FGV)
 
 **Duration**: 16 horas (2 dias)
 
@@ -702,7 +691,7 @@ O programa é dividido em **4 tracks** conforme função:
 - ✅ **CEO Responsibilities per ISO 27001**:
   - Aprovar Information Security Policy (SGSI-POLICY-001) - **CRÍTICO**
   - Commitment visível (comunicar importância à equipe)
-  - Alocar recursos (€65-75k/ano para programa ISO 27001)
+  - Alocar recursos para programa ISO 27001
   - Participar de Management Reviews trimestrais (obrigatório)
   - Demonstrar liderança ao auditor (entrevista com CEO em Stage 2)
 - ✅ **Management Review Inputs** (per Clause 9.3):
@@ -715,7 +704,7 @@ O programa é dividido em **4 tracks** conforme função:
 - ✅ **Management Review Outputs**:
   - Decisões sobre melhorias necessárias
   - Decisões sobre mudanças no SGSI
-  - Alocação de recursos adicionais (budget, pessoas)
+  - Alocação de recursos adicionais
 
 **Hands-on**:
 - Review template de Management Review (SGSI-MREVIEW-001)
@@ -732,8 +721,6 @@ O programa é dividido em **4 tracks** conforme função:
 
 **Platform**: Sessão interna (Gestor SGSI apresenta)
 
-**Cost**: Tempo interno (~2h CEO + 2h Gestor SGSI)
-
 **Duration**: 2 horas
 
 **Critical Action**: **CEO ASSINAR SGSI-POLICY-001** - blocker para certificação
@@ -742,54 +729,56 @@ O programa é dividido em **4 tracks** conforme função:
 
 ---
 
-## 8. Training Platforms & Vendors
+## 8. Training Platforms & Tools
 
-### 8.1 KnowBe4 Security Awareness Training
+### 8.1 Ness (Primary Training Platform)
 
-**Why KnowBe4?**
-- #1 security awareness platform worldwide
-- 1,000+ training modules (ISO 27001, GDPR/LGPD, phishing, passwords)
-- Automated phishing simulations (mensal)
-- Compliance tracking dashboard (evidência para auditor)
-- SCORM-compliant (integration com LMS se necessário)
+**Purpose**: Plataforma principal para hospedagem e entrega de todos os conteúdos de treinamento
 
-**Pricing**:
-- **€20/user/year** para <50 users (TWYN qualifica)
-- Inclui:
-  - Biblioteca de 1,000+ módulos
-  - Unlimited phishing simulations
-  - Compliance reports
-  - Email support
+**Content Hosted**:
+- Todos os módulos (Track 1, 2, 3, 4)
+- Vídeos instrucionais
+- Quizzes e assessments
+- Hands-on exercises
+- Case studies
+- Completion tracking
 
-**ROI**:
-- Reduz risco de phishing (RISK-014 - score 8)
-- Automated training saves HR time (~€2k/ano)
-- Single source of truth para compliance (ISO 27001, LGPD)
+**Content Creation**: Gestor SGSI (Ricardo Esper) + DevOps Lead + subject matter experts
 
-**Implementation**:
-- Setup: 1 dia (admin dashboard, enroll users, schedule campaigns)
-- First campaign: Semana 1 (Universal Training Track 1)
-- Phishing simulations: Start Month 2 (mensal)
-
-**Contract**: Anual (renovação automática)
-
-**Alternatives** (se budget constraint):
-- **Cofense PhishMe** (só phishing) - €10/user/year
-- **SANS Security Awareness** (premium) - €40/user/year
-- Free (DIY): YouTube + internal quizzes (não recomendado - sem tracking)
+**Note**: A localização/plataforma exata será definida posteriormente (pode ser LMS interno, Notion, Google Sites, Confluence, etc)
 
 ---
 
-### 8.2 OWASP WebGoat / Juice Shop (Free)
+### 8.2 KnowBe4 (Phishing Simulations Only)
 
-**Why OWASP?**
-- Hands-on learning (exploit vulnerabilities em ambiente seguro)
-- Covers OWASP Top 10 2021 + API Top 10 2023
-- Free, open-source, self-hosted
+**Purpose**: Ferramenta especializada exclusivamente para phishing simulations
+
+**Usage**:
+- **Mensal**: Automated phishing simulations
+- **Remedial training**: Auto-assigned para usuários que clicam em phishing
+- **Reporting**: Click rates, trends, vulnerability analysis
+
+**NOT Used For**:
+- ❌ General security awareness training (isso vai em Ness)
+- ❌ ISO 27001 training (isso vai em Ness)
+- ❌ Technical training (isso vai em Ness)
+
+**Integration**: Resultados das simulations reportados via SGSI-COMP-001
+
+---
+
+### 8.3 OWASP Tools (Free Labs)
+
+**Purpose**: Hands-on learning para desenvolvimento seguro
+
+**Tools**:
+- **OWASP WebGoat**: OWASP Top 10 2021 labs
+- **OWASP Juice Shop**: Modern web app vulnerabilities
+- **OWASP crAPI**: API Security Top 10 2023 labs
 
 **Setup**:
-- Docker container (5 min deploy)
-- No custo (infraestrutura pode usar AWS Free Tier)
+- Docker containers (self-hosted)
+- No custo (open-source)
 
 **Usage**:
 - Track 2 Module 6 (Secure Coding)
@@ -797,57 +786,41 @@ O programa é dividido em **4 tracks** conforme função:
 
 ---
 
-### 8.3 AWS Training & Certification
+### 8.4 AWS Training Resources (Free)
 
-**Why AWS?**
-- Official training (atualizado com novos serviços)
-- Free tier (basics) + paid courses (advanced)
-- Hands-on labs (sandbox environment)
+**Purpose**: Official AWS documentation e hands-on labs
 
-**Relevant Courses**:
-- **AWS Security Fundamentals** (free, 2h)
-- **AWS Security Best Practices** (free, 4h)
-- **Exam Prep: AWS Certified Security - Specialty** (€40, 10h)
+**Resources**:
+- AWS Security Fundamentals (free)
+- AWS Security Best Practices (free)
+- EKS Best Practices Guide (free)
+- CIS AWS Foundations Benchmark (free)
 
-**Certification** (opcional mas recomendado):
-- **AWS Certified Security - Specialty** ($300 USD)
-- Valid: 3 anos
-- Employer pays (part of professional development budget)
-
----
-
-### 8.4 PECB ISO 27001 Lead Implementer
-
-**Why PECB?**
-- Top certification body para ISO standards
-- Recognized by IAF (International Accreditation Forum)
-- 5-day intensive course (hands-on)
-
-**Cost**: **€2,400** (includes exam, materials, certificate)
-
-**Format**:
-- Presencial (Lisboa: APCER, TÜV Portugal)
-- Online (live instructor)
-
-**Schedule**: Check https://pecb.com/en/education-and-certification-for-individuals/iso-iec-27001
+**Usage**:
+- Track 3 Module 9 (AWS Security)
+- Track 3 Module 10 (CIS Benchmark)
+- Track 3 Module 11 (EKS Security)
 
 ---
 
 ## 9. Implementation Timeline
 
-### Phase 1: Setup (Weeks 1-2) - Jun 03-14, 2026
+### Phase 1: Platform Setup & Content Creation (Weeks 1-4) - Jun 03-28, 2026
 
 **Actions**:
-- ✅ Contratar KnowBe4 (€20/user × 10 users estimado = €200/ano)
-- ✅ Setup admin dashboard (enroll users, assign roles)
-- ✅ Deploy OWASP WebGoat (Docker container em AWS Free Tier)
-- ✅ Criar tutorial interno (Module 3: Password/MFA, Module 8: Secrets)
+- ✅ Definir plataforma Ness (decisão de onde hospedar conteúdo)
+- ✅ Setup KnowBe4 (apenas phishing simulations)
+- ✅ Criar conteúdos Track 1 (Modules 1-5):
+  - Gravar vídeos
+  - Criar quizzes
+  - Desenvolver case studies
+- ✅ Deploy OWASP WebGoat/Juice Shop (labs para developers)
 - ✅ Schedule CEO signature session (Module 15 - 2h workshop)
 
 **Deliverables**:
-- KnowBe4 account ativo
-- 10 users enrolled
-- OWASP WebGoat acessível (internal URL)
+- Ness platform pronta com Track 1 completo
+- KnowBe4 configurado para phishing simulations
+- OWASP labs acessíveis
 
 **Owner**: Gestor SGSI
 
@@ -922,36 +895,7 @@ O programa é dividido em **4 tracks** conforme função:
 
 ---
 
-## 10. Budget Summary
-
-| Item | Quantity | Unit Cost | Total | Frequency | Annual Cost |
-|------|----------|-----------|-------|-----------|-------------|
-| **KnowBe4** | 10 users | €20/user/year | €200 | Anual | €200 |
-| **OWASP WebGoat** | Self-hosted | Free | €0 | One-time | €0 |
-| **AWS Training** | 1 DevOps | €40 (Udemy) | €40 | One-time | €40 |
-| **AWS Certification** (opcional) | 1 DevOps | €280 | €280 | 3 anos | €93/ano |
-| **ISO 27001 Lead Implementer** | 1 Gestor SGSI | €2,400 | €2,400 | 3 anos | €800/ano |
-| **LGPD DPO Training** | 1 Gestor SGSI | €800 | €800 | One-time | €800 |
-| **Internal tutorials** | Dev time | ~€300 | €300 | One-time | €100/ano (maint) |
-| **Employee time** | 10 people × 8h avg | ~€50/h | €4,000 | Anual | €4,000 |
-| **TOTAL YEAR 1** | | | **€8,020** | | |
-| **TOTAL RECURRING (Year 2+)** | | | | | **€5,133/ano** |
-
-**Budget Breakdown**:
-- **Platforms/Tools**: €240/ano (KnowBe4 + AWS)
-- **Certifications**: €1,693/ano (amortized over 3 years)
-- **Employee time**: €4,000/ano (8h/person × €50/h avg)
-
-**ROI**:
-- **Risk Reduction**: RISK-002 (Insider threat - €50k impact) reduced by 60% = €30k saved
-- **Risk Reduction**: RISK-013 (Insecure code - €20k impact) reduced by 70% = €14k saved
-- **Risk Reduction**: RISK-014 (Phishing - €15k impact) reduced by 80% = €12k saved
-- **Avoided Costs**: External consultant (€10k-15k) - Gestor SGSI certificado substitui
-- **Total ROI**: €56k saved / €8k invested = **7:1 ROI**
-
----
-
-## 11. Compliance Mapping
+## 10. Compliance Mapping
 
 ### ISO 27001:2022 Clauses
 
@@ -976,21 +920,21 @@ O programa é dividido em **4 tracks** conforme função:
 |---------|-------|-------------------------|
 | RISK-002 | Unauthorized internal access (Insider threat - score 12) | Track 1 Module 2 (LGPD) + Module 3 (Access control) |
 | RISK-013 | Insecure application code (score 9) | Track 2 Modules 6-7 (OWASP Top 10, API Security) |
-| RISK-014 | Phishing attack leading to credential theft (score 8) | Track 1 Module 4 (Phishing awareness + simulations) |
+| RISK-014 | Phishing attack leading to credential theft (score 8) | Track 1 Module 4 (Phishing awareness + KnowBe4 simulations) |
 | RISK-015 | Single point of failure (DevOps Lead - score 12) | Track 3 (cross-train, document runbooks) |
 
 ---
 
-## 12. Success Metrics & KPIs
+## 11. Success Metrics & KPIs
 
 ### Training Completion Metrics
 
 | Metric | Target | Measurement | Frequency |
 |--------|--------|-------------|-----------|
-| **Universal Training (Track 1) completion** | 100% | KnowBe4 dashboard | Onboarding + Anual |
-| **Role-specific training completion** | 100% | KnowBe4 + manual tracking | Onboarding + per schedule |
+| **Universal Training (Track 1) completion** | 100% | Ness platform tracking | Onboarding + Anual |
+| **Role-specific training completion** | 100% | Ness platform tracking | Onboarding + per schedule |
 | **Time to complete onboarding training** | <30 dias | SGSI-COMP-001 | Per new hire |
-| **Stragglers (>30 days overdue)** | 0 | KnowBe4 dashboard | Mensal review |
+| **Stragglers (>30 days overdue)** | 0 | Ness dashboard | Mensal review |
 
 ### Security Behavior Metrics
 
@@ -1012,19 +956,19 @@ O programa é dividido em **4 tracks** conforme função:
 
 ---
 
-## 13. Onboarding Integration (SOP-001)
+## 12. Onboarding Integration (SOP-001)
 
 Este programa de training está integrado com **SOP-001 (Onboarding/Offboarding)**:
 
 ### Day 1 (First Day)
-- ✅ Welcome email com links para Track 1 (Universal Training)
+- ✅ Welcome email com links para Track 1 (Universal Training) em Ness
 - ✅ Hands-on: Configure MFA (Module 3) - OBRIGATÓRIO antes de receber acesso
 - ✅ Read Information Security Policy (SGSI-POLICY-001) - assinar acceptance
 
 ### Week 1
-- ✅ Complete Track 1 Modules 1-5 (4h total)
+- ✅ Complete Track 1 Modules 1-5 (4h total) em Ness
 - ✅ Pass quizzes (80% minimum)
-- ✅ Primeiro phishing simulation (baseline)
+- ✅ Primeiro phishing simulation (baseline via KnowBe4)
 
 ### Week 2
 - ✅ Role-specific training begins (Track 2 ou 3 conforme função)
@@ -1041,23 +985,25 @@ Este programa de training está integrado com **SOP-001 (Onboarding/Offboarding)
 
 ---
 
-## 14. Audit Evidence
+## 13. Audit Evidence
 
 Para demonstrar conformidade ao auditor ISO 27001 (Stage 2), mantenha evidências:
 
 ### Documentary Evidence
 - ✅ Este documento (SGSI-TRAIN-001) - Training Programme aprovado
 - ✅ SGSI-COMP-001 (Competence Records) - training completion per person
-- ✅ Certificados de conclusão (KnowBe4, ISO 27001 Lead Implementer, DPO)
+- ✅ Certificados de conclusão (Ness, ISO 27001 Lead Implementer, DPO)
 - ✅ Materiais de training (slides, videos, quizzes)
 
 ### Technical Evidence
-- ✅ KnowBe4 dashboard (screenshots):
+- ✅ Ness platform (screenshots):
   - Training completion rates (100% target)
+  - Quiz scores
+  - Time spent per module
+- ✅ KnowBe4 dashboard (screenshots):
   - Phishing simulation results (trend: decreasing click rate)
   - Remedial training assigned
 - ✅ OWASP WebGoat completion logs (dev team)
-- ✅ AWS Training certificates (DevOps)
 
 ### Testimonial Evidence
 - ✅ Entrevista com CEO: demonstrar commitment e awareness
@@ -1072,13 +1018,13 @@ Para demonstrar conformidade ao auditor ISO 27001 (Stage 2), mantenha evidência
 
 ---
 
-## 15. Continuous Improvement
+## 14. Continuous Improvement
 
 ### Annual Review (Janeiro 2027)
 - ✅ Update content: OWASP Top 10 2024 (se lançado)
 - ✅ Review phishing click rate trends → ajustar dificuldade de simulations
 - ✅ Survey employee feedback (training relevance, duration)
-- ✅ Budget review (renovar KnowBe4, novas certificações?)
+- ✅ Platform review (Ness working well? Need changes?)
 
 ### Quarterly Metrics Review (Management Review)
 - ✅ Training completion: 100%? Stragglers?
@@ -1094,20 +1040,20 @@ Para demonstrar conformidade ao auditor ISO 27001 (Stage 2), mantenha evidência
 
 ---
 
-## 16. Roles & Responsibilities
+## 15. Roles & Responsibilities
 
 | Role | Responsibilities |
 |------|------------------|
-| **Gestor SGSI** | Programa owner, track completion, report metrics, facilitate trainings, maintain SGSI-COMP-001 |
-| **CEO** | Approve budget, endorse programme (email announcement), complete Module 15, sign IS Policy |
-| **DevOps Lead** | Complete Track 3, mentor junior DevOps (quando contratado), maintain runbooks |
+| **Gestor SGSI** | Programa owner, create content, track completion, report metrics, facilitate trainings, maintain SGSI-COMP-001 |
+| **CEO** | Endorse programme (email announcement), complete Module 15, sign IS Policy |
+| **DevOps Lead** | Complete Track 3, create technical content (Modules 9-12), mentor junior DevOps, maintain runbooks |
 | **Dev Team** | Complete Tracks 1+2, apply secure coding practices, peer code reviews |
 | **HR** | Send onboarding emails (Day 1), track completion (30-day checklist), escalate stragglers |
 | **All Employees** | Complete mandatory training, report phishing attempts, follow policies |
 
 ---
 
-## 17. Frequently Asked Questions (FAQ)
+## 16. Frequently Asked Questions (FAQ)
 
 ### Q1: O que acontece se eu não completar o training no prazo?
 **A**:
@@ -1136,30 +1082,31 @@ Para demonstrar conformidade ao auditor ISO 27001 (Stage 2), mantenha evidência
 ### Q6: A certificação ISO 27001 Lead Implementer é obrigatória para todos?
 **A**: Não. Apenas para Gestor SGSI (obrigatório) e CEO (recomendado mas não obrigatório - awareness de 2 dias é suficiente).
 
-### Q7: Quem paga pelas certificações?
-**A**: Employer (TWYN/Bekaa) paga certificações relacionadas ao trabalho (ISO 27001, AWS, DPO). Budget aprovado: €3,500 (ano 1).
+### Q7: Onde os treinamentos serão hospedados?
+**A**: Plataforma Ness (a ser definida - pode ser LMS interno, Notion, Confluence, Google Sites, etc). O Gestor SGSI criará o conteúdo e definirá a plataforma.
 
-### Q8: Posso usar este training para CPD (Continuing Professional Development)?
-**A**: Sim. Certificações contam para CPD credits (CISSP, CISM, etc). Peça certificado de conclusão ao Gestor SGSI.
+### Q8: KnowBe4 substitui Ness?
+**A**: Não. KnowBe4 é APENAS para phishing simulations. Todo o conteúdo de treinamento (ISO 27001, LGPD, OWASP, AWS) fica em Ness.
 
 ---
 
-## 18. Next Steps (Immediate Actions)
+## 17. Next Steps (Immediate Actions)
 
 ### For Gestor SGSI (Ricardo Esper):
 1. ✅ **HOJE**: Aprovar este documento (SGSI-TRAIN-001)
 2. ✅ **Semana 1 (Jun 03-07)**:
-   - Contratar KnowBe4 (€200/ano)
-   - Matricular em ISO 27001 Lead Implementer (PECB - Jul 08-12, €2,400)
-   - Matricular em LGPD DPO Training (Jul 22-23, €800)
-3. ✅ **Semana 2 (Jun 10-14)**:
-   - Setup KnowBe4 (enroll users, configurar phishing simulations)
-   - Deploy OWASP WebGoat (Docker)
-   - Criar tutoriais internos (Password/MFA, Secrets)
+   - Definir plataforma Ness (onde hospedar treinamentos)
+   - Setup KnowBe4 (apenas phishing simulations)
+   - Matricular em ISO 27001 Lead Implementer (Jul 08-12)
+   - Matricular em LGPD DPO Training (Jul 22-23)
+3. ✅ **Semana 2-4 (Jun 10-28)**:
+   - Criar conteúdo Track 1 (vídeos, quizzes, case studies)
+   - Deploy OWASP WebGoat/Juice Shop
+   - Testar platform end-to-end
 4. ✅ **Semana 3 (Jun 17)**: Launch Track 1 (email announcement CEO-endorsed)
 
 ### For CEO:
-1. ✅ **HOJE**: Aprovar budget (€8,020 ano 1)
+1. ✅ **HOJE**: Aprovar training programme
 2. ✅ **Semana 3 (Jun 17)**: Enviar email endorse (importância de security training)
 3. ✅ **Week 9 (Jul 29)**:
    - Participar de Module 15 (2h workshop)
@@ -1167,8 +1114,8 @@ Para demonstrar conformidade ao auditor ISO 27001 (Stage 2), mantenha evidência
 
 ### For DevOps Lead:
 1. ✅ **Semana 1-2 (Jun 03-14)**: Complete Track 1 (Universal)
-2. ✅ **Semana 5-8 (Jul 01-26)**: Complete Track 3 (Modules 9-12)
-3. ✅ **Q3 2026**: Considerar AWS Certified Security - Specialty (opcional - €280)
+2. ✅ **Semana 2-4**: Criar conteúdo Track 3 (Modules 9-12)
+3. ✅ **Semana 5-8 (Jul 01-26)**: Complete Track 3 hands-on
 
 ### For Dev Team:
 1. ✅ **Semana 1-2 (Jun 03-14)**: Complete Track 1 (Universal)
@@ -1176,7 +1123,7 @@ Para demonstrar conformidade ao auditor ISO 27001 (Stage 2), mantenha evidência
 
 ---
 
-## 19. References
+## 18. References
 
 ### ISO Standards
 - ISO/IEC 27001:2022 - Information security, cybersecurity and privacy protection
@@ -1193,10 +1140,10 @@ Para demonstrar conformidade ao auditor ISO 27001 (Stage 2), mantenha evidência
 - LGPD (Lei Geral de Proteção de Dados) - Lei nº 13.709/2018 - https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm
 - ANPD (Autoridade Nacional de Proteção de Dados) - https://www.gov.br/anpd/
 
-### Training Providers
-- KnowBe4 - https://www.knowbe4.com/
-- PECB - https://pecb.com/
-- OWASP - https://owasp.org/
+### Tools
+- KnowBe4 - https://www.knowbe4.com/ (phishing simulations)
+- OWASP WebGoat - https://owasp.org/www-project-webgoat/
+- OWASP Juice Shop - https://owasp.org/www-project-juice-shop/
 - AWS Training - https://aws.amazon.com/training/
 
 ### Internal Documents
@@ -1209,7 +1156,7 @@ Para demonstrar conformidade ao auditor ISO 27001 (Stage 2), mantenha evidência
 
 ---
 
-## 20. Approval
+## 19. Approval
 
 | Field | Value |
 |-------|-------|
@@ -1222,18 +1169,20 @@ Para demonstrar conformidade ao auditor ISO 27001 (Stage 2), mantenha evidência
 
 ---
 
-## 21. Revision History
+## 20. Revision History
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | 2026-05-26 | Security Consultant | Versão inicial - 4 tracks, 15 modules, 8-week implementation, €8k budget, integrated com SOP-001 |
+| 1.0 | 2026-05-26 | Security Consultant | Versão inicial - 4 tracks, 15 modules, 8-week implementation |
+| 2.0 | 2026-05-26 | Security Consultant | Updated: Ness as primary platform (not KnowBe4), KnowBe4 only for phishing, removed budget references, content created by Gestor SGSI |
 
 ---
 
 **⚠️ CRITICAL ACTIONS**:
-1. **Gestor SGSI**: Matricular em ISO 27001 Lead Implementer (Q2 2026 - Jul 08-12)
-2. **CEO**: Assinar Information Security Policy (Week 9 - Jul 29) - **BLOCKER para certificação**
-3. **ALL**: Complete Universal Training (Track 1) by Jun 28, 2026
+1. **Gestor SGSI**: Definir plataforma Ness + criar conteúdo (Weeks 1-4)
+2. **Gestor SGSI**: Matricular em ISO 27001 Lead Implementer (Jul 08-12)
+3. **CEO**: Assinar Information Security Policy (Week 9 - Jul 29) - **BLOCKER para certificação**
+4. **ALL**: Complete Universal Training (Track 1) by Jun 28, 2026
 
 **STATUS**: Draft - aguardando aprovação CEO + Gestor SGSI
 
