@@ -1,152 +1,129 @@
 ---
 document_id: SGSI-POLICY-003
 title: Incident Response Policy
-version: 1.0
-date: 2026-05-26
+version: 2.0
+date: 2026-06-02
 annex_a_controls: "A.5.24, A.5.25, A.5.26, A.5.27, A.5.28"
+owner: Gestor SGSI
+approved_by: CEO (Pendente)
 ---
 
 # Incident Response Policy
 
 ## 1. Purpose
-Estabelecer procedimentos para detectar, responder, e recuperar de incidentes de segurança da informação.
+Estabelecer procedimentos para detectar, responder, e recuperar de incidentes de segurança da informação, em conformidade com a ISO 27001 e os requisitos de notificação de incidentes da Lei Geral de Proteção de Dados Pessoais (LGPD).
 
 ## 2. Scope
-- Todos os incidentes afetando confidencialidade, integridade ou disponibilidade
-- Face ID Platform API, AWS infrastructure, dados biométricos
-- Aplicável a todos colaboradores e terceiros
+- Todos os incidentes afetando a confidencialidade, integridade ou disponibilidade da informação.
+- Plataforma Face ID (Face ID Platform API), infraestrutura AWS e dados biométricos.
+- Aplicável a todos os colaboradores, contratados e terceiros da TWYN.
 
-## 3. Incident Classification
+## 3. Incident Classification (Severity Levels)
 
-### Severity Levels
-**CRITICAL (P0)**: 
-- Data breach de dados biométricos
-- Ransomware ativo
-- Produção completamente indisponível
-- Response time: <15 minutos
+**CRITICAL (P0)**:
+- Vazamento confirmado de dados biométricos (Data Breach).
+- Infecção ativa por Ransomware.
+- Indisponibilidade total do ambiente de produção.
+- **Tempo de Resposta (SLA):** < 15 minutos
 
 **HIGH (P1)**:
-- Tentativa de acesso não autorizado a produção
-- Malware detectado em sistemas críticos
-- Degradação significativa de performance
-- Response time: <1 hora
+- Acesso não autorizado confirmado ao ambiente de produção ou banco de dados.
+- Malware detectado em sistemas críticos (ex: containers EKS, instâncias EC2).
+- Degradação severa de performance impactando múltiplos clientes.
+- **Tempo de Resposta (SLA):** < 1 hora
 
 **MEDIUM (P2)**:
-- Phishing bem-sucedido (credenciais comprometidas)
-- Vulnerabilidade HIGH descoberta
-- Response time: <4 horas
+- Campanha de phishing bem-sucedida (credenciais de colaboradores comprometidas).
+- Vulnerabilidade HIGH/CRITICAL descoberta em produção sem exploit ativo.
+- **Tempo de Resposta (SLA):** < 4 horas
 
 **LOW (P3)**:
-- Tentativas de login falhadas suspeitas
-- Spam/phishing reportado
-- Response time: <24 horas
+- Tentativas de login falhadas (brute force) bloqueadas.
+- Alertas de anomalia isolada no GuardDuty / WAF.
+- **Tempo de Resposta (SLA):** < 24 horas
 
-## 4. Incident Response Process
+**INFORMATIONAL (P4)**:
+- Scans de rede passivos bloqueados pelo firewall.
+- E-mails de phishing reportados e não clicados.
+- **Tempo de Resposta (SLA):** Revisão semanal
 
-### Phase 1: Detection & Reporting
-**Detection Methods**:
-- AWS GuardDuty alerts
-- CloudWatch anomalies
-- User reports (via email: security@twyn.com)
-- Audit log reviews
+## 4. Processo de Resposta a Incidentes
 
-**Reporting**:
-- Qualquer colaborador pode reportar suspeita
-- Email: security@twyn.com (monitored 24/7)
-- Slack: #security-incidents (se disponível)
-- Phone: Gestor SGSI (emergências)
+### Fase 1: Detecção & Reporte
+**Fontes de Detecção**:
+- Alertas automatizados (AWS GuardDuty, AWS Security Hub, CloudWatch).
+- Notificações de usuários ou clientes (email: security@twyn.com).
+- Revisão contínua de logs e relatórios de auditoria.
 
-### Phase 2: Classification & Escalation
-**Incident Manager**: Gestor SGSI (Ricardo Esper)
-**Technical Lead**: DevOps Lead
+**Reporte Interno**:
+- Qualquer colaborador que suspeitar de um incidente deve contatar imediatamente o email `security@twyn.com` ou utilizar o canal do Slack `#security-incidents`.
+- Emergências (P0/P1) devem ser escaladas por telefone para o Gestor SGSI e DevOps Lead.
 
-**Escalation Matrix**:
-- P0/P1: Notify CEO + DevOps Lead imediatamente
-- P2: Notify Gestor SGSI within 1h
-- P3: Log ticket, investigate next business day
+### Fase 2: Classificação & Escalada
+**Gerente do Incidente (Incident Commander):** Gestor SGSI (Ricardo Esper)
+**Líder Técnico:** DevOps Lead
 
-### Phase 3: Containment
-**Immediate Actions** (P0/P1):
-1. Isolar sistemas afetados (disable network, terminate EC2)
-2. Preservar evidências (snapshots, logs)
-3. Revogar credenciais comprometidas
-4. Block IPs maliciosos (Security Groups)
-5. Ativar Business Continuity Plan se necessário
+**Fluxo de Escalada**:
+1. **Triagem Inicial:** O DevOps Lead analisa o alerta e classifica a severidade (P0 a P4).
+2. **Notificação P0/P1:** O CEO e o Gestor SGSI são acionados em até 15 minutos via telefone. Um "War Room" (sala de crise virtual) é estabelecido.
+3. **Notificação P2:** O Gestor SGSI é notificado via Slack/Email para acompanhamento.
+4. **Notificação P3/P4:** O ticket é registrado no sistema para investigação em horário comercial.
 
-**Short-term Containment**:
-- Aplicar patches de segurança
-- Implementar workarounds
-- Comunicar stakeholders
+### Fase 3: Contenção
+**Ações Imediatas (P0/P1):**
+1. Isolar sistemas afetados (desconectar EC2 da rede via Security Groups, desligar containers K8s comprometidos).
+2. Preservar evidências (capturar snapshots de disco/RDS antes de qualquer reinicialização).
+3. Revogar imediatamente credenciais suspeitas (IAM, banco de dados, VPN).
+4. Bloquear IPs maliciosos no AWS WAF.
+5. Invocar o Plano de Continuidade de Negócios (BCP) se a contenção resultar em downtime prolongado.
 
-### Phase 4: Eradication
-- Remover malware/backdoors
-- Patch vulnerabilidades exploitadas
-- Resetar passwords comprometidos
-- Rebuild sistemas se necessário
+### Fase 4: Erradicação
+- Identificar e remover a causa raiz (malware, backdoor, credencial exposta).
+- Aplicar patches de segurança para vulnerabilidades exploradas.
+- Resetar e forçar a rotação de todas as senhas/chaves associadas ao vetor de ataque.
+- Reconstruir a infraestrutura afetada a partir de imagens imutáveis limpas (IaC via Terraform).
 
-### Phase 5: Recovery
-- Restaurar sistemas de backups validados
-- Verificar integridade de dados
-- Monitorar por re-infecção (72 horas)
-- Validar controles de segurança funcionando
+### Fase 5: Recuperação
+- Restaurar dados a partir do último backup validado.
+- Iniciar os serviços de forma gradual, monitorando logs de perto por 72 horas para garantir que não há reinfecção.
+- Validar a eficácia dos novos controles de segurança implementados.
 
-### Phase 6: Post-Incident Review
-**Timeline**: Within 48 hours de resolução
+### Fase 6: Revisão Pós-Incidente (Post-Mortem)
+- **Prazo:** Em até 48 horas após a contenção final.
+- **Entregáveis:** Relatório Post-Mortem contendo causa raiz, cronograma dos eventos, lições aprendidas e Ações Corretivas (CARs).
+- **Armazenamento:** `docs/05-evidence/incidents/YYYY-MM-incident-name.md`
 
-**Deliverables**:
-1. Incident Report (5W2H: What, When, Where, Who, Why, How, How Much)
-2. Root Cause Analysis
-3. Lessons Learned
-4. Corrective Actions (CARs)
-5. Update Runbooks
+## 5. Plano de Comunicação e Notificação à ANPD
 
-**Stored in**: `docs/05-evidence/incidents/YYYY-MM-incident-name.md`
+### Comunicação Interna
+- **P0/P1:** Updates a cada 2 horas para o Board (CEO, Gestor SGSI). Reunião All-hands pós-incidente.
 
-## 5. Communication
+### Comunicação com Clientes
+- Notificar clientes afetados em até 24 horas se houver comprometimento de disponibilidade ou confidencialidade dos seus dados.
 
-### Internal
-- P0/P1: Immediate notification (CEO, DevOps, Gestor SGSI)
-- Status updates every 2 hours during incident
-- Post-incident: All-hands summary
+### Notificação à Autoridade Nacional de Proteção de Dados (ANPD)
+Se o incidente envolver vazamento ou acesso não autorizado a dados pessoais (biometria) que possa acarretar risco ou dano relevante aos titulares:
+1. **Prazo:** O DPO (Gestor SGSI) deve notificar a ANPD em até **2 dias úteis** contados da ciência do incidente (conforme diretrizes da ANPD).
+2. **Template de Notificação:**
+   - Natureza dos dados pessoais afetados (biometria facial).
+   - Informações sobre os titulares envolvidos.
+   - Indicação das medidas técnicas e de segurança utilizadas para proteção.
+   - Riscos relacionados ao incidente.
+   - Medidas que foram ou serão adotadas para reverter ou mitigar os efeitos.
 
-### External
-**Clients**: 
-- Notify if their data affected (within 24h)
-- Provide incident summary + remediation
+### Comunicação com a Mídia
+- Somente o CEO ou porta-voz designado (em coordenação com o departamento jurídico) está autorizado a falar publicamente sobre o incidente.
 
-**Regulators (LGPD)**:
-- Data breach notification within 72h (ANPD)
-- Include: nature of breach, categories affected, consequences, measures taken
+## 6. Preservação de Evidências
+- Nunca desligar máquinas virtuais ou excluir logs sem antes realizar uma cópia forense.
+- Manter a cadeia de custódia documentada (quem acessou a evidência e quando).
+- Evidências de incidentes P0/P1 devem ser retidas por no mínimo 5 anos.
 
-**Media**:
-- Only CEO or designated spokesperson
-- Coordinate with legal team
+## 7. Exercícios e Testes (Drills)
+- Exercícios de mesa (Tabletop) anuais simulando incidentes P0 (ex: ataque de ransomware e vazamento de banco de dados).
+- Campanhas de phishing simulado trimestrais para todos os colaboradores.
 
-## 6. Evidence Preservation
-- Do NOT delete logs or shut down systems without forensic copy
-- Chain of custody documented
-- Store evidence for minimum 2 years
-- May be needed for legal/insurance claims
-
-## 7. Third-Party Incidents
-If incident caused by vendor (AWS, GitHub):
-- Report immediately to vendor support
-- Document vendor's response
-- Assess if SLA breached
-- Include in post-incident review
-
-## 8. Training & Drills
-- Annual tabletop exercise (simulate P0 incident)
-- Quarterly phishing simulations
-- New hires: Incident reporting training (Day 1)
-
-## 9. Related Documents
-- SGSI-NCR-001: Nonconformity Register
-- SGSI-CAR-001: Corrective Action Log
-- RISK-009: Incident Response capability gap
-- SOP-002: Change Management (emergency changes)
-
-## 10. Approval
-- **Owner**: Gestor SGSI
-- **Approved By**: CEO (Pendente)
-- **Next Review**: 2026-12-31
+## 8. Aprovação
+- **Proprietário:** Gestor SGSI
+- **Aprovado Por:** CEO (Pendente)
+- **Próxima Revisão:** 2026-12-31
