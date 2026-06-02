@@ -13,6 +13,8 @@ annex_a_controls: "A.5.19, A.5.20, A.5.21, A.5.22"
 Este questionário deve ser preenchido por todos os fornecedores críticos, prestadores de serviços em nuvem ou empresas que terão acesso aos sistemas ou dados (especialmente biometria) da TWYN. 
 A avaliação das respostas ditará a aprovação do fornecedor ou a necessidade de cláusulas contratuais adicionais de mitigação de riscos.
 
+> **Nota sobre Hyperscalers (ex: AWS, GitHub, Google):** Grandes provedores não respondem questionários manuais. Para estes casos, a TWYN deve consumir suas certificações públicas e relatórios de auditoria (ex: via AWS Artifact para SOC 2 Type II, ISO 27001, etc). O preenchimento manual do questionário é dispensado, e o Gestor SGSI deve preencher apenas a seção "8. Uso Interno TWYN" com base na análise documental das certificações baixadas.
+
 ## 1. Informações da Empresa
 - **Razão Social do Fornecedor:** 
 - **CNPJ / ID Fiscal:** 
