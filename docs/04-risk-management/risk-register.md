@@ -5,7 +5,7 @@
 | **Document ID** | SGSI-RISK-002 |
 | **Version** | 1.0 |
 | **Author** | BEKAA Consultoria — Ricardo Esper |
-| **Approved By** | [Gestor SGSI] |
+| **Approved By** | Ricardo Esper (Bekaa Trusted Advisors) |
 | **Last Review** | 26/05/2026 |
 | **Next Review** | Q2 2027 (Anual) |
 | **ISO 27001:2022 Mapping** | **Clause 6.1.2 — Risk assessment** + **Clause 8.2** |

@@ -365,7 +365,7 @@ Detalhes completos em **SOP-001: Onboarding/Offboarding**.
 ```markdown
 ## New Asset Request
 
-**Submitted by**: [Nome]
+**Submitted by**: Ricardo Esper (Gestor SGSI)
 **Date**: [YYYY-MM-DD]
 **Asset Type**: [INFO / INFRA / SW / HW / PEOPLE]
 
@@ -407,7 +407,7 @@ Detalhes completos em **SOP-001: Onboarding/Offboarding**.
 ```markdown
 ## Asset Decommissioning Request
 
-**Submitted by**: [Nome]
+**Submitted by**: Ricardo Esper (Gestor SGSI)
 **Date**: [YYYY-MM-DD]
 **Asset ID**: [e.g., INFO-001]
 

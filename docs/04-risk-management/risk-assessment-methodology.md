@@ -5,7 +5,7 @@
 | **Document ID** | SGSI-RISK-001 |
 | **Version** | 1.0 |
 | **Author** | BEKAA Consultoria — Ricardo Esper |
-| **Approved By** | [Gestor SGSI] |
+| **Approved By** | Ricardo Esper (Bekaa Trusted Advisors) |
 | **Approval Date** | [Pendente] |
 | **Effective Date** | [Pendente] |
 | **Next Review** | [Anual após aprovação] |
@@ -506,12 +506,12 @@ After each risk assessment cycle:
 
 **Gestor SGSI**  
 **Signature**: _______________________________  
-**Name**: [Nome Completo]  
+**Name**: Enes Fernando Degasperi  
 **Date**: _____ / _____ / 2026
 
 **CTO**  
 **Signature**: _______________________________  
-**Name**: [Nome Completo]  
+**Name**: Enes Fernando Degasperi  
 **Date**: _____ / _____ / 2026
 
 ---

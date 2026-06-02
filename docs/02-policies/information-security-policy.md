@@ -105,7 +105,7 @@ Garantir que informações e sistemas estejam **disponíveis** quando necessári
 **Compromisso formal**:
 > *"A TWYN compromete-se a estabelecer, implementar, manter e melhorar continuamente o Sistema de Gestão de Segurança da Informação, fornecendo recursos necessários e garantindo conformidade com requisitos legais, regulatórios e contratuais."*
 >
-> — **[Nome do CEO]**, Chief Executive Officer
+> — **Enes Fernando Degasperi**, Chief Executive Officer
 
 ### 4.2 ISMS Manager (Gestor SGSI)
 
@@ -665,35 +665,35 @@ Exceções **nunca** são concedidas para:
 
 ### Top Management Commitment
 
-> **"I, [Nome Completo do CEO], as Chief Executive Officer of TWYN, hereby approve this Information Security Policy and commit to providing necessary resources for the establishment, implementation, maintenance, and continual improvement of the Information Security Management System (ISMS) in accordance with ISO/IEC 27001:2022."**
+> **"I, Enes Fernando Degasperi, as Chief Executive Officer of TWYN, hereby approve this Information Security Policy and commit to providing necessary resources for the establishment, implementation, maintenance, and continual improvement of the Information Security Management System (ISMS) in accordance with ISO/IEC 27001:2022."**
 
 ---
 
 **CEO TWYN**  
 **Signature**: _______________________________  
-**Name**: [Nome Completo]  
+**Name**: Enes Fernando Degasperi  
 **Date**: _____ / _____ / 2026
 
 ---
 
 **Gestor SGSI**  
 **Signature**: _______________________________  
-**Name**: [Nome Completo]  
+**Name**: Enes Fernando Degasperi  
 **Date**: _____ / _____ / 2026
 
 ---
 
 **CTO**  
 **Signature**: _______________________________  
-**Name**: [Nome Completo]  
+**Name**: Enes Fernando Degasperi  
 **Date**: _____ / _____ / 2026
 
 ---
 
 ## ⚠️ CRITICAL NEXT STEPS
 
-1. **[ ]** Preencher placeholders: [Nome CEO], [CNPJ], [Endereço], [DPO], [Gestor SGSI]
-2. **[ ]** Obter **assinaturas físicas ou digitais** da alta direção
+1. **[ ]** Preencher placeholders: Enes Fernando Degasperi, 31.122.819/0001-55, Avenida Paulista, nº 37, Bairro Bela Vista, São Paulo/SP, [DPO], Ricardo Esper (Bekaa Trusted Advisors)
+2. **[ ]** Obter **assinaturas físicas ou digitais** (Pendente Enes Fernando Degasperi) da alta direção
 3. **[ ]** Comunicar política a TODOS os colaboradores (email + treinamento)
 4. **[ ]** Armazenar versão assinada em local seguro e controlado
 5. **[ ]** Publicar versão pública (sem informações sensíveis) para clientes/auditores

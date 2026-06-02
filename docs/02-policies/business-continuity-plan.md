@@ -361,7 +361,7 @@ Os processos de negócio da TWYN foram identificados, priorizados e classificado
 | Papel | Titular | Backup Primário | Backup Secundário | Conhecimento Documentado |
 |-------|---------|-----------------|--------------------|-----------------------|
 | DevOps Lead (Infra Admin) | [Nome DevOps Lead] | Junior DevOps | Consultor externo (contrato de emergência) | Runbooks em `docs/06-implementation-guides/` |
-| CEO (Decisor) | [Nome CEO] | Gestor SGSI (Bekaa/Ricardo Esper) | DevOps Lead (decisões técnicas) | Procedimentos documentados neste BCP |
+| CEO (Decisor) | Enes Fernando Degasperi | Gestor SGSI (Bekaa/Ricardo Esper) | DevOps Lead (decisões técnicas) | Procedimentos documentados neste BCP |
 | Gestor SGSI (Coordenador BCP) | Ricardo Esper (Bekaa) | CEO | DevOps Lead | Este documento + SGSI docs |
 | Desenvolvimento | Desenvolvedores | DevOps Lead | Contratação emergencial | README + docs técnicos |
 
@@ -602,7 +602,7 @@ ORIENTAÇÕES:
 
 Próxima atualização será enviada em [30/60 minutos].
 
-[Nome] — Gestor SGSI
+Ricardo Esper — Gestor SGSI
 ```
 
 #### Template 2 — Notificação a Clientes (Incidente de Serviço)
@@ -634,7 +634,7 @@ significativa].
 Lamentamos qualquer inconveniente causado e agradecemos sua compreensão.
 
 Atenciosamente,
-[Nome do CEO]
+Enes Fernando Degasperi
 CEO — TWYN
 [email de contato]
 ```
@@ -710,7 +710,7 @@ anormalidade, entre em contato conosco em [email/telefone].
 Agradecemos sua compreensão e paciência.
 
 Atenciosamente,
-[Nome do CEO]
+Enes Fernando Degasperi
 CEO — TWYN
 ```
 
@@ -1180,13 +1180,13 @@ Os KPIs são reportados:
 
 ### Declaração de Aprovação
 
-> **"Eu, [Nome Completo do CEO], como Chief Executive Officer da TWYN, aprovo este Plano de Continuidade de Negócios e me comprometo a alocar os recursos necessários para sua implementação, teste e manutenção contínua, garantindo a resiliência operacional da organização em conformidade com a ISO/IEC 27001:2022."**
+> **"Eu, Enes Fernando Degasperi, como Chief Executive Officer da TWYN, aprovo este Plano de Continuidade de Negócios e me comprometo a alocar os recursos necessários para sua implementação, teste e manutenção contínua, garantindo a resiliência operacional da organização em conformidade com a ISO/IEC 27001:2022."**
 
 ---
 
 **CEO TWYN**
 **Assinatura**: _______________________________
-**Nome**: [Nome Completo]
+**Nome**: Enes Fernando Degasperi
 **Data**: _____ / _____ / 2026
 
 ---
@@ -1200,7 +1200,7 @@ Os KPIs são reportados:
 
 **DevOps Lead**
 **Assinatura**: _______________________________
-**Nome**: [Nome Completo]
+**Nome**: Enes Fernando Degasperi
 **Data**: _____ / _____ / 2026
 
 ---

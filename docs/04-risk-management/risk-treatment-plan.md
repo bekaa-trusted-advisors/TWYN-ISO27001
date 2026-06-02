@@ -316,12 +316,12 @@ This RTP is considered **COMPLETE** when:
 
 **Gestor SGSI**  
 **Signature**: _______________________________  
-**Name**: [Nome]  
+**Name**: Ricardo Esper  
 **Date**: _____ / _____ / 2026
 
 **CTO**  
 **Signature**: _______________________________  
-**Name**: [Nome]  
+**Name**: Ricardo Esper  
 **Date**: _____ / _____ / 2026
 
 ---

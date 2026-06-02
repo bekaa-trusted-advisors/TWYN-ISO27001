@@ -106,5 +106,5 @@ Este documento é a base para o escopo e o registro de riscos do SGSI, tendo sid
 
 | Papel | Nome | Assinatura | Data |
 |-------|------|------------|------|
-| **CEO TWYN** | [Nome do CEO] | ________________________ | ___/___/2026 |
+| **CEO TWYN** | Enes Fernando Degasperi | ________________________ | ___/___/2026 |
 | **Gestor SGSI** | Ricardo Esper | ________________________ | ___/___/2026 |

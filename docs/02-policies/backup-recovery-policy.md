@@ -800,21 +800,21 @@ As seguintes exceções **NUNCA** são concedidas:
 
 **Owner — Gestor SGSI**
 **Assinatura**: _______________________________
-**Nome**: [Nome Completo]
+**Nome**: Enes Fernando Degasperi
 **Data**: _____ / _____ / 2026
 
 ---
 
 **Aprovador — CEO TWYN**
 **Assinatura**: _______________________________
-**Nome**: [Nome Completo]
+**Nome**: Enes Fernando Degasperi
 **Data**: _____ / _____ / 2026
 
 ---
 
 **Revisão Técnica — CTO**
 **Assinatura**: _______________________________
-**Nome**: [Nome Completo]
+**Nome**: Enes Fernando Degasperi
 **Data**: _____ / _____ / 2026
 
 ---

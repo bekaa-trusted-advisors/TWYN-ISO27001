@@ -26,9 +26,9 @@ Este documento define o **escopo do Sistema de Gestão de Segurança da Informa�
 ### 2. Organizational Context (Contexto Organizacional)
 
 #### 2.1 About TWYN
-**Razão Social**: [Nome legal da TWYN]  
-**CNPJ**: [CNPJ da TWYN]  
-**Endereço Principal**: [Endereço]  
+**Razão Social**: TWYN T4ISB DO BRASIL TECNOLOGIA E PARTICIPAÇÕES LTDA.  
+**CNPJ**: 31.122.819/0001-55  
+**Endereço Principal**: Avenida Paulista, nº 37, Bairro Bela Vista, São Paulo/SP  
 **Setor**: Tecnologia — Plataforma de Autenticação Biométrica (Face ID)
 
 **Modelo de Negócio**:
@@ -96,7 +96,7 @@ Este documento define o **escopo do Sistema de Gestão de Segurança da Informa�
 **Localização Física**:
 - ✅ **AWS Região**: `us-east-1` (N. Virginia) — primária
 - ✅ **AWS Região**: `us-west-2` (Oregon) — DR/backup
-- ✅ **Escritório TWYN**: [Endereço] — workstations administrativas apenas
+- ✅ **Escritório TWYN**: Avenida Paulista, nº 37, Bairro Bela Vista, São Paulo/SP — workstations administrativas apenas
 
 **Processos de Negócio**:
 - ✅ Desenvolvimento de software (metodologia ágil)
@@ -138,7 +138,7 @@ Este documento define o **escopo do Sistema de Gestão de Segurança da Informa�
 
 **Limite Físico**:
 - Datacenters AWS em `us-east-1` e `us-west-2`
-- Escritório TWYN em [Endereço] — apenas workstations administrativas
+- Escritório TWYN em Avenida Paulista, nº 37, Bairro Bela Vista, São Paulo/SP — apenas workstations administrativas
 
 **Limite Lógico**:
 - VPC `vpc-XXXXXXXXX` (produção)
@@ -182,8 +182,8 @@ Conforme ISO 27001:2022 Annex A, os seguintes controles são **excluídos** com 
 
 | Control | Justification | Approved By |
 |---------|---------------|-------------|
-| A.7.1 Physical security perimeters | Infraestrutura 100% cloud (AWS); sem perímetro físico próprio. Covered by AWS SOC 2/ISO certifications. | [Gestor SGSI] |
-| A.7.2 Physical entry | Mesma justificativa acima | [Gestor SGSI] |
+| A.7.1 Physical security perimeters | Infraestrutura 100% cloud (AWS); sem perímetro físico próprio. Covered by AWS SOC 2/ISO certifications. | Ricardo Esper (Bekaa Trusted Advisors) |
+| A.7.2 Physical entry | Mesma justificativa acima | Ricardo Esper (Bekaa Trusted Advisors) |
 
 *(Esta tabela será expandida no Statement of Applicability completo)*
 
@@ -204,9 +204,9 @@ Este escopo foi revisado e aprovado pelos seguintes responsáveis:
 
 | Role | Name | Signature | Date |
 |------|------|-----------|------|
-| **CEO / Top Management** | [Nome] | _______________ | ___/___/2026 |
-| **Gestor SGSI** | [Nome] | _______________ | ___/___/2026 |
-| **CTO** | [Nome] | _______________ | ___/___/2026 |
+| **CEO / Top Management** | Enes Fernando Degasperi | _______________ | ___/___/2026 |
+| **Gestor SGSI** | Ricardo Esper (Bekaa Trusted Advisors) | _______________ | ___/___/2026 |
+| **CTO** | Enes Fernando Degasperi | _______________ | ___/___/2026 |
 
 ---
 

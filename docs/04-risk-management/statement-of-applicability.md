@@ -362,10 +362,10 @@ Esta Declaração de Aplicabilidade deve ser revisada e aprovada **anualmente** 
 
 **CEO TWYN**
 
-> *"Eu, [Nome Completo do CEO], na qualidade de Chief Executive Officer da TWYN, aprovo esta Declaração de Aplicabilidade e confirmo que os controles não aplicáveis são justificados conforme o escopo do SGSI e o modelo de responsabilidade compartilhada com a AWS."*
+> *"Eu, Enes Fernando Degasperi, na qualidade de Chief Executive Officer da TWYN, aprovo esta Declaração de Aplicabilidade e confirmo que os controles não aplicáveis são justificados conforme o escopo do SGSI e o modelo de responsabilidade compartilhada com a AWS."*
 
 **Assinatura**: _______________________________
-**Nome**: [Nome Completo]
+**Nome**: Enes Fernando Degasperi
 **Cargo**: CEO — TWYN
 **Data**: _____ / _____ / 2026
 
@@ -385,7 +385,7 @@ Esta Declaração de Aplicabilidade deve ser revisada e aprovada **anualmente** 
 **CTO TWYN**
 
 **Assinatura**: _______________________________
-**Nome**: [Nome Completo]
+**Nome**: Enes Fernando Degasperi
 **Cargo**: CTO — TWYN
 **Data**: _____ / _____ / 2026
 

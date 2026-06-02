@@ -161,8 +161,8 @@ Este documento registra evidências de competência da equipe TWYN conforme exig
 
 | Employee ID | Name | Role | Education | Certifications | Training Completed | Last Update | Next Review | Status |
 |-------------|------|------|-----------|----------------|--------------------|-----------| ------------|--------|
-| EMP-001 | A definir | CEO | A definir | - | Security Awareness (pending) | - | 2026-08-26 | Pending |
-| EMP-002 | A definir | Gestor SGSI | A definir | ISO 27001 Lead Implementer (pending) | - | - | 2026-08-26 | To hire |
+| EMP-001 | Enes Fernando Degasperi | CEO | São Paulo/SP | - | Security Awareness (pending) | - | 2026-08-26 | Pending |
+| EMP-002 | Ricardo Esper | Gestor SGSI | Bekaa Advisors | ISO 27001 Lead Implementer (pending) | - | - | 2026-08-26 | To hire |
 | EMP-003 | A definir | DevOps Lead | A definir | AWS (specify) | Security Awareness (pending) | - | 2026-08-26 | Active |
 | EMP-004 | A definir | Senior Backend Dev | A definir | - | OWASP Top 10 (pending) | - | 2026-08-26 | Active |
 | EMP-005 | A definir | Backend Dev 1 | A definir | - | OWASP Top 10 (pending) | - | 2026-08-26 | Active |

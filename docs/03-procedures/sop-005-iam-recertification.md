@@ -414,7 +414,7 @@ RELATÓRIO DE RECERTIFICAÇÃO IAM — Qn/AAAA
 
 Data da recertificação: DD/MM/AAAA
 Executado por: [Nome do DevOps Lead]
-Revisado por: [Nome do Gestor SGSI]
+Revisado por: Ricardo Esper (Bekaa Trusted Advisors)
 
 1. RESUMO EXECUTIVO
    - Total de usuários IAM: XX
