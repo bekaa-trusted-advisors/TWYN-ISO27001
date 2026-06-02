@@ -2,11 +2,11 @@
 document_id: SGSI-RACI-001
 title: RACI Matrix - Roles e Responsabilidades SGSI
 version: 1.0
-date: 2026-05-26
+date: 2026-06-02
 iso_clause: "5.3, 7.2"
 annex_a_controls: "A.5.2, A.6.1"
 classification: Internal
-owner: Gestor SGSI
+owner: Ricardo Esper (Bekaa Trusted Advisors) - Gestor SGSI
 approved_by: CEO
 next_review: 2026-08-26
 ---
@@ -53,19 +53,20 @@ Esta matriz cobre todas as atividades relacionadas ao SGSI ISO 27001:2022, inclu
 | Papel | Descrição | Pessoa/Equipe |
 |-------|-----------|---------------|
 | **CEO** | Chief Executive Officer - Autoridade máxima, responsável por aprovar políticas e alocar recursos | A definir |
-| **Gestor SGSI** | ISMS Manager - Coordena e gerencia todo o SGSI, ponto focal para certificação ISO 27001 | A definir |
-| **DevOps Lead** | Líder técnico responsável pela infraestrutura AWS, segurança de rede, e implementação de controles técnicos | A definir |
+| **DevOps Lead** | Líder técnico responsável pela infraestrutura AWS, segurança de rede, e implementação de controles técnicos. Atua como ponto focal técnico interno do SGSI, reportando ao Gestor SGSI em assuntos de segurança da informação | A definir |
 | **Dev Team** | Equipe de desenvolvimento responsável pelo código da Face ID Platform API | A definir |
 | **DPO/Legal** | Data Protection Officer / Jurídico - Responsável por LGPD, contratos, e compliance legal | A definir (pode ser externo) |
 | **HR/People Ops** | Recursos Humanos - Responsável por onboarding/offboarding, treinamentos, e controles de pessoal | A definir |
 | **Finance** | Financeiro - Responsável por contratos de fornecedores, seguros, e orçamento de SI | A definir |
 
-### 4.2 Papéis Externos
+### 4.2 Papéis Externos (inclui Gestor SGSI — modelo híbrido)
+
+> **Nota — Modelo Híbrido:** O Gestor SGSI é exercido por consultor externo (terceiro), conforme permitido pela ISO 27001:2022, Cláusula 5.3. O DevOps Lead atua como ponto focal técnico interno. Este modelo foi adotado para garantir expertise especializada, independência na avaliação de riscos e auditorias, e eficiência operacional. A nomeação formal consta na Carta de Nomeação SGSI-EVIDENCE-NOM-001.
 
 | Papel | Descrição | Fornecedor |
 |-------|-----------|------------|
+| **Gestor SGSI** | ISMS Manager (terceiro/híbrido) — Coordena e gerencia todo o SGSI, ponto focal para certificação ISO 27001. Responsável pela gestão de riscos, auditoria interna, conformidade normativa e reporte direto ao CEO. Nomeação formal: SGSI-EVIDENCE-NOM-001 | Ricardo Esper (Bekaa Trusted Advisors) |
 | **External Auditor** | Auditor de certificação ISO 27001:2022 (Stage 1 e Stage 2) | A contratar (Q2 2026) |
-| **Security Consultant** | Consultor externo especializado em ISO 27001 e AWS security | Bekaa Trusted Advisors |
 | **AWS Support** | Suporte técnico da AWS (Business Support recomendado) | AWS |
 | **Penetration Tester** | Empresa de pentesting para testes de intrusão anuais | A contratar (Q3 2026) |
 
@@ -358,7 +359,7 @@ Esta matriz cobre todas as atividades relacionadas ao SGSI ISO 27001:2022, inclu
 | Field | Value |
 |-------|-------|
 | **Document Prepared By** | Security Consultant (Bekaa) |
-| **Document Reviewed By** | Gestor SGSI (Pendente) |
+| **Document Reviewed By** | Ricardo Esper — Gestor SGSI (Bekaa Trusted Advisors) |
 | **Document Approved By** | CEO (Pendente) |
 | **Approval Date** | Pendente |
 | **Effective Date** | Após aprovação CEO |
@@ -372,6 +373,7 @@ Esta matriz cobre todas as atividades relacionadas ao SGSI ISO 27001:2022, inclu
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
 | 1.0 | 2026-05-26 | Security Consultant | Versão inicial - RACI completo cobrindo Cláusulas 4-10, Anexo A, e processos operacionais |
+| 1.1 | 2026-06-02 | Ricardo Esper (Bekaa) | Formalização do Gestor SGSI: Ricardo Esper (Bekaa Trusted Advisors) designado como Gestor SGSI sob modelo híbrido (terceiro). Atualização de papéis, contatos de emergência e referência à Carta de Nomeação SGSI-EVIDENCE-NOM-001 |
 
 ---
 
@@ -392,14 +394,13 @@ Esta matriz cobre todas as atividades relacionadas ao SGSI ISO 27001:2022, inclu
 | Papel | Nome | Email | Telefone | Disponibilidade |
 |-------|------|-------|----------|-----------------|
 | CEO | A definir | - | - | 24/7 (crítico) |
-| Gestor SGSI | A definir | - | - | 24/7 |
+| Gestor SGSI | Ricardo Esper (Bekaa Trusted Advisors) | resper@bekaa.eu | - | Horário comercial; estendida para incidentes críticos |
 | DevOps Lead | A definir | - | - | 24/7 (on-call) |
 | DPO/Legal | A definir | - | - | Horário comercial |
 | AWS Support | AWS | via Console | - | 24/7 (Business Support) |
-| Security Consultant | Bekaa | resper@bekaa.eu | - | Horário comercial |
 
 ---
 
 **⚠️ AÇÃO OBRIGATÓRIA**: Este documento requer aprovação formal do CEO antes de entrar em vigor. A assinatura do CEO é requisito de auditoria ISO 27001:2022 (Cláusula 5.1).
 
-**📋 STATUS**: DRAFT - Aguardando definição de nomes/emails da equipe TWYN e aprovação do CEO.
+**📋 STATUS**: DRAFT - Gestor SGSI formalizado (Ricardo Esper, Bekaa Trusted Advisors). Aguardando definição dos demais nomes/emails da equipe TWYN e aprovação do CEO.
