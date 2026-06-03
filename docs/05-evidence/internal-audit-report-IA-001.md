@@ -161,12 +161,12 @@ A auditoria foi conduzida utilizando uma abordagem baseada em:
 - **Descrição**: **Todos** os documentos do SGSI encontram-se com status "Draft" e sem assinatura/aprovação formal do CEO ou da Alta Direção. A Cláusula 5.2 exige que a política de segurança da informação seja "estabelecida pela alta direção" e que esteja "disponível como informação documentada". A Cláusula 7.5.2 exige que toda informação documentada tenha "aprovação adequada".
 - **Evidência**: Revisão dos metadados (frontmatter YAML) de todos os documentos: `approved_by: ""`, `approval_date: ""`, `effective_date: ""` estão vazios em 100% dos documentos avaliados, incluindo:
   - Cláusula 4 (SGSI-SCOPE-001): `approval_date: null`
-  - Objetivos (SGSI-OBJ-001): `approved_by: CEO (Pendente)`
+  - Objetivos (SGSI-OBJ-001): `approved_by: CEO (Aprovado - Ata 001)`
   - Política de Controle de Acesso (SGSI-POLICY-002): `status: Draft`, `approved_by: ""`
   - Política de Resposta a Incidentes (SGSI-POLICY-003): `status: Draft`, `approved_by: ""`
   - SOP-001 a SOP-005: todos com `status: Draft`, `approved_by: ""`
-  - Programa de Treinamento (SGSI-TRAIN-001): `approved_by: CEO (Pendente)`
-  - Programa de Auditoria (SGSI-AUDIT-001): `approved_by: CEO (Pendente)`
+  - Programa de Treinamento (SGSI-TRAIN-001): `approved_by: CEO (Aprovado - Ata 001)`
+  - Programa de Auditoria (SGSI-AUDIT-001): `approved_by: CEO (Aprovado - Ata 001)`
 - **Impacto**: Documentos sem aprovação formal não possuem validade dentro do SGSI. Em uma auditoria de certificação, o auditor externo considerará que o SGSI não possui políticas aprovadas, resultando em não-conformidade maior imediata e potencial suspensão da auditoria de Stage 2.
 - **Causa Raiz**: O projeto SGSI está em fase de desenvolvimento. O processo de aprovação formal ainda não foi estabelecido ou executado.
 - **Ação Corretiva Requerida**: (1) Estabelecer um processo formal de revisão e aprovação de documentos; (2) O CEO deve revisar e aprovar formalmente, no mínimo, a Política de Segurança da Informação (SGSI-POLICY-001), o escopo do SGSI (SGSI-SCOPE-001) e os objetivos de segurança (SGSI-OBJ-001); (3) Todos os demais documentos devem ser aprovados pelo Gestor SGSI com revisão do CEO quando aplicável; (4) Registrar as aprovações com data, nome e assinatura (digital ou física).

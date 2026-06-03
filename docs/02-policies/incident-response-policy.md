@@ -5,7 +5,7 @@ version: 2.0
 date: 2026-06-02
 annex_a_controls: "A.5.24, A.5.25, A.5.26, A.5.27, A.5.28"
 owner: Gestor SGSI
-approved_by: CEO (Pendente)
+approved_by: CEO (Aprovado - Ata 001)
 ---
 
 # Incident Response Policy

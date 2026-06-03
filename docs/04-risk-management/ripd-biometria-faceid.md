@@ -5,7 +5,7 @@ version: 1.0
 date: 2026-06-02
 classification: CONFIDENTIAL
 owner: Gestor SGSI
-approved_by: CEO (Pendente)
+approved_by: CEO (Aprovado - Ata 001)
 annex_a_controls: "A.5.33, A.8.28, A.8.11, A.8.10"
 ---
 
