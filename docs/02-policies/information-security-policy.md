@@ -1,6 +1,6 @@
 ---
 **Document Control**
-| Field | Value |
+| Campo | Valor |
 |-------|-------|
 | **Document ID** | SGSI-POLICY-001 |
 | **Version** | 1.0 |
@@ -8,7 +8,7 @@
 | **Approved By** | **[CEO TWYN]** ⚠️ ASSINATURA OBRIGATÓRIA |
 | **Approval Date** | [Pendente] |
 | **Effective Date** | [Pendente] |
-| **Next Review** | [Anual após aprovação] |
+| **Próxima Revisão** | [Anual após aprovação] |
 | **ISO 27001:2022 Mapping** | **Clause 5.2 — Leadership** + Control **A.5.1** |
 | **Classification** | **PUBLIC** (divulgável a clientes/auditores) |
 ---
@@ -18,7 +18,7 @@
 
 ---
 
-## 1. Purpose (Propósito)
+## 1. Propósito
 
 Esta **Política de Segurança da Informação** estabelece o compromisso da **TWYN** com a proteção da informação e define os princípios e diretrizes que orientam o **Sistema de Gestão de Segurança da Informação (SGSI)** em conformidade com **ISO/IEC 27001:2022**.
 
@@ -35,7 +35,7 @@ Esta política aplica-se a:
 - ✅ Clientes B2B que utilizam a plataforma Face ID
 - ✅ Todos os ambientes (produção, staging, desenvolvimento)
 
-Escopo detalhado conforme **[SGSI-SCOPE-001]** ISMS Scope Document.
+Escopo detalhado conforme **[SGSI-SCOPE-001]** Documento de Escopo do SGSI.
 
 ---
 
@@ -155,7 +155,7 @@ Garantir que informações e sistemas estejam **disponíveis** quando necessári
 
 Os seguintes objetivos **mensuráveis** são estabelecidos para 2026:
 
-| Objective | Target | Measurement | Owner |
+| Objective | Target | Measurement | Responsável |
 |-----------|--------|-------------|-------|
 | **Obter certificação ISO 27001:2022** | Q3 2026 (ago) | Certificado emitido | Gestor SGSI |
 | **Zero incidentes críticos de dados** | 0 por ano | Incidentes registrados em [SGSI-INC] | SecOps |
@@ -247,7 +247,7 @@ Todos os ativos de informação críticos são **inventariados e classificados**
 
 | Level | Description | Examples | Controls |
 |-------|-------------|----------|----------|
-| **CRITICAL** | Dados biométricos, secrets, PII sensível | Face templates, DB passwords, API keys | Encryption at rest+transit, MFA, audit logs |
+| **CRÍTICO** | Dados biométricos, secrets, PII sensível | Face templates, DB passwords, API keys | Encryption at rest+transit, MFA, audit logs |
 | **CONFIDENTIAL** | Dados de negócio sensíveis | Contratos, código-fonte, logs de auditoria | Access control, versioning, backup |
 | **INTERNAL** | Informações internas não públicas | Documentação técnica, roadmaps | Acesso restrito a colaboradores |
 | **PUBLIC** | Informações divulgáveis | API docs públicos, marketing | Proteção de integridade |
@@ -632,11 +632,11 @@ Exceções **nunca** são concedidas para:
 
 ---
 
-## 24. Related Documents (Documentos Relacionados)
+## 24. Documentos Relacionados (Documentos Relacionados)
 
 | Doc ID | Title |
 |--------|-------|
-| SGSI-SCOPE-001 | ISMS Scope Document |
+| SGSI-SCOPE-001 | Documento de Escopo do SGSI |
 | SGSI-RISK-001 | Risk Assessment Methodology |
 | SGSI-RISK-002 | Risk Register |
 | SGSI-RTP-001 | Risk Treatment Plan |
@@ -654,7 +654,7 @@ Exceções **nunca** são concedidas para:
 
 ## 25. Document History (Histórico)
 
-| Version | Date | Author | Changes | Approved By |
+| Versão | Data | Autor | Alterações | Approved By |
 |---------|------|--------|---------|-------------|
 | 0.1 (Draft) | 26/05/2026 | Ricardo Esper (BEKAA) | Initial draft | — |
 | 1.0 | [Pendente] | Ricardo Esper | Final version for approval | **[CEO TWYN]** |
@@ -690,7 +690,7 @@ Exceções **nunca** são concedidas para:
 
 ---
 
-## ⚠️ CRITICAL NEXT STEPS
+## ⚠️ CRÍTICO NEXT STEPS
 
 1. **[ ]** Preencher placeholders: Enes Fernando Degasperi, 31.122.819/0001-55, Avenida Paulista, nº 37, Bairro Bela Vista, São Paulo/SP, [DPO], Ricardo Esper (Bekaa Trusted Advisors)
 2. **[ ]** Obter **assinaturas físicas ou digitais** (Pendente Enes Fernando Degasperi) da alta direção

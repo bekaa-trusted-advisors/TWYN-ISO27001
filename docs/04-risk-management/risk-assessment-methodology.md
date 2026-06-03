@@ -1,6 +1,6 @@
 ---
 **Document Control**
-| Field | Value |
+| Campo | Valor |
 |-------|-------|
 | **Document ID** | SGSI-RISK-001 |
 | **Version** | 1.0 |
@@ -8,7 +8,7 @@
 | **Approved By** | Ricardo Esper (Bekaa Trusted Advisors) |
 | **Approval Date** | [Pendente] |
 | **Effective Date** | [Pendente] |
-| **Next Review** | [Anual após aprovação] |
+| **Próxima Revisão** | [Anual após aprovação] |
 | **ISO 27001:2022 Mapping** | **Clause 6.1.2 — Information security risk assessment** |
 ---
 
@@ -17,7 +17,7 @@
 
 ---
 
-## 1. Purpose (Propósito)
+## 1. Propósito
 
 Este documento define a **metodologia formal** utilizada pela TWYN para identificar, analisar e avaliar riscos de segurança da informação, em conformidade com **ISO/IEC 27001:2022 Clause 6.1.2**.
 
@@ -103,14 +103,14 @@ Ambos medidos em escala de **1 a 5**.
 
 ### 5.1 Asset Categories
 
-| Category | Examples | Classification |
+| Categoria | Examples | Classification |
 |----------|----------|----------------|
-| **Data** | Dados biométricos, código-fonte, logs, credentials | CRITICAL / CONFIDENTIAL |
-| **Applications** | Face ID API, pipelines CI/CD, admin dashboards | CRITICAL / CONFIDENTIAL |
-| **Infrastructure** | AWS accounts, EKS clusters, RDS databases, S3 buckets | CRITICAL |
+| **Data** | Dados biométricos, código-fonte, logs, credentials | CRÍTICO / CONFIDENTIAL |
+| **Applications** | Face ID API, pipelines CI/CD, admin dashboards | CRÍTICO / CONFIDENTIAL |
+| **Infrastructure** | AWS accounts, EKS clusters, RDS databases, S3 buckets | CRÍTICO |
 | **Hardware** | Workstations, laptops (remote work) | INTERNAL |
 | **People** | DevOps team, developers, Gestor SGSI | N/A |
-| **Services** | AWS, GitHub, DNS providers | CRITICAL (dependency) |
+| **Services** | AWS, GitHub, DNS providers | CRÍTICO (dependency) |
 
 ### 5.2 Asset Attributes
 
@@ -119,7 +119,7 @@ Para cada ativo crítico, documentar:
 - **Owner** (business owner)
 - **Custodian** (technical owner)
 - **Location** (AWS region, repo, etc.)
-- **Classification** (CRITICAL/CONFIDENTIAL/INTERNAL/PUBLIC)
+- **Classification** (CRÍTICO/CONFIDENTIAL/INTERNAL/PUBLIC)
 - **CIA Rating**: 
   - Confidentiality: 1-5
   - Integrity: 1-5
@@ -234,13 +234,13 @@ D
 
 ### 8.2 Risk Levels and Treatment Priority
 
-| Risk Score | Risk Level | Color | Treatment Priority | Action |
+| Pontuação de Risco | Risk Level | Color | Treatment Priority | Action |
 |------------|------------|-------|-------------------|--------|
-| **20-25** | CRITICAL | 🔴 Red | **IMMEDIATE** | Must treat within 30 days |
-| **12-19** | HIGH | 🟠 Orange | **HIGH** | Must treat within 90 days |
-| **6-11** | MEDIUM | 🟡 Yellow | **MEDIUM** | Treat within 6 months |
-| **3-5** | LOW | 🟢 Green | **LOW** | Monitor, treat if cost-effective |
-| **1-2** | VERY LOW | 🟢 Green | **ACCEPT** | Document acceptance |
+| **20-25** | CRÍTICO | 🔴 Red | **IMMEDIATE** | Must treat within 30 days |
+| **12-19** | ALTO | 🟠 Orange | **ALTO** | Must treat within 90 days |
+| **6-11** | MÉDIO | 🟡 Yellow | **MÉDIO** | Treat within 6 months |
+| **3-5** | BAIXO | 🟢 Green | **BAIXO** | Monitor, treat if cost-effective |
+| **1-2** | VERY BAIXO | 🟢 Green | **ACCEPT** | Document acceptance |
 
 ---
 
@@ -259,7 +259,7 @@ D
 
 For each **MITIGATE** decision, create RMAP entry:
 
-| Field | Description |
+| Campo | Description |
 |-------|-------------|
 | **Risk ID** | Unique identifier (RISK-001) |
 | **Control(s)** | Which Annex A control(s) address this risk |
@@ -283,13 +283,13 @@ For each **MITIGATE** decision, create RMAP entry:
 
 All residual risks **MUST** be:
 1. ✅ Documented in Risk Register
-2. ✅ **Accepted formally** by risk owner + Gestor SGSI
+2. ✅ **Aceito formally** by risk owner + Gestor SGSI
 3. ✅ Reviewed annually
 
 **Acceptance Criteria**:
-- Residual risk ≤ **MEDIUM** (score ≤ 11) → Auto-accept by Gestor SGSI
-- Residual risk = **HIGH** (12-19) → Requires CTO approval
-- Residual risk = **CRITICAL** (≥ 20) → Requires **CEO approval** + documented justification
+- Residual risk ≤ **MÉDIO** (score ≤ 11) → Auto-accept by Gestor SGSI
+- Residual risk = **ALTO** (12-19) → Requires CTO approval
+- Residual risk = **CRÍTICO** (≥ 20) → Requires **CEO approval** + documented justification
 
 ---
 
@@ -306,11 +306,11 @@ All residual risks **MUST** be:
 | **Likelihood** | 1-5 score |
 | **Impact** | 1-5 score |
 | **Risk Score** | L × I |
-| **Risk Level** | CRITICAL/HIGH/MEDIUM/LOW |
+| **Risk Level** | CRÍTICO/ALTO/MÉDIO/BAIXO |
 | **Treatment** | MITIGATE/ACCEPT/AVOID/TRANSFER |
 | **Control(s)** | Annex A control IDs |
 | **Owner** | Person responsible |
-| **Status** | Open / In Treatment / Accepted / Closed |
+| **Status** | Open / Em Tratamento / Aceito / Closed |
 | **Residual Risk** | Score after controls |
 | **Review Date** | Last reviewed |
 
@@ -343,10 +343,10 @@ All residual risks **MUST** be:
 
 | Role | Responsibilities |
 |------|------------------|
-| **Gestor SGSI** | • Own the risk assessment process<br>• Facilitate risk workshops<br>• Maintain Risk Register<br>• Approve residual risks (≤ MEDIUM) |
+| **Gestor SGSI** | • Own the risk assessment process<br>• Facilitate risk workshops<br>• Maintain Risk Register<br>• Approve residual risks (≤ MÉDIO) |
 | **Asset Owners** | • Identify threats and vulnerabilities for their assets<br>• Assess impact<br>• Own risks related to their assets |
-| **CTO** | • Provide technical input on likelihood<br>• Approve HIGH residual risks<br>• Allocate resources for risk treatment |
-| **CEO** | • Approve CRITICAL residual risks<br>• Provide strategic risk appetite guidance |
+| **CTO** | • Provide technical input on likelihood<br>• Approve ALTO residual risks<br>• Allocate resources for risk treatment |
+| **CEO** | • Approve CRÍTICO residual risks<br>• Provide strategic risk appetite guidance |
 | **IT/Security Team** | • Identify technical vulnerabilities<br>• Implement risk treatment controls<br>• Monitor threats |
 
 ---
@@ -389,8 +389,8 @@ All residual risks **MUST** be:
 ### 15.1 Risk Dashboard
 
 **Metrics to track**:
-- Total risks: by level (CRITICAL/HIGH/MEDIUM/LOW)
-- Risks by status: Open / In Treatment / Accepted / Closed
+- Total risks: by level (CRÍTICO/ALTO/MÉDIO/BAIXO)
+- Risks by status: Open / Em Tratamento / Aceito / Closed
 - Overdue treatments (past due date)
 - Top 5 risks (highest scores)
 
@@ -420,7 +420,7 @@ Each identified risk should map to **one or more** Annex A controls.
 - **Vulnerability**: Weak IAM policies, no MFA
 - **Likelihood**: 4 (High)
 - **Impact**: 5 (Very High — biometric data breach)
-- **Risk Score**: 20 (CRITICAL 🔴)
+- **Risk Score**: 20 (CRÍTICO 🔴)
 - **Treatment**: MITIGATE
 - **Controls**:
   - A.5.15 — Access control
@@ -488,7 +488,7 @@ After each risk assessment cycle:
 > - Indisponibilidade > 4 horas de APIs críticas
 > - Violação de contratos com clientes (SLA breach)
 >
-> **A TWYN aceita riscos residuais LOW ou MEDIUM** (score ≤ 11) após implementação de controles razoáveis, desde que formalmente documentados e aprovados."**
+> **A TWYN aceita riscos residuais BAIXO ou MÉDIO** (score ≤ 11) após implementação de controles razoáveis, desde que formalmente documentados e aprovados."**
 
 ---
 
@@ -502,7 +502,7 @@ After each risk assessment cycle:
 
 ---
 
-## 21. Approval (Aprovação)
+## 21. Aprovação
 
 **Gestor SGSI**  
 **Signature**: _______________________________  
@@ -520,7 +520,7 @@ After each risk assessment cycle:
 
 **Use this template during risk assessment workshops**:
 
-| Risk ID | Asset | Threat | Vulnerability | L (1-5) | I (1-5) | Risk Score | Level | Treatment | Control | Owner | Due Date |
+| ID do Risco | Ativo | Ameaça | Vulnerabilidade | L (1-5) | I (1-5) | Pontuação de Risco | Level | Tratamento | Control | Responsável | Prazo |
 |---------|-------|--------|---------------|---------|---------|------------|-------|-----------|---------|-------|----------|
 | RISK-001 | | | | | | | | | | | |
 | RISK-002 | | | | | | | | | | | |
@@ -537,7 +537,7 @@ After each risk assessment cycle:
 - **Vulnerability**: Bucket misconfiguration (public access)
 - **Likelihood**: 3 (Medium — common misconfiguration)
 - **Impact**: 5 (Very High — LGPD violation, reputation damage)
-- **Risk Score**: 15 (HIGH 🟠)
+- **Risk Score**: 15 (ALTO 🟠)
 - **Treatment**: MITIGATE
 - **Controls**: A.8.1 (User endpoint devices), A.8.10 (Information deletion), A.8.11 (Data masking)
 - **Actions**: Enable S3 Block Public Access, enable encryption (SSE-KMS), audit all buckets
@@ -549,7 +549,7 @@ After each risk assessment cycle:
 - **Vulnerability**: Over-permissioned IAM role
 - **Likelihood**: 2 (Low — rare but possible)
 - **Impact**: 4 (High — service outage, data loss)
-- **Risk Score**: 8 (MEDIUM 🟡)
+- **Risk Score**: 8 (MÉDIO 🟡)
 - **Treatment**: MITIGATE
 - **Controls**: A.5.18 (Access rights), A.6.4 (Disciplinary process)
 - **Actions**: Implement least privilege IAM, enable CloudTrail, restrict delete permissions, offboarding checklist
@@ -561,7 +561,7 @@ After each risk assessment cycle:
 - **Vulnerability**: Unpatched container images, no backup tested
 - **Likelihood**: 3 (Medium — growing threat)
 - **Impact**: 5 (Very High — business disruption, data loss)
-- **Risk Score**: 15 (HIGH 🟠)
+- **Risk Score**: 15 (ALTO 🟠)
 - **Treatment**: MITIGATE + TRANSFER (insurance)
 - **Controls**: A.5.14 (Information transfer), A.8.7 (Protection against malware), A.8.13 (Information backup)
 - **Actions**: Regular patching, backup automation, quarterly DR test, cyber insurance

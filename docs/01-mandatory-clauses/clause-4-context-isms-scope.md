@@ -1,6 +1,6 @@
 ---
 **Document Control**
-| Field | Value |
+| Campo | Valor |
 |-------|-------|
 | **Document ID** | SGSI-SCOPE-001 |
 | **Version** | 1.0 |
@@ -8,14 +8,14 @@
 | **Approved By** | [CEO TWYN / Gestor SGSI] |
 | **Approval Date** | [Pendente] |
 | **Effective Date** | [Pendente] |
-| **Next Review** | [Anual após aprovação] |
+| **Próxima Revisão** | [Anual após aprovação] |
 | **ISO 27001:2022 Mapping** | Clause 4.3 — Context of the Organization |
 ---
 
-# ISMS Scope Document
+# Documento de Escopo do SGSI
 ## Sistema de Gestão de Segurança da Informação — TWYN
 
-### 1. Purpose (Objetivo)
+### 1. Objetivo
 
 Este documento define o **escopo do Sistema de Gestão de Segurança da Informação (SGSI)** da TWYN em conformidade com ISO/IEC 27001:2022, estabelecendo claramente:
 - Quais ativos, processos e sistemas estão **dentro** do escopo de certificação
@@ -23,9 +23,9 @@ Este documento define o **escopo do Sistema de Gestão de Segurança da Informa�
 - Limites físicos e lógicos do SGSI
 - Interfaces com partes externas
 
-### 2. Organizational Context (Contexto Organizacional)
+### 2. Contexto Organizacional
 
-#### 2.1 About TWYN
+#### 2.1 Sobre a TWYN
 **Razão Social**: TWYN T4ISB DO BRASIL TECNOLOGIA E PARTICIPAÇÕES LTDA.  
 **CNPJ**: 31.122.819/0001-55  
 **Endereço Principal**: Avenida Paulista, nº 37, Bairro Bela Vista, São Paulo/SP  
@@ -37,9 +37,9 @@ Este documento define o **escopo do Sistema de Gestão de Segurança da Informa�
 - Clientes B2B (bancos, fintechs, empresas)
 - Processamento de dados biométricos sensíveis
 
-#### 2.2 Key Stakeholders
+#### 2.2 Principais Partes Interessadas
 
-| Stakeholder | Interest | Requirements |
+| Parte Interessada | Interesse | Requisitos |
 |-------------|----------|--------------|
 | **Clientes B2B** | Conformidade regulatória (LGPD, GDPR) | Certificação ISO 27001, SOC 2 Type II, auditorias |
 | **Usuários Finais** | Privacidade e proteção de dados biométricos | LGPD compliance, dados não compartilhados |
@@ -47,9 +47,9 @@ Este documento define o **escopo do Sistema de Gestão de Segurança da Informa�
 | **Investidores** | Gestão de risco corporativo | Due diligence de segurança |
 | **Reguladores** | LGPD, ANPD | Notificação de incidentes, DPO designado |
 
-### 3. ISMS Scope Definition (Definição do Escopo)
+### 3. Definição do Escopo do SGSI
 
-#### 3.1 In Scope (Dentro do Escopo)
+#### 3.1 Dentro do Escopo
 
 **Sistemas e Aplicações**:
 - ✅ **Face ID Platform API** (REST API, produção)
@@ -116,7 +116,7 @@ Este documento define o **escopo do Sistema de Gestão de Segurança da Informa�
 - ✅ **Credenciais** (AWS secrets, DB passwords, API tokens)
 - ✅ **Documentação técnica e de arquitetura**
 
-#### 3.2 Out of Scope (Fora do Escopo)
+#### 3.2 Fora do Escopo
 
 **Sistemas Excluídos**:
 - ❌ Ambientes de desenvolvimento local (laptops de devs)
@@ -134,7 +134,7 @@ Este documento define o **escopo do Sistema de Gestão de Segurança da Informa�
 2. **SaaS terceiros**: Cobertos por avaliação de fornecedores (Annex A.5.19-5.22) e contratos DPA
 3. **Website marketing**: Não processa dados sensíveis; separado da infraestrutura de produção
 
-#### 3.3 Physical and Logical Boundaries (Limites)
+#### 3.3 Fronteiras Físicas e Lógicas
 
 **Limite Físico**:
 - Datacenters AWS em `us-east-1` e `us-west-2`
@@ -152,9 +152,9 @@ Este documento define o **escopo do Sistema de Gestão de Segurança da Informa�
 - Gestor SGSI (a ser designado formalmente)
 - CEO e C-level (responsabilidade final)
 
-### 4. Dependencies and Interfaces (Dependências e Interfaces)
+### 4. Dependências e Interfaces
 
-#### 4.1 External Dependencies
+#### 4.1 Dependências Externas
 
 | Fornecedor | Serviço | Criticidade | Status DPA/BAA |
 |------------|---------|-------------|----------------|
@@ -176,18 +176,18 @@ Cliente B2B → API Gateway → EKS (Face ID API) → RDS/S3
                           CloudWatch/CloudTrail
 ```
 
-### 5. Exclusions and Justifications (Exclusões)
+### 5. Exclusões e Justificativas
 
 Conforme ISO 27001:2022 Annex A, os seguintes controles são **excluídos** com justificativa:
 
-| Control | Justification | Approved By |
+| Controle | Justificativa | Aprovado Por |
 |---------|---------------|-------------|
 | A.7.1 Physical security perimeters | Infraestrutura 100% cloud (AWS); sem perímetro físico próprio. Covered by AWS SOC 2/ISO certifications. | Ricardo Esper (Bekaa Trusted Advisors) |
 | A.7.2 Physical entry | Mesma justificativa acima | Ricardo Esper (Bekaa Trusted Advisors) |
 
 *(Esta tabela será expandida no Statement of Applicability completo)*
 
-### 6. Review and Maintenance (Revisão e Manutenção)
+### 6. Revisão e Manutenção
 
 **Frequência de Revisão**: Anual ou quando:
 - Mudanças significativas de arquitetura
@@ -198,11 +198,11 @@ Conforme ISO 27001:2022 Annex A, os seguintes controles são **excluídos** com 
 
 **Responsável pela Revisão**: Gestor SGSI + CTO
 
-### 7. Approval (Aprovação)
+### 7. Aprovação
 
 Este escopo foi revisado e aprovado pelos seguintes responsáveis:
 
-| Role | Name | Signature | Date |
+| Função | Nome | Assinatura | Data |
 |------|------|-----------|------|
 | **CEO / Top Management** | Enes Fernando Degasperi | _______________ | ___/___/2026 |
 | **Gestor SGSI** | Ricardo Esper (Bekaa Trusted Advisors) | _______________ | ___/___/2026 |
@@ -210,15 +210,15 @@ Este escopo foi revisado e aprovado pelos seguintes responsáveis:
 
 ---
 
-## Annex A: Scope Change Log
+## Annex A: Histórico de Alterações do Escopo
 
-| Version | Date | Author | Changes |
+| Versão | Data | Autor | Alterações |
 |---------|------|--------|---------|
 | 1.0 (Draft) | 26/05/2026 | Ricardo Esper (BEKAA) | Initial version for TWYN ISMS scope definition |
 
 ---
 
-## Annex B: Related Documents
+## Annex B: Documentos Relacionados
 
 - [SGSI-POLICY-001] Information Security Policy
 - [SGSI-RISK-001] Risk Assessment Methodology
@@ -228,4 +228,4 @@ Este escopo foi revisado e aprovado pelos seguintes responsáveis:
 
 ---
 
-**DRAFT — PENDING APPROVAL**
+**RASCUNHO — PENDENTE DE APROVAÇÃO**
