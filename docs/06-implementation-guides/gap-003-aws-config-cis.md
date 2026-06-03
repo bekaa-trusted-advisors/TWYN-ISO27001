@@ -1,5 +1,5 @@
 ---
-document_id: GUIDE-GAP-003
+document_id: SGSI-GAP-003
 title: Implementation Guide - GAP-003: Implement AWS Config + CIS Benchmarks
 version: 1.0
 date: 2026-05-26

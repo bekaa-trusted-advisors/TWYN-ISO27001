@@ -1,3 +1,11 @@
+---
+document_id: SGSI-ARC-001
+title: arc42
+version: 1.0
+date: 2026-06-03
+owner: Gestor SGSI
+---
+
 # Documento de Arquitetura — TWYN SGSI (Arc42)
 
 | Metadado           | Valor                                                    |

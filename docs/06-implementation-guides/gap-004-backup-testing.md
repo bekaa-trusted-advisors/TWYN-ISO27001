@@ -1,5 +1,5 @@
 ---
-document_id: GUIDE-GAP-004
+document_id: SGSI-GAP-004
 title: Implementation Guide - GAP-004: Test Backup Restoration
 version: 1.0
 date: 2026-05-26

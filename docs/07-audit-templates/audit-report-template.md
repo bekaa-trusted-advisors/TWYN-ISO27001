@@ -1,5 +1,5 @@
 ---
-document_id: TEMPLATE-AUDIT-002
+document_id: SGSI-TMPL-002
 title: Internal Audit Report Template
 version: 1.0
 ---

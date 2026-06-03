@@ -1,5 +1,5 @@
 ---
-document_id: GUIDE-GAP-002
+document_id: SGSI-GAP-002
 title: Implementation Guide - GAP-002: Rotate IAM Access Key (tmpsaasboost)
 version: 1.0
 date: 2026-05-26

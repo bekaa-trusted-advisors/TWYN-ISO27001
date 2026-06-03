@@ -1,5 +1,5 @@
 ---
-document_id: GUIDE-GAP-007
+document_id: SGSI-GAP-007
 title: Implementation Guide - GAP-007: ISO 27001 Lead Implementer Certification
 version: 1.0
 date: 2026-05-26

@@ -1,5 +1,5 @@
 ---
-document_id: TEMPLATE-AUDIT-001
+document_id: SGSI-TMPL-001
 title: Internal Audit Checklist - ISO 27001:2022 Annex A
 version: 1.0
 date: 2026-05-26

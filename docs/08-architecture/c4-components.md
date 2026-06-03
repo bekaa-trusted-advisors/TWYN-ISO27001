@@ -1,3 +1,11 @@
+---
+document_id: SGSI-ARC-002
+title: c4-components
+version: 1.0
+date: 2026-06-03
+owner: Gestor SGSI
+---
+
 # C4 Component Level — TWYN Face ID Platform
 
 | Metadado           | Valor                                                    |

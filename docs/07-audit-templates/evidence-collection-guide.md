@@ -1,5 +1,5 @@
 ---
-document_id: TEMPLATE-AUDIT-003
+document_id: SGSI-TMPL-003
 title: Evidence Collection Guide
 version: 1.0
 ---

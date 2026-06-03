@@ -1,5 +1,5 @@
 ---
-document_id: GUIDE-GAP-005
+document_id: SGSI-GAP-005
 title: Implementation Guide - GAP-005: AWS Support Level Decision
 version: 1.0
 date: 2026-05-26

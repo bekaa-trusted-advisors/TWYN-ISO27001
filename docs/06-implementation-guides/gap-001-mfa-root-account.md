@@ -1,5 +1,5 @@
 ---
-document_id: GUIDE-GAP-001
+document_id: SGSI-GAP-001
 title: Implementation Guide - GAP-001: Enable MFA on AWS Root Account
 version: 1.0
 date: 2026-05-26

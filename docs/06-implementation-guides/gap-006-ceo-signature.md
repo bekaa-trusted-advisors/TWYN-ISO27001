@@ -1,5 +1,5 @@
 ---
-document_id: GUIDE-GAP-006
+document_id: SGSI-GAP-006
 title: Implementation Guide - GAP-006: CEO Signature on IS Policy
 version: 1.0
 date: 2026-05-26
