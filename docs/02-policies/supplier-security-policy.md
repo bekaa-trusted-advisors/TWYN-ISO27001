@@ -26,7 +26,7 @@ Esta política estabelece os controles de Segurança da Informação a serem apl
 
 ## 2. Escopo
 
-Esta política abrange fornecedores de serviços em nuvem (ex: AWS, GitHub, Vercel), ferramentas SaaS de produtividade e contratados independentes (PJ/Freelancers) que possuam acesso lógico a qualquer nível de informação confidencial ou sistemas críticos da TWYN.
+Esta política abrange fornecedores de serviços em nuvem (ex: AWS, GitHub), ferramentas SaaS de produtividade e contratados independentes (PJ/Freelancers) que possuam acesso lógico a qualquer nível de informação confidencial ou sistemas críticos da TWYN.
 
 ---
 
@@ -35,7 +35,7 @@ Esta política abrange fornecedores de serviços em nuvem (ex: AWS, GitHub, Verc
 Devido ao modelo operacional da TWYN e ao uso de plataformas de hiper-escala e serviços SaaS globalmente reconhecidos, a metodologia de **Third-Party Risk Assessment (TPRA)** é executada da seguinte maneira:
 
 ### 3.1 Fornecedores de Grande Porte / Hiperescaladores
-Para provedores mundiais como AWS, GitHub, Google, Vercel, entre outros:
+Para provedores mundiais como AWS e GitHub, entre outros:
 - O processo de avaliação consumirá relatórios de auditoria e certificados emitidos publicamente em seus respectivos portais de conformidade (*Trust Centers*).
 - O Gestor SGSI da TWYN fará o download e a verificação de certificados relevantes (ISO 27001, SOC 2 Type II, CSA STAR) para assegurar o alinhamento de maturidade do fornecedor.
 - O resultado dessa avaliação deve ser condensado em um relatório simplificado de aceitação do fornecedor, anexado como evidência.
