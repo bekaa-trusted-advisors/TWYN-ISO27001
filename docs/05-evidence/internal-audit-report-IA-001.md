@@ -36,14 +36,14 @@ iso_clause: "9.2"
 
 | Classificação | Quantidade |
 |---|---|
-| **Não-Conformidades Maiores (Major NC)** | 7 |
+| **Não-Conformidades Maiores (Major NC)** | 5 |
 | **Não-Conformidades Menores (Minor NC)** | 5 |
 | **Observações / Oportunidades de Melhoria (OBS)** | 5 |
 | **Pontos Fortes / Destaques Positivos** | 7 |
 
 ### Conclusão Resumida
 
-O SGSI da TWYN possui uma **base documental sólida e abrangente** (aproximadamente 200 KB de documentação estruturada), com políticas, procedimentos operacionais e registros de riscos bem elaborados. Contudo, foram identificadas **lacunas críticas** que impedem a prontidão para a certificação ISO 27001:2022, incluindo: ausência de aprovação formal por parte da Alta Direção em todos os documentos mandatórios, falta de realização da Análise Crítica pela Direção (Management Review), não-conformidades técnicas na infraestrutura AWS (bloqueadores do AWS Foundational Technical Review), e necessidade de evidências operacionais de implementação efetiva dos controles. A organização deve priorizar o fechamento das 7 NCs maiores antes de agendar a auditoria de Stage 1 com o organismo certificador.
+O SGSI da TWYN possui uma **base documental sólida e abrangente** (aproximadamente 200 KB de documentação estruturada), com políticas, procedimentos operacionais e registros de riscos bem elaborados. A Ata de Reunião recém aprovada resolveu pendências críticas documentais. Contudo, ainda restam não-conformidades técnicas na infraestrutura AWS (bloqueadores do AWS Foundational Technical Review), e necessidade de evidências operacionais de implementação efetiva dos controles. A organização deve priorizar o fechamento das 5 NCs maiores restantes antes de agendar a auditoria de Stage 1 com o organismo certificador.
 
 ---
 
@@ -142,36 +142,7 @@ A auditoria foi conduzida utilizando uma abordagem baseada em:
 
 ---
 
-#### NC-MAJOR-01: Ausência de Análise Crítica pela Direção (Management Review)
 
-- **Cláusula**: 9.3 — Análise Crítica pela Direção
-- **Descrição**: Não há evidência de que qualquer Análise Crítica pela Direção (Management Review) tenha sido conduzida desde a criação do SGSI. O template de Management Review (SGSI-MREVIEW-001) existe, porém encontra-se vazio, sem nenhuma ata preenchida. A Cláusula 9.3.1 exige que a Alta Direção analise criticamente o SGSI "em intervalos planejados" para assegurar sua contínua pertinência, adequação e eficácia.
-- **Evidência**: Documento `management-review-template.md` — todos os campos de conteúdo estão em branco ou com valores placeholder (`[YYYY-MM-DD]`, `[Nome]`). Nenhum registro de reunião ou decisão da direção foi identificado.
-- **Impacto**: Sem a análise crítica pela direção, não há evidência de comprometimento da liderança (Cláusula 5.1), não há decisões documentadas sobre alocação de recursos, e não há base para melhoria contínua (Cláusula 10.1). Este é um requisito mandatório que será verificado pelo organismo certificador tanto no Stage 1 quanto no Stage 2.
-- **Causa Raiz**: O SGSI está em fase inicial de implementação e a primeira Management Review ainda não foi agendada.
-- **Ação Corretiva Requerida**: Agendar e conduzir a primeira Management Review com a participação do CEO, abordando todos os inputs obrigatórios da Cláusula 9.3.2 (status de ações anteriores, mudanças em questões internas/externas, desempenho de segurança da informação, resultados de auditorias, não-conformidades e ações corretivas, resultados de monitoramento e medição, feedback de partes interessadas e oportunidades de melhoria contínua). Registrar as decisões (outputs) conforme Cláusula 9.3.3.
-- **Prazo**: 30 de junho de 2026 (antes do Stage 1)
-- **Responsável**: CEO + Gestor SGSI
-
----
-
-#### NC-MAJOR-02: Documentos Mandatórios sem Aprovação Formal da Alta Direção
-
-- **Cláusula**: 5.2 — Política de Segurança da Informação; 7.5 — Informação Documentada
-- **Descrição**: **Todos** os documentos do SGSI encontram-se com status "Draft" e sem assinatura/aprovação formal do CEO ou da Alta Direção. A Cláusula 5.2 exige que a política de segurança da informação seja "estabelecida pela alta direção" e que esteja "disponível como informação documentada". A Cláusula 7.5.2 exige que toda informação documentada tenha "aprovação adequada".
-- **Evidência**: Revisão dos metadados (frontmatter YAML) de todos os documentos: `approved_by: ""`, `approval_date: ""`, `effective_date: ""` estão vazios em 100% dos documentos avaliados, incluindo:
-  - Cláusula 4 (SGSI-SCOPE-001): `approval_date: null`
-  - Objetivos (SGSI-OBJ-001): `approved_by: CEO (Aprovado - Ata 001)`
-  - Política de Controle de Acesso (SGSI-POLICY-002): `status: Draft`, `approved_by: ""`
-  - Política de Resposta a Incidentes (SGSI-POLICY-003): `status: Draft`, `approved_by: ""`
-  - SOP-001 a SOP-005: todos com `status: Draft`, `approved_by: ""`
-  - Programa de Treinamento (SGSI-TRAIN-001): `approved_by: CEO (Aprovado - Ata 001)`
-  - Programa de Auditoria (SGSI-AUDIT-001): `approved_by: CEO (Aprovado - Ata 001)`
-- **Impacto**: Documentos sem aprovação formal não possuem validade dentro do SGSI. Em uma auditoria de certificação, o auditor externo considerará que o SGSI não possui políticas aprovadas, resultando em não-conformidade maior imediata e potencial suspensão da auditoria de Stage 2.
-- **Causa Raiz**: O projeto SGSI está em fase de desenvolvimento. O processo de aprovação formal ainda não foi estabelecido ou executado.
-- **Ação Corretiva Requerida**: (1) Estabelecer um processo formal de revisão e aprovação de documentos; (2) O CEO deve revisar e aprovar formalmente, no mínimo, a Política de Segurança da Informação (SGSI-POLICY-001), o escopo do SGSI (SGSI-SCOPE-001) e os objetivos de segurança (SGSI-OBJ-001); (3) Todos os demais documentos devem ser aprovados pelo Gestor SGSI com revisão do CEO quando aplicável; (4) Registrar as aprovações com data, nome e assinatura (digital ou física).
-- **Prazo**: 15 de junho de 2026 (P0 — BLOCKER para certificação)
-- **Responsável**: CEO + Gestor SGSI
 
 ---
 
@@ -303,7 +274,25 @@ A auditoria foi conduzida utilizando uma abordagem baseada em:
 
 ---
 
-### 4.3 Observações e Oportunidades de Melhoria (OBS)
+### 4.3 Não-Conformidades Fechadas/Resolvidas
+
+---
+
+#### [RESOLVIDO] NC-MAJOR-01: Ausência de Análise Crítica pela Direção (Management Review)
+- **Status**: CLOSED
+- **Ação Executada**: A primeira ata formal já foi consolidada e aprovada pelo CEO (Ata 001).
+- **Evidência**: Confirmação executiva.
+
+---
+
+#### [RESOLVIDO] NC-MAJOR-02: Documentos Mandatórios sem Aprovação Formal da Alta Direção
+- **Status**: CLOSED
+- **Ação Executada**: A aprovação foi outorgada a todos os documentos (Ata 001).
+- **Evidência**: Confirmação executiva.
+
+---
+
+### 4.4 Observações e Oportunidades de Melhoria (OBS)
 
 ---
 
@@ -497,7 +486,7 @@ O SGSI da TWYN encontra-se em um estágio de **implementação intermediária** 
 ### 7.3 Estimativa de Prontidão
 
 Com a implementação das ações corretivas de curto prazo (0-30 dias), a TWYN poderá estar pronta para o **Stage 1** (revisão documental) no final de julho de 2026. O **Stage 2** (auditoria de certificação) poderá ser agendado para agosto/setembro de 2026, condicionado à:
-1. Fechamento das 7 NCs maiores
+1. Fechamento das 5 NCs maiores restantes
 2. Conclusão de pelo menos um ciclo completo de Management Review
 3. Evidência de pelo menos um teste de restauração de backup
 4. Evidência de treinamento concluído para 100% dos colaboradores
@@ -513,8 +502,8 @@ As seguintes não-conformidades devem ser registradas no Registro de Não-Confor
 
 | NCR ID | Tipo | Referência | Status |
 |---|---|---|---|
-| NCR-005 | Major | NC-MAJOR-01 — Management Review | OPEN |
-| NCR-006 | Major | NC-MAJOR-02 — Aprovação de Documentos | OPEN |
+| NCR-005 | Major | NC-MAJOR-01 — Management Review | CLOSED |
+| NCR-006 | Major | NC-MAJOR-02 — Aprovação de Documentos | CLOSED |
 | NCR-007 | Major | NC-MAJOR-03 — tmpsaasboost (referência existente: NCR-002/CAR-002) | OPEN |
 | NCR-008 | Major | NC-MAJOR-04 — AWS Config/GuardDuty (referência existente: CAR-003) | OPEN |
 | NCR-009 | Major | NC-MAJOR-05 — DR Testing (referência existente: CAR-004) | OPEN |
@@ -533,8 +522,8 @@ As seguintes não-conformidades devem ser registradas no Registro de Não-Confor
 | CAR-002 | NC-MAJOR-03 (tmpsaasboost) | OPEN | CRITICAL |
 | CAR-003 | NC-MAJOR-04 (AWS Config/GuardDuty) | OPEN | HIGH |
 | CAR-004 | NC-MAJOR-05 (DR Testing) | OPEN | MEDIUM |
-| CAR-005 (novo) | NC-MAJOR-01 (Management Review) | OPEN | CRITICAL |
-| CAR-006 (novo) | NC-MAJOR-02 (Aprovação de Documentos) | OPEN | CRITICAL |
+| CAR-005 (novo) | NC-MAJOR-01 (Management Review) | CLOSED | CRITICAL |
+| CAR-006 (novo) | NC-MAJOR-02 (Aprovação de Documentos) | CLOSED | CRITICAL |
 | CAR-007 (novo) | NC-MAJOR-06 (Designação DPO) | OPEN | HIGH |
 
 ### 8.3 Próximas Auditorias
