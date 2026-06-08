@@ -14,8 +14,6 @@ related_policies:
 annex_a_controls:
   - "A.8.32 — Change management"
   - "A.8.9 — Configuration management"
-  - "A.8.25 — Secure development lifecycle"
-  - "A.8.27 — Secure system architecture and engineering principles"
   - "A.8.31 — Separation of development, test and production environments"
 ---
 
@@ -543,10 +541,8 @@ O DevOps Lead deve gerar relatório mensal contendo:
 
 | Controle Anexo A | Como Este SOP Atende |
 |---|---|
-| **A.8.32 — Change management** | Processo completo de gestão de mudanças com classificação, aprovação e rastreabilidade |
+| **A.8.32 — Change management** | Processo completo de gestão de mudanças de infraestrutura e aceitação de novos releases. |
 | **A.8.9 — Configuration management** | Atualização de CMDB/inventário na etapa de fechamento; IaC versionado em Git |
-| **A.8.25 — Secure development lifecycle** | Scanning obrigatório (Trivy/Snyk), code review, testes em staging antes de produção |
-| **A.8.27 — Secure system architecture** | Avaliação de impacto em segurança, revisão de network policies e IAM |
 | **A.8.31 — Separation of environments** | Fluxo obrigatório Dev → Staging → Production em VPCs separadas |
 
 ---

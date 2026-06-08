@@ -481,12 +481,10 @@ Procedimento: **[SOP-002]** Change Management
 
 ### 16.3 Secure Development
 
-- ✅ **Secure coding**: OWASP Top 10 training
-- ✅ **Code review**: Pull requests obrigatórios (2 aprovadores)
-- ✅ **SAST/DAST**: Automated security scanning em CI/CD
-- ✅ **Dependency scanning**: Snyk/Dependabot
+A segurança deve ser considerada em todo o ciclo de vida dos sistemas de informação, mas o desenvolvimento da plataforma SaaS está fora do escopo deste SGSI, que foca na operação.
+A equipe de Operação atuará como o gatekeeper, aceitando código apenas se este passar em todos os *scans* automatizados de segurança no pipeline CI/CD.
 
-Procedimento: **[SGSI-SDLC-001]** Secure Development Lifecycle
+- Procedimento: **[SGSI-SOP-002]** Gestão de Mudanças (Deploy e Infraestrutura)
 
 ---
 
