@@ -99,11 +99,11 @@ Este documento define o **escopo do Sistema de Gestão de Segurança da Informa�
 - ✅ **Escritório TWYN**: Avenida Paulista, nº 37, Bairro Bela Vista, São Paulo/SP — workstations administrativas apenas
 
 **Processos de Negócio**:
-- ✅ Desenvolvimento de software (metodologia ágil)
-- ✅ Deployment e release management
+- ✅ Operação e Hospedagem (Hosting) da Plataforma SaaS
+- ✅ Deployment e release management (Operacional)
 - ✅ Incident response e gestão de incidentes
-- ✅ Change management (mudanças em produção)
-- ✅ Onboarding/offboarding de colaboradores
+- ✅ Change management (mudanças na infraestrutura de produção)
+- ✅ Onboarding/offboarding de colaboradores operacionais
 - ✅ Gestão de acesso e identidades (IAM)
 - ✅ Backup e disaster recovery
 - ✅ Monitoramento e observability
@@ -125,14 +125,16 @@ Este documento define o **escopo do Sistema de Gestão de Segurança da Informa�
 - ❌ Sistemas financeiros/contábeis (se terceirizados)
 
 **Processos Excluídos**:
-- ❌ RH (folha de pagamento, benefícios) — se terceirizado
+- ❌ **Desenvolvimento de Software (SDLC)**: A engenharia e a escrita do código-fonte da API estão fora do escopo. O SGSI inicia-se na recepção do artefato para *deploy* (hospedagem e operação na AWS).
+- ❌ RH (folha de pagamento, benefícios) — terceirizado
 - ❌ Jurídico/contratual — exceto contratos de SI
 - ❌ Vendas e marketing — exceto onde intersecta SI
 
 **Justificativas para Exclusões**:
-1. **Ambientes dev locais**: Não processam dados reais de produção; cobertos por política de workstation segura (Annex A.6.7)
-2. **SaaS terceiros**: Cobertos por avaliação de fornecedores (Annex A.5.19-5.22) e contratos DPA
-3. **Website marketing**: Não processa dados sensíveis; separado da infraestrutura de produção
+1. **Desenvolvimento de Software**: O foco do certificado é a operação, disponibilidade e segurança da infraestrutura da API (SaaS em nuvem), isolando o processo de engenharia de software da auditoria do SGSI.
+2. **Ambientes dev locais**: Não processam dados reais de produção.
+3. **SaaS terceiros**: Cobertos por avaliação de fornecedores.
+4. **Website marketing**: Não processa dados sensíveis.
 
 #### 3.3 Fronteiras Físicas e Lógicas
 

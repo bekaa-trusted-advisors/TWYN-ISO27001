@@ -116,11 +116,11 @@ A TWYN é uma provedora B2B de API de Reconhecimento Facial operando 100% remota
 | A.8.22| Segregação de redes | Sim | Implementado | Ambientes Dev, Staging e Prod rodam em VPCs isoladas. |
 | A.8.23| Filtragem para web (Web filtering) | **Não** | N/A | TWYN não filtra navegação corporativa por ser 100% remoto BYOD. |
 | A.8.24| Uso de criptografia | Sim | Implementado | Criptografia AWS KMS AES-256 in-rest e TLS 1.3 in-transit. |
-| A.8.25| Ciclo de vida de dev. seguro (SDLC) | Sim | Implementado | Processo CI/CD engloba code-review e scan. (SOP-002). |
-| A.8.26| Requisitos de segurança em aplicações | Sim | Implementado | Thread modeling incluído antes de mudanças arquiteturais. |
-| A.8.27| Princípios de arquitetura segura | Sim | Implementado | Baseado em Well-Architected Framework (AWS). |
-| A.8.28| Codificação segura (Secure coding) | Sim | Implementado | Práticas como validação de inputs e evitar OWASP Top 10. |
-| A.8.29| Teste de segurança no desenvolvimento | Sim | Parcial | Depende das integrações atuais de GitHub Actions (Snyk/Trivy). |
+| A.8.25| Ciclo de vida de dev. seguro (SDLC) | **Não** | N/A | Excluído: Desenvolvimento de software fora do escopo do SGSI (foco apenas em operação/hosting). |
+| A.8.26| Requisitos de segurança em aplicações | **Não** | N/A | Excluído pelo escopo. |
+| A.8.27| Princípios de arquitetura segura | **Não** | N/A | Excluído pelo escopo. |
+| A.8.28| Codificação segura (Secure coding) | **Não** | N/A | Excluído pelo escopo. |
+| A.8.29| Teste de segurança no desenvolvimento | **Não** | N/A | Excluído pelo escopo. |
 | A.8.30| Engenharia terceirizada (Outsourced dev) | **Não** | N/A | A TWYN utiliza equipe interna para o desenvolvimento da API. |
 | A.8.31| Separação dos ambientes (Dev/Test/Prod)| Sim | Implementado | Isolamento lógico via contas/VPCs distintas (SOP-002). |
 | A.8.32| Gerenciamento de mudanças (Change Mgmt)| Sim | Implementado | Alterações seguem o fluxo de Pull Request (SOP-002). |
