@@ -12,7 +12,7 @@ approved_by: CEO (Aprovado - Ata 001)
 
 ## 1. Propósito e Escopo
 Esta política visa garantir que a TWYN possua mecanismos e regras estritas para cópias de segurança (backup) e restauração, prevenindo a perda acidental ou maliciosa de dados e garantindo a continuidade do negócio em linha com a ISO 27001 (Anexo A.8.13).
-**Escopo:** Sistemas críticos, bancos de dados em nuvem, código-fonte, dados biométricos de clientes e arquivos corporativos importantes.
+**Escopo:** Sistemas críticos, bancos de dados em nuvem, dados biométricos de clientes e arquivos corporativos de infraestrutura.
 
 ## 2. Princípios de Backup
 Todos os sistemas hospedando dados classificados como CONFIDENCIAL e RESTRITO devem possuir mecanismos de backup automatizados ativos. O princípio adotado é a automação máxima: não deve haver dependência de trabalho manual para o ciclo de proteção.
@@ -30,7 +30,6 @@ A TWYN adota a seguinte arquitetura de backup nativa na AWS:
 |---------------------|---------------------|--------------------|---------------------|-----|
 | **AWS RDS (PostgreSQL)** (Dados biométricos e logs) | AWS RDS Automated Backups (Snapshots diários) + PITR | Snapshot Diário. Logs a cada 5 min (PITR). | 30 Dias para o Snapshot completo. | 1 Hora |
 | **AWS S3 (Imagens/Vetores Brutos)** | S3 Versioning + S3 Cross-Region Replication | Contínuo / Imediato a cada evento de objeto. | 30 Dias (objetos excluídos mantêm versão). | Quase Zero |
-| **Código Fonte (Repositórios)** | GitHub Cloud (Arquitetura Gerenciada GitHub) | N/A (Gerenciado pelo provedor). | N/A | Zero |
 | **Infraestrutura como Código** (Terraform State) | S3 (Versionamento habilitado) | Contínuo (a cada apply). | 90 Dias | Quase Zero |
 | **Bases Auxiliares/Ambiente Secundário** | Sem backup para ambiente Dev/Staging. | N/A | N/A | N/A |
 

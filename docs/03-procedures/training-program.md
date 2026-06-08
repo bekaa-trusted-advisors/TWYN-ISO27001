@@ -234,8 +234,8 @@ O programa é dividido em **4 tracks** conforme função:
 
 **Objectives**:
 - Prevenir vulnerabilidades OWASP Top 10 2021
-- Aplicar security-by-design em código
-- Code review com foco em segurança
+- Aplicar security-by-design em IaC
+- Code review com foco em configuração segura
 
 **Content**:
 - ✅ **A01: Broken Access Control** - implement RBAC, never trust client-side checks
@@ -251,7 +251,7 @@ O programa é dividido em **4 tracks** conforme função:
 
 **Hands-on Labs**:
 - Exploit vulnerabilities em ambiente seguro (OWASP WebGoat ou Juice Shop)
-- Fix vulnerabilities em sample code
+- Fix vulnerabilities em sample IaC
 - Peer code review com security checklist
 
 **Format**: Workshop prático + labs
@@ -325,7 +325,7 @@ O programa é dividido em **4 tracks** conforme função:
 ### 5.3 Module 8: Secrets Management (1h)
 
 **Objectives**:
-- NUNCA commitar secrets em código
+- NUNCA commitar secrets em IaC
 - Usar AWS Secrets Manager / Parameter Store
 - Rotacionar secrets periodicamente
 
@@ -769,7 +769,7 @@ O programa é dividido em **4 tracks** conforme função:
 
 ### 8.3 OWASP Tools (Free Labs)
 
-**Purpose**: Hands-on learning para desenvolvimento seguro
+**Purpose**: Hands-on learning para configuração segura
 
 **Tools**:
 - **OWASP WebGoat**: OWASP Top 10 2021 labs

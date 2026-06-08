@@ -348,7 +348,7 @@ O acesso a dados e sistemas deve respeitar a classificação de informação da 
 |----------------|-----------|--------------------|-----------| 
 | **PUBLIC** | Informação pública, sem impacto se divulgada | Todos | Site institucional, materiais de marketing |
 | **INTERNAL** | Uso interno da organização | Todos os colaboradores | Procedimentos operacionais, comunicados internos |
-| **CONFIDENTIAL** | Informação sensível ao negócio | Aprovação do Gestor SGSI necessária | Código-fonte, configurações de infraestrutura, contratos |
+| **CONFIDENTIAL** | Informação sensível ao negócio | Aprovação do Gestor SGSI necessária | Infraestrutura como Código (Terraform), configurações AWS, contratos |
 | **RESTRICTED** | Dados extremamente sensíveis (biométricos, PII) | Apenas colaboradores autorizados com NDA + treinamento | Dados biométricos faciais, chaves criptográficas, credenciais de produção |
 
 > ⚠️ **LGPD Art. 11:** Dados biométricos são classificados como **RESTRICTED**. O acesso requer aprovação explícita do Gestor SGSI, NDA assinado, e conclusão do treinamento de proteção de dados.

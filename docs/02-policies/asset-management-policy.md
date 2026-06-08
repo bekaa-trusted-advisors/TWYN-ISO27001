@@ -44,7 +44,7 @@ Todos os ativos no escopo ISMS:
 - Encryption in transit
 
 **CONFIDENTIAL**:
-- Código-fonte Face ID, configurações AWS, credenciais
+- Repositórios de IaC (Terraform), configurações AWS, credenciais
 - Access control (least privilege)
 - Encryption at-rest + in-transit
 - Audit logging
@@ -189,7 +189,7 @@ Obrigatório para todos recursos AWS:
 ## 12. Intellectual Property
 
 ### Ownership
-- Código desenvolvido por colaboradores TWYN: Propriedade TWYN
+- Infraestrutura como Código (Terraform): Propriedade TWYN
 - Contratos de trabalho incluem IP assignment clause
 - Consultores: Work-for-hire agreements
 

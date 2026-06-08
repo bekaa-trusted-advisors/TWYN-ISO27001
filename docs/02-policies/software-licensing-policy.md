@@ -12,7 +12,7 @@ annex_a_controls: "A.5.32, A.8.19"
 # Política de Uso de Software e Licenciamento (Software Licensing Policy)
 
 ## 1. Propósito
-Garantir que todo o software utilizado pela **TWYN** em seus ambientes operacionais, corporativos e de desenvolvimento esteja em estrita conformidade com as leis de propriedade intelectual, direitos autorais e termos contratuais de licenciamento, mitigando riscos legais, financeiros e de segurança da informação (como malwares atrelados a softwares piratas).
+Garantir que todo o software utilizado pela **TWYN** em seus ambientes operacionais e corporativos esteja em estrita conformidade com as leis de propriedade intelectual, direitos autorais e termos contratuais de licenciamento, mitigando riscos legais, financeiros e de segurança da informação (como malwares atrelados a softwares piratas).
 
 ## 2. Escopo
 Esta política aplica-se a todos os colaboradores, estagiários, prestadores de serviço e terceiros que utilizem equipamentos de propriedade da TWYN, bem como equipamentos pessoais (BYOD) usados para acessar o ambiente corporativo e de produção da TWYN.
@@ -25,10 +25,11 @@ Esta política aplica-se a todos os colaboradores, estagiários, prestadores de 
 
 ## 4. Software de Código Aberto (Open Source - OSS)
 
-Dado que a arquitetura da TWYN envolve desenvolvimento de software (Node.js, AWS, Kubernetes), o uso de pacotes de código aberto é incentivado, porém regulado:
+Dado que a arquitetura da TWYN envolve hospedagem e operação SaaS (AWS, Kubernetes), o uso de pacotes de código aberto é regulado:
+
 - **Licenças Permitidas:** O uso de bibliotecas com licenças permissivas (MIT, Apache 2.0, BSD) é aprovado por padrão.
-- **Licenças Restritivas (Virais):** O uso de bibliotecas com licenças do tipo *Copyleft* forte (ex: GPL v2/v3, AGPL) **deve ser aprovado previamente** pelo CTO e Gestor SGSI, para evitar a obrigação de abertura do código-fonte proprietário da plataforma Face ID da TWYN.
-- **Auditoria de Dependências:** O CI/CD deve realizar varreduras automatizadas (ex: ferramentas como Snyk ou Trivy) para identificar tanto vulnerabilidades quanto licenças incompatíveis no código.
+- **Licenças Restritivas (Virais):** O uso de bibliotecas com licenças do tipo *Copyleft* forte (ex: GPL v2/v3, AGPL) **deve ser bloqueado** pelo CI/CD para evitar a obrigação de abertura do código-fonte proprietário da plataforma Face ID da TWYN.
+- **Auditoria de Dependências:** O CI/CD deve realizar varreduras automatizadas (ex: ferramentas como Snyk ou Trivy) para identificar tanto vulnerabilidades quanto licenças incompatíveis no artefato fornecido antes do deploy.
 
 ## 5. Instalação em Sistemas Operacionais (A.8.19)
 

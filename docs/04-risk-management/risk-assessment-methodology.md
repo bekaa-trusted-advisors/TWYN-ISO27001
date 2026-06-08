@@ -105,7 +105,7 @@ Ambos medidos em escala de **1 a 5**.
 
 | Categoria | Examples | Classification |
 |----------|----------|----------------|
-| **Data** | Dados biométricos, código-fonte, logs, credentials | CRÍTICO / CONFIDENTIAL |
+| **Data** | Dados biométricos, IaC (Terraform), logs, credentials | CRÍTICO / CONFIDENTIAL |
 | **Applications** | Face ID API, pipelines CI/CD, admin dashboards | CRÍTICO / CONFIDENTIAL |
 | **Infrastructure** | AWS accounts, EKS clusters, RDS databases, S3 buckets | CRÍTICO |
 | **Hardware** | Workstations, laptops (remote work) | INTERNAL |

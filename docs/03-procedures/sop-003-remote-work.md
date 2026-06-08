@@ -241,7 +241,7 @@ Devido à natureza sensível dos dados biométricos processados pela TWYN:
 |---|---|---|
 | Comunicação interna | Slack corporativo, Microsoft Teams | WhatsApp pessoal, Telegram pessoal |
 | E-mail | E-mail corporativo (@twyn.com.br) | E-mail pessoal (Gmail, Hotmail, etc.) |
-| Compartilhamento de código | GitHub (repositórios privados) | Google Drive pessoal, Dropbox pessoal |
+| Armazenamento de Infraestrutura (IaC) | GitHub (repositórios privados) | Google Drive pessoal, Dropbox pessoal |
 | Transferência de arquivos | AWS S3 (buckets autorizados), GitHub | WeTransfer, pen drives pessoais |
 | Videoconferência | Google Meet corporativo, Zoom licenciado | Plataformas não autorizadas |
 | Documentação técnica | Confluence, Notion corporativo | Documentos locais não sincronizados |

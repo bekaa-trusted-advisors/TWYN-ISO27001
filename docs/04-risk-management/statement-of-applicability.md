@@ -81,18 +81,18 @@ A TWYN é uma provedora B2B de API de Reconhecimento Facial operando 100% remota
 | A.7.6 | Trabalho em áreas seguras | **Não** | N/A | Excluído pelo escopo remoto. (A.6.7 cobre o teletrabalho de forma lógica). |
 | A.7.7 | Mesas e telas limpas (Clear desk) | Sim | Implementado | Configurado auto-lock (5 min) e regras no SOP-003 e AUP. |
 | A.7.8 | Localização e proteção de equipamentos | **Não** | N/A | Apenas laptops; sem servidores físicos ou roteadores da empresa. |
-| A.7.9 | Segurança de equipamentos fora das instalações | Sim | Parcial | Laptops utilizados home-office devem usar FDE (Full Disk Encryption). |
+| A.7.9 | Segurança de equipamentos fora das instalações | Sim | Parcial | FDE (Full Disk Encryption) exigido APENAS nos laptops da equipe de Operações. Endpoints de Dev fora de escopo. |
 | A.7.10| Mídias de armazenamento (Storage media) | **Não** | N/A | Uso de pendrives ou HD externos proibido ou irrelevante (100% cloud). |
 | A.7.11| Utilidades (Fornecimento de energia, AC) | **Não** | N/A | Excluído pelo escopo. DC gerenciado pela AWS. |
 | A.7.12| Segurança no cabeamento | **Não** | N/A | Excluído pelo escopo remoto. |
 | A.7.13| Manutenção de equipamentos | **Não** | N/A | Excluído. Manutenção de servidores é da AWS. Laptops são trocados. |
-| A.7.14| Descarte e reutilização de equipamentos | Sim | Parcial | Se houver reciclagem de laptop da empresa, o disco é apagado via wipe. |
+| A.7.14| Descarte e reutilização de equipamentos | Sim | Parcial | Aplica-se APENAS aos laptops da equipe de Operações (wipe obrigatório antes de reuso). |
 
 ## 4. Controles Tecnológicos (A.8)
 
 | Ref. | Controle | Aplicável? | Status | Justificativa / Implementação |
 |---|---|---|---|---|
-| A.8.1 | Dispositivos de endpoint (User devices) | Sim | Parcial | MDM e Endpoint Security recomendado no SOP-003. |
+| A.8.1 | Dispositivos de endpoint (User devices) | Sim | Parcial | Políticas do SOP-003 e exigência de MDM aplicam-se APENAS aos administradores AWS (Operação). |
 | A.8.2 | Direitos de acesso a informações | Sim | Implementado | RBAC definido para Banco e API na AWS. |
 | A.8.3 | Restrição de acesso a informações | Sim | Implementado | Somente portas essenciais (HTTPS) expostas publicamente. |
 | A.8.4 | Acesso ao código-fonte | Sim | Implementado | Acesso de Operação restrito aos repositórios de IaC (Terraform). Código da API é gerido pela Engenharia (Fora do Escopo). |
@@ -103,7 +103,7 @@ A TWYN é uma provedora B2B de API de Reconhecimento Facial operando 100% remota
 | A.8.9 | Gerenciamento de configuração | Sim | Parcial | IaC via Terraform, mas AWS Config NÃO HABILITADO (RISK-002). |
 | A.8.10| Eliminação de informações (Deletion) | Sim | Implementado | Regras de Lifecycle de S3 e scripts de sanitização de vetores. |
 | A.8.11| Mascaramento de dados | Sim | Implementado | Logs são limpos de PII; banco de dados de dev mascarado. |
-| A.8.12| Prevenção contra vazamento (DLP) | Sim | Não Imp. | Ferramentas tradicionais de DLP ainda ausentes nos endpoints. |
+| A.8.12| Prevenção contra vazamento (DLP) | Sim | Parcial | DLP aplicado na borda (IAM, S3 policies, Macie). Endpoints tradicionais estão fora de escopo. |
 | A.8.13| Backup da informação | Sim | Parcial | Política de Backup (005), RDS e S3 ativos. Restores nunca testados. |
 | A.8.14| Redundância de instalações | Sim | Implementado | Arquitetura Cloud-Native hospedada em Multi-AZ. |
 | A.8.15| Geração de registros de log (Logging) | Sim | Implementado | Centralizado no CloudWatch; AWS CloudTrail ativo. |
