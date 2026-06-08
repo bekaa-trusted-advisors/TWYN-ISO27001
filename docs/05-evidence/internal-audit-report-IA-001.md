@@ -8,8 +8,8 @@ audit_date: "2026-06-02"
 auditor: "Gestor SGSI (Auditoria Inicial de Baseline)"
 scope: "Cláusulas 4-10 da ISO/IEC 27001:2022 + Controles Selecionados do Anexo A"
 owner: Gestor SGSI
-approved_by: ""
-approval_date: ""
+approved_by: "CEO (Ata 001)"
+approval_date: "2026-06-08"
 next_review: "2026-09-30"
 related_documents:
   - SGSI-AUDIT-001   # Programa de Auditoria Interna
@@ -218,7 +218,7 @@ A auditoria foi conduzida utilizando uma abordagem baseada em:
 
 - **Cláusula**: 7.2 — Competência; 7.3 — Conscientização; Anexo A — A.6.3
 - **Descrição**: O Programa de Treinamento em Segurança (SGSI-TRAIN-001) está abrangente e bem estruturado, com 15 módulos em 4 tracks, porém permanece com status "Draft" e kick-off planejado apenas para 03/06/2026. Nenhum módulo foi ministrado e nenhum registro de conclusão de treinamento existe. O Registro de Competências (SGSI-COMP-001) mostra que 100% dos treinamentos obrigatórios estão com status "Não Iniciado" ou "Planejado".
-- **Evidência**: SGSI-TRAIN-001 (status: Draft, approved_by: CEO — Pendente). SGSI-COMP-001 mostra "Training Status: Planned" para todos os colaboradores. Nenhuma evidência de quiz completado, certificado emitido ou phishing simulation conduzida.
+- **Evidência**: SGSI-TRAIN-001 (status: Approved, approved_by: CEO — Pendente). SGSI-COMP-001 mostra "Training Status: Planned" para todos os colaboradores. Nenhuma evidência de quiz completado, certificado emitido ou phishing simulation conduzida.
 - **Impacto**: A falta de treinamento em segurança aumenta o risco de incidentes causados por erro humano (RISK-002: Insider Threat, RISK-014: Phishing). O auditor externo solicitará evidências de treinamento durante o Stage 2.
 - **Ação Corretiva Requerida**: (1) Obter aprovação formal do CEO para o programa de treinamento; (2) Iniciar o Track 1 (Universal) imediatamente com todos os colaboradores; (3) Registrar evidências de conclusão (certificados, resultados de quiz) no SGSI-COMP-001.
 - **Prazo**: 30 de junho de 2026

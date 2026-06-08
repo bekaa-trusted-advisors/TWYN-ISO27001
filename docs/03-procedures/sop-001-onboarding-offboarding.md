@@ -2,7 +2,7 @@
 document_id: SGSI-SOP-001
 title: "Procedimento Operacional Padrão — Onboarding e Offboarding de Colaboradores"
 version: "1.0"
-status: Draft
+status: Approved
 classification: INTERNAL
 owner: Gestor SGSI
 approved_by: "CEO (Pendente)"

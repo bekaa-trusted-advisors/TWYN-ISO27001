@@ -5,9 +5,9 @@
 | **Document ID** | SGSI-POLICY-010 |
 | **Version** | 1.0 |
 | **Author** | BEKAA Consultoria — Ricardo Esper |
-| **Approved By** | **[CEO TWYN]** ⚠️ ASSINATURA OBRIGATÓRIA |
-| **Approval Date** | [Pendente] |
-| **Effective Date** | [Pendente] |
+| **Approved By** | **CEO (Ata 001)** |
+| **Approval Date** | 2026-06-08 |
+| **Effective Date** | 2026-06-08 |
 | **Próxima Revisão** | Anual após aprovação |
 | **ISO 27001:2022 Mapping** | **A.8.10**, **A.8.12**, **A.8.14** |
 | **Classification** | **PUBLIC** |

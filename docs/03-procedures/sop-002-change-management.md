@@ -3,7 +3,7 @@ document_id: SGSI-SOP-002
 title: "Procedimento Operacional Padrão — Gestão de Mudanças"
 version: "1.0"
 date: 2026-06-02
-status: Draft
+status: Approved
 classification: INTERNAL
 owner: Gestor SGSI
 approved_by: "CEO (Pendente)"

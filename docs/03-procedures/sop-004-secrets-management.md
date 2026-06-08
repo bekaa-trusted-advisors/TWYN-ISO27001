@@ -2,12 +2,12 @@
 document_id: SGSI-SOP-004
 title: "Procedimento Operacional Padrão — Gestão de Segredos e Rotação de Chaves (90 dias)"
 version: "1.0"
-status: Draft
+status: Approved
 classification: CONFIDENTIAL
 owner: DevOps Lead
-approved_by: ""
-approval_date: ""
-effective_date: ""
+approved_by: "CEO (Ata 001)"
+approval_date: "2026-06-08"
+effective_date: "2026-06-08"
 next_review: ""
 related_policies:
   - SGSI-POLICY-001

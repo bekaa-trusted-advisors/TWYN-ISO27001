@@ -2,9 +2,9 @@
 document_id: SGSI-SOP-003
 title: "Procedimento Operacional Padrão — Segurança no Trabalho Remoto"
 version: "1.0"
-status: Draft
+status: Approved
 classification: INTERNAL
-approval_date: null
+approval_date: "2026-06-08"
 effective_date: null
 next_review: null
 owner: Gestor SGSI

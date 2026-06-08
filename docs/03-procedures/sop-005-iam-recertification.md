@@ -2,12 +2,12 @@
 document_id: SGSI-SOP-005
 title: "Procedimento Operacional Padrão — Recertificação de Identidades e Acessos (IAM)"
 version: "1.0"
-status: Draft
+status: Approved
 classification: INTERNAL
 owner: Gestor SGSI
-approved_by: ""
-approval_date: ""
-effective_date: ""
+approved_by: "CEO (Ata 001)"
+approval_date: "2026-06-08"
+effective_date: "2026-06-08"
 next_review: ""
 related_policies:
   - SGSI-POLICY-002  # Política de Controle de Acesso

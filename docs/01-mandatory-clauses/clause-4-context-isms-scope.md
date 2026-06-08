@@ -6,8 +6,8 @@
 | **Version** | 1.0 |
 | **Author** | BEKAA Consultoria — Ricardo Esper |
 | **Approved By** | [CEO TWYN / Gestor SGSI] |
-| **Approval Date** | [Pendente] |
-| **Effective Date** | [Pendente] |
+| **Approval Date** | 2026-06-08 |
+| **Effective Date** | 2026-06-08 |
 | **Próxima Revisão** | [Anual após aprovação] |
 | **ISO 27001:2022 Mapping** | Clause 4.3 — Context of the Organization |
 ---
