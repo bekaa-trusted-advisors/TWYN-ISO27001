@@ -6,7 +6,7 @@
 | **Version** | 1.0 |
 | **Author** | BEKAA Consultoria — Ricardo Esper |
 | **Approved By** | [Gestor SGSI + CTO] |
-| **Last Update** | 26/05/2026 |
+| **Last Update** | 08/06/2026 |
 | **Próxima Revisão** | Monthly (until all risks treated) |
 | **ISO 27001:2022 Mapping** | **Clause 6.1.3 — Information security risk treatment** |
 ---
@@ -92,7 +92,7 @@ Este documento define o **plano de ação** para tratar cada risco identificado 
 | 3.1 | Check if root access keys exist | AWS Console → Security Credentials → delete if exist | CTO | ⏳ Pending | 28/05/2026 |
 | 3.2 | Enable MFA on root account | Use hardware token (YubiKey) preferred | CTO | ⏳ Pending | 28/05/2026 |
 | 3.3 | Store root credentials in physical safe | Document safe location, access procedure | CTO | ⏳ Pending | 30/05/2026 |
-| 3.4 | Enable CloudTrail alert on root usage | SNS → email/Slack on any root API call | Cloud Infra | ⏳ Pending | 02/06/2026 |
+| 3.4 | Enable CloudTrail alert on root usage | SNS → email/Slack on any root API call | Cloud Infra | ⏳ Pending | 08/06/2026 |
 | 3.5 | Document "break glass" procedure | When/how to use root (emergency only) | Gestor SGSI | ⏳ Pending | 05/06/2026 |
 | 3.6 | Annual root credential rotation | Calendar reminder every 12 months | CTO | ⏳ Pending | 05/06/2026 |
 
@@ -277,7 +277,7 @@ For each Annex A control, track implementation:
 
 | Ativo | Control Status | Evidence | Last Verified |
 |-------|----------------|----------|---------------|
-| S3 buckets (biometric data) | 🟡 In Progress | SSE-KMS being enabled | 26/05/2026 |
+| S3 buckets (biometric data) | 🟡 In Progress | SSE-KMS being enabled | 08/06/2026 |
 | RDS databases | ✅ Implemented | Encryption at rest enabled | 15/03/2026 |
 | EBS volumes | ✅ Implemented | Default encryption on | 10/02/2026 |
 | TLS for APIs | ✅ Implemented | ALB enforces HTTPS | 01/01/2026 |

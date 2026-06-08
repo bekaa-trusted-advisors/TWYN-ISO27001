@@ -656,7 +656,7 @@ Exceções **nunca** são concedidas para:
 
 | Versão | Data | Autor | Alterações | Approved By |
 |---------|------|--------|---------|-------------|
-| 0.1 (Draft) | 26/05/2026 | Ricardo Esper (BEKAA) | Initial draft | — |
+| 0.1 (Draft) | 08/06/2026 | Ricardo Esper (BEKAA) | Initial draft | — |
 | 1.0 | [Pendente] | Ricardo Esper | Final version for approval | **[CEO TWYN]** |
 
 ---

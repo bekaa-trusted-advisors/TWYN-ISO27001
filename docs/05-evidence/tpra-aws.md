@@ -40,6 +40,6 @@ Para utilizar a AWS de forma segura, a TWYN implementa as seguintes medidas miti
 O nível de segurança e maturidade da AWS excede os requisitos internos da TWYN. Os relatórios de auditoria de terceiros confirmam a eficácia dos controles do provedor.
 
 - **Status da Avaliação:** **APROVADO**
-- **Data da Avaliação:** 02/06/2026
+- **Data da Avaliação:** 08/06/2026
 - **Avaliador:** Ricardo Esper (Gestor SGSI / DPO)
 - **Data da Próxima Revisão:** 02/06/2027

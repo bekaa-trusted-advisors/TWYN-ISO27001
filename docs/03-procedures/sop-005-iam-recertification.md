@@ -803,7 +803,7 @@ Os KPIs devem ser consolidados em uma tabela no relatório de recertificação:
 
 | Versão | Data       | Autor           | Descrição da Alteração                                           |
 | ------ | ---------- | --------------- | ---------------------------------------------------------------- |
-| 1.0    | 02/06/2026 | Gestor SGSI     | Criação inicial do procedimento de recertificação IAM            |
+| 1.0    | 08/06/2026 | Gestor SGSI     | Criação inicial do procedimento de recertificação IAM            |
 |        |            |                 |                                                                  |
 |        |            |                 |                                                                  |
 

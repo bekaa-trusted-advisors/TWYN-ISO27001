@@ -495,8 +495,8 @@ O Gestor SGSI deve monitorar os seguintes KPIs mensalmente:
 |-----------|-----|---------|
 | Política de Segurança da Informação | SGSI-POLICY-001 | Política-mãe; define os princípios que este POP implementa |
 | Política de Controle de Acesso | SGSI-POLICY-002 | Define os requisitos de RBAC, MFA e senhas implementados aqui |
-| Procedimento de Gestão de Incidentes | SGSI-SOP-003 | Referenciado na seção de desprovisionamento de emergência |
-| Procedimento de Gestão de Ativos | SGSI-SOP-004 | Complementa o rastreamento de equipamentos |
+| Procedimento de Gestão de Incidentes | SGSI-POLICY-003 | Referenciado na seção de desprovisionamento de emergência |
+| Procedimento de Gestão de Ativos | SGSI-POLICY-004 | Complementa o rastreamento de equipamentos |
 | Registro de Riscos | SGSI-RISK-REG | Riscos relacionados a acessos não revogados |
 | Declaração de Aplicabilidade (SoA) | SGSI-SOA-001 | Mapeia os controles Annex A aplicados neste procedimento |
 | Plano de Treinamento e Conscientização | SGSI-PLAN-TRAIN | Programa de treinamento referenciado nas Fases 2 e 3 |

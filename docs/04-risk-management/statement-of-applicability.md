@@ -19,7 +19,7 @@ A TWYN é uma provedora B2B de API de Reconhecimento Facial operando 100% remota
 |---|---|---|---|---|
 | A.5.1 | Políticas para segurança da informação | Sim | Implementado | SGSI-POLICY-001 aprovada pela diretoria. |
 | A.5.2 | Funções e responsabilidades da segurança | Sim | Implementado | Matriz RACI estabelecida (SGSI-RACI-001). |
-| A.5.3 | Segregação de funções | Sim | Implementado | Regras de RBAC e separação na AWS (SGSI-POLICY-002). |
+| A.5.3 | Segregação de funções | Sim | Parcial | Regras de RBAC ativas, porém há SPOF em cargos chave (GAP). |
 | A.5.4 | Responsabilidades da direção | Sim | Implementado | Revisão da direção executada e orçamento garantido. |
 | A.5.5 | Contato com autoridades | Sim | Implementado | Fluxo de comunicação com ANPD no Incident Response. |
 | A.5.6 | Contato com grupos especiais | Sim | Parcial | O Gestor SGSI interage com fóruns de cibersegurança. |
@@ -33,20 +33,20 @@ A TWYN é uma provedora B2B de API de Reconhecimento Facial operando 100% remota
 | A.5.14 | Transferência da informação | Sim | Implementado | APIs usam estritamente TLS 1.3 (Face ID Platform). |
 | A.5.15 | Controle de acesso | Sim | Implementado | SGSI-POLICY-002; MFA é padrão ouro. |
 | A.5.16 | Gestão de identidade | Sim | Implementado | Contas baseadas no IAM e GitHub (SOP-001). |
-| A.5.17 | Informação de autenticação | Sim | Implementado | Gerenciado via AWS Secrets Manager (SOP-004). |
+| A.5.17 | Informação de autenticação | Sim | Parcial | AWS Secrets Manager (SOP-004). Chave 'tmpsaasboost' não rotacionada. |
 | A.5.18 | Direitos de acesso | Sim | Implementado | Recertificação trimestral (SOP-005). |
 | A.5.19 | Segurança em relacionamentos com fornecedores | Sim | Implementado | TPRA process, Supplier Security Questionnaire. |
 | A.5.20 | Abordagem à segurança em contratos de fornecedores| Sim | Implementado | Cláusulas de DPAs assinadas em NDA. |
 | A.5.21 | Gestão da cadeia de suprimento de TI | Sim | Parcial | Análise baseada no GitHub/AWS TPRAs (SGSI-TPRA). |
 | A.5.22 | Monitoramento dos serviços de fornecedores | Sim | Parcial | Monitoramento de SLAs de uptime dos hiperescaladores. |
 | A.5.23 | Segurança no uso de serviços em nuvem | Sim | Implementado | Modelo Shared Responsibility, uso do AWS Config/Security Hub. |
-| A.5.24 | Gestão de incidentes de segurança | Sim | Implementado | Incident Response Policy (SGSI-POLICY-003). |
+| A.5.24 | Gestão de incidentes de segurança | Sim | Parcial | Incident Response Policy criado, pendente testes. |
 | A.5.25 | Avaliação de eventos de segurança | Sim | Implementado | Classificação de P0 a P4 implementada. |
-| A.5.26 | Resposta a incidentes | Sim | Implementado | Procedimentos de contenção e recuperação descritos no IRP. |
+| A.5.26 | Resposta a incidentes | Sim | Parcial | IRP necessita formalização prática de runbooks. |
 | A.5.27 | Aprendizado com incidentes | Sim | Implementado | Requisito de Post-Mortem (CARs gerados após crise). |
 | A.5.28 | Coleta de evidências | Sim | Parcial | Não há exclusão de logs em instâncias sob ataque. |
 | A.5.29 | Segurança durante interrupções | Sim | Implementado | Descrito no BCP (SGSI-POLICY-006). |
-| A.5.30 | Prontidão das TIC para continuidade | Sim | Implementado | BCP e DR elaborados com testes semestrais estipulados. |
+| A.5.30 | Prontidão das TIC para continuidade | Sim | Parcial | BCP elaborado, testes semestrais de restore *nunca realizados* (RISK-009). |
 | A.5.31 | Requisitos legais e regulamentares | Sim | Implementado | Conformidade com LGPD Art. 11 (Dados Sensíveis). |
 | A.5.32 | Direitos de propriedade intelectual | Sim | Parcial | Políticas de uso de software licenciado apenas. |
 | A.5.33 | Proteção de registros organizacionais | Sim | Implementado | Registros vitais em S3 versionado e logs imutáveis. |
@@ -100,14 +100,14 @@ A TWYN é uma provedora B2B de API de Reconhecimento Facial operando 100% remota
 | A.8.6 | Gerenciamento de capacidade | Sim | Implementado | Autoscaling e métricas no CloudWatch monitoram capacidades. |
 | A.8.7 | Proteção contra malware | Sim | Parcial | Container scanning (Trivy) ativado nas pipelines CI/CD. |
 | A.8.8 | Gestão de vulnerabilidades técnicas | Sim | Parcial | Processo de correção de CVEs integrado nos sprints de infra. |
-| A.8.9 | Gerenciamento de configuração | Sim | Implementado | Toda a infraestrutura roda como código via Terraform. |
+| A.8.9 | Gerenciamento de configuração | Sim | Parcial | IaC via Terraform, mas AWS Config NÃO HABILITADO (RISK-002). |
 | A.8.10| Eliminação de informações (Deletion) | Sim | Implementado | Regras de Lifecycle de S3 e scripts de sanitização de vetores. |
 | A.8.11| Mascaramento de dados | Sim | Implementado | Logs são limpos de PII; banco de dados de dev mascarado. |
 | A.8.12| Prevenção contra vazamento (DLP) | Sim | Não Imp. | Ferramentas tradicionais de DLP ainda ausentes nos endpoints. |
-| A.8.13| Backup da informação | Sim | Implementado | Política de Backup (005), RDS Automated e S3 Versioning. |
+| A.8.13| Backup da informação | Sim | Parcial | Política de Backup (005), RDS e S3 ativos. Restores nunca testados. |
 | A.8.14| Redundância de instalações | Sim | Implementado | Arquitetura Cloud-Native hospedada em Multi-AZ. |
 | A.8.15| Geração de registros de log (Logging) | Sim | Implementado | Centralizado no CloudWatch; AWS CloudTrail ativo. |
-| A.8.16| Monitoramento de atividades | Sim | Implementado | AWS GuardDuty ativo e Security Hub em implantação. |
+| A.8.16| Monitoramento de atividades | Sim | Parcial | GuardDuty NÃO habilitado e Security Hub incompleto (RISK-005). |
 | A.8.17| Sincronização de relógios | Sim | Implementado | NTP padronizado gerido nativamente pela infraestrutura AWS. |
 | A.8.18| Uso de programas utilitários privilegiados | Sim | Parcial | Uso restrito via sessões documentadas no Change Management. |
 | A.8.19| Instalação de software em prod | Sim | Implementado | Deployências feitas exclusivamente pelo GitHub Actions. |

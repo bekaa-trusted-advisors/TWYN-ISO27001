@@ -214,7 +214,7 @@ Este escopo foi revisado e aprovado pelos seguintes responsáveis:
 
 | Versão | Data | Autor | Alterações |
 |---------|------|--------|---------|
-| 1.0 (Draft) | 26/05/2026 | Ricardo Esper (BEKAA) | Initial version for TWYN ISMS scope definition |
+| 1.0 (Draft) | 08/06/2026 | Ricardo Esper (BEKAA) | Initial version for TWYN ISMS scope definition |
 
 ---
 

@@ -39,6 +39,6 @@ Para mitigar os riscos no uso da plataforma, a TWYN implementa e gerencia os seg
 O GitHub apresenta um ecossistema de segurança altamente maduro e testado. Os relatórios de conformidade evidenciam a eficácia dos seus controles organizacionais e técnicos.
 
 - **Status da Avaliação:** **APROVADO**
-- **Data da Avaliação:** 02/06/2026
+- **Data da Avaliação:** 08/06/2026
 - **Avaliador:** Ricardo Esper (Gestor SGSI / DPO)
 - **Data da Próxima Revisão:** 02/06/2027

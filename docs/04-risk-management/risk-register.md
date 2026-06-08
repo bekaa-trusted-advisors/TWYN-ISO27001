@@ -6,7 +6,7 @@
 | **Version** | 1.0 |
 | **Author** | BEKAA Consultoria — Ricardo Esper |
 | **Approved By** | Ricardo Esper (Bekaa Trusted Advisors) |
-| **Last Review** | 26/05/2026 |
+| **Last Review** | 08/08/2026 |
 | **Próxima Revisão** | Q2 2027 (Anual) |
 | **ISO 27001:2022 Mapping** | **Clause 6.1.2 — Risk assessment** + **Clause 8.2** |
 ---
@@ -78,10 +78,10 @@ Este Risk Register documenta **todos os riscos identificados** para os ativos no
 | **Related Annex A Controls** | • A.8.11 (Data masking)<br>• A.8.10 (Information deletion)<br>• A.5.23 (Cloud services security)<br>• A.8.24 (Use of cryptography) |
 | **Actions (RTP)** | 1. Enable **S3 Block Public Access** on all buckets<br>2. Enable **SSE-KMS encryption** (AWS KMS)<br>3. Implement **bucket policies** (least privilege)<br>4. Enable **S3 Access Logging**<br>5. Quarterly audit of all S3 buckets |
 | **Owner** | Cloud Infrastructure Lead |
-| **Due Date** | **15/06/2026** (20 days) |
+| **Due Date** | **15/08/2026** (20 days) |
 | **Status** | 🔴 **Open — High Priority** |
 | **Residual Risk** | **6** 🟡 (L=2, I=3) after controls |
-| **Last Review** | 26/05/2026 |
+| **Last Review** | 08/08/2026 |
 
 ---
 
@@ -101,10 +101,10 @@ Este Risk Register documenta **todos os riscos identificados** para os ativos no
 | **Related Annex A Controls** | • A.8.9 (Configuration management)<br>• A.5.37 (Documented operating procedures) |
 | **Actions (RTP)** | 1. **Enable AWS Config** in all regions<br>2. Enable **CIS AWS Foundations Benchmark** rules<br>3. Configure alerting (SNS → Slack/Email)<br>4. Create Config dashboard<br>5. Monthly compliance review |
 | **Owner** | Cloud Infrastructure Lead |
-| **Due Date** | **10/06/2026** (15 days) |
+| **Due Date** | **10/08/2026** (15 days) |
 | **Status** | 🟡 **Em Tratamento** (GAP-001 issue created) |
 | **Residual Risk** | **4** 🟢 (L=2, I=2) after AWS Config enabled |
-| **Last Review** | 26/05/2026 |
+| **Last Review** | 08/08/2026 |
 
 ---
 
@@ -124,10 +124,10 @@ Este Risk Register documenta **todos os riscos identificados** para os ativos no
 | **Related Annex A Controls** | • A.5.15 (Access control)<br>• A.5.17 (Authentication information)<br>• A.5.18 (Access rights)<br>• A.8.5 (Secure authentication) |
 | **Actions (RTP)** | 1. **Delete root access keys** (if exist)<br>2. **Enable MFA** on root (hardware token preferred)<br>3. Store root credentials in **physical safe**<br>4. Enable **CloudTrail alert** on any root usage<br>5. Document "break glass" procedure<br>6. Annual root credential rotation |
 | **Owner** | CTO |
-| **Due Date** | **05/06/2026** (10 days) |
+| **Due Date** | **05/08/2026** (10 days) |
 | **Status** | 🟡 **Em Tratamento** |
 | **Residual Risk** | **8** 🟡 (L=2, I=4) after MFA + monitoring |
-| **Last Review** | 26/05/2026 |
+| **Last Review** | 08/08/2026 |
 
 ---
 
@@ -147,10 +147,10 @@ Este Risk Register documenta **todos os riscos identificados** para os ativos no
 | **Related Annex A Controls** | • A.5.18 (Access rights)<br>• A.6.4 (Disciplinary process)<br>• A.8.2 (Privileged access rights) |
 | **Actions (RTP)** | 1. **IAM audit**: Review all users/roles (GAP-003)<br>2. Implement **least privilege** (remove AdministratorAccess)<br>3. Create **custom IAM policies** per job function<br>4. Enable **MFA delete** on S3 critical buckets<br>5. Implement **SOP-005** (quarterly IAM recertification)<br>6. Segregation: separate Dev/Ops/Security roles |
 | **Owner** | Cloud Infrastructure Lead + SecOps |
-| **Due Date** | **30/06/2026** (35 days) |
+| **Due Date** | **30/08/2026** (35 days) |
 | **Status** | 🔴 **Open** (GAP-003 issue created) |
 | **Residual Risk** | **6** 🟡 (L=2, I=3) after least privilege |
-| **Last Review** | 26/05/2026 |
+| **Last Review** | 08/08/2026 |
 
 ---
 
@@ -170,10 +170,10 @@ Este Risk Register documenta **todos os riscos identificados** para os ativos no
 | **Related Annex A Controls** | • A.5.7 (Threat intelligence)<br>• A.8.16 (Monitoring activities)<br>• A.5.25 (Security event assessment) |
 | **Actions (RTP)** | 1. **Enable GuardDuty** in all AWS regions<br>2. Configure **SNS alerts** for ALTO/CRÍTICO findings<br>3. Integrate with **incident response process**<br>4. Weekly review of GuardDuty findings<br>5. Tune false positives |
 | **Owner** | SecOps Lead |
-| **Due Date** | **12/06/2026** (17 days) |
+| **Due Date** | **12/08/2026** (17 days) |
 | **Status** | 🔴 **Open** (GAP-002 issue created) |
 | **Residual Risk** | **3** 🟢 (L=1, I=3) after GuardDuty |
-| **Last Review** | 26/05/2026 |
+| **Last Review** | 08/08/2026 |
 
 ---
 
@@ -193,10 +193,10 @@ Este Risk Register documenta **todos os riscos identificados** para os ativos no
 | **Related Annex A Controls** | • A.5.16 (Identity management)<br>• A.5.17 (Authentication information)<br>• A.8.5 (Secure authentication) |
 | **Actions (RTP)** | 1. **Investigate** if `tmpsaasboost` key is still in use<br>2. If NOT in use: **delete immediately**<br>3. If in use: rotate key + update app config<br>4. Implement **automated key rotation** (90 days max)<br>5. **Prefer IAM roles** over access keys<br>6. Create **SOP-004** (secrets rotation) |
 | **Owner** | Cloud Infrastructure Lead |
-| **Due Date** | **08/06/2026** (13 days — FTR blocker) |
+| **Due Date** | **08/08/2026** (13 days — FTR blocker) |
 | **Status** | 🔴 **Open — FTR Blocker** (AWS FTR issue #18) |
 | **Residual Risk** | **4** 🟢 (L=2, I=2) after rotation + automation |
-| **Last Review** | 26/05/2026 |
+| **Last Review** | 08/08/2026 |
 
 ---
 
@@ -216,10 +216,10 @@ Este Risk Register documenta **todos os riscos identificados** para os ativos no
 | **Related Annex A Controls** | • A.8.7 (Protection against malware)<br>• A.8.13 (Information backup)<br>• A.5.29 (Information security during disruption)<br>• A.5.30 (ICT readiness for business continuity) |
 | **Actions (RTP)** | 1. **Container image scanning** (Trivy/ECR scanning)<br>2. Enable **GuardDuty EKS protection**<br>3. Implement **pod security policies**<br>4. **Test DR quarterly** (GAP-007)<br>5. Purchase **cyber insurance** (ransomware coverage)<br>6. Incident response playbook for ransomware |
 | **Owner** | Cloud Infrastructure Lead + SecOps |
-| **Due Date** | **30/06/2026** (35 days) |
+| **Due Date** | **30/08/2026** (35 days) |
 | **Status** | 🟡 **Em Tratamento** (GAP-007 for backup testing) |
 | **Residual Risk** | **8** 🟡 (L=2, I=4) after controls + insurance |
-| **Last Review** | 26/05/2026 |
+| **Last Review** | 08/08/2026 |
 
 ---
 
@@ -239,10 +239,10 @@ Este Risk Register documenta **todos os riscos identificados** para os ativos no
 | **Related Annex A Controls** | • A.5.9 (Inventory of information and other associated assets)<br>• A.5.12 (Classification of information)<br>• A.8.10 (Information deletion) |
 | **Actions (RTP)** | 1. **Full AWS asset discovery** (AWS Config, scripts)<br>2. **Tag all resources** (owner, project, lifecycle)<br>3. **Identify orphaned** resources (no tags, old)<br>4. **Decommission** legacy resources (GAP-004)<br>5. Create **asset inventory** (SGSI-ASSETS-001)<br>6. Implement tagging policy (mandatory) |
 | **Owner** | Cloud Infrastructure Lead |
-| **Due Date** | **20/06/2026** (25 days) |
+| **Due Date** | **20/08/2026** (25 days) |
 | **Status** | 🔴 **Open** (GAP-004 issue created) |
 | **Residual Risk** | **4** 🟢 (L=2, I=2) after inventory + cleanup |
-| **Last Review** | 26/05/2026 |
+| **Last Review** | 08/08/2026 |
 
 ---
 
@@ -262,10 +262,10 @@ Este Risk Register documenta **todos os riscos identificados** para os ativos no
 | **Related Annex A Controls** | • A.8.13 (Information backup)<br>• A.5.30 (ICT readiness for BC) |
 | **Actions (RTP)** | 1. **Execute DR drill** immediately (GAP-007)<br>2. Document **actual RTO/RPO** achieved<br>3. Create **DR playbook** (SGSI-DRP-001)<br>4. **Quarterly DR tests** (calendar reminders)<br>5. Automate restore testing (scripted) |
 | **Owner** | Cloud Infrastructure Lead |
-| **Due Date** | **15/06/2026** (20 days — AWS FTR evidence) |
+| **Due Date** | **15/08/2026** (20 days — AWS FTR evidence) |
 | **Status** | 🔴 **Open** (GAP-007 + AWS FTR #16) |
 | **Residual Risk** | **6** 🟡 (L=2, I=3) after quarterly testing |
-| **Last Review** | 26/05/2026 |
+| **Last Review** | 08/08/2026 |
 
 ---
 
@@ -285,10 +285,10 @@ Este Risk Register documenta **todos os riscos identificados** para os ativos no
 | **Related Annex A Controls** | • A.5.22 (Monitoring and review of supplier services)<br>• A.5.23 (Cloud services security) |
 | **Actions (RTP)** | **Option A**: Upgrade to **Business Support** (~$100-500/month)<br>**Option B**: Document acceptance + mitigation plan:<br>1. Create **break-glass runbook** for common issues<br>2. Train team on AWS troubleshooting<br>3. Contract **on-demand AWS consultant** (backup)<br>4. Define **SLA allowances** in client contracts |
 | **Owner** | CTO + Finance |
-| **Due Date** | **10/06/2026** (decision needed for FTR) |
+| **Due Date** | **10/08/2026** (decision needed for FTR) |
 | **Status** | 🔴 **Open — Pending Decision** (AWS FTR #17) |
 | **Residual Risk** | **6** 🟡 if Business Support; **8** 🟡 if accept |
-| **Last Review** | 26/05/2026 |
+| **Last Review** | 08/08/2026 |
 
 ---
 
@@ -308,10 +308,10 @@ Este Risk Register documenta **todos os riscos identificados** para os ativos no
 | **Related Annex A Controls** | • A.5.16 (Identity management) — IAM controls<br>• A.8.3 (Information access restriction) — EC2 controls<br>• A.5.1 (Policies for information security) — ACCOUNT.1 |
 | **Actions (RTP)** | 1. **Enable missing controls** in Security Hub<br>2. Fix non-compliances:<br>   - IAM.4: Ensure no root access keys<br>   - IAM.5: Enable MFA for console users<br>   - IAM.15/16: IAM permissions via groups/roles only<br>   - EC2.2: Restrict default SG<br>   - EC2.53: No public IPs on instances<br>   - EC2.54: Use IMDSv2<br>   - ACCOUNT.1: Add security contact<br>3. **Re-run CIS Benchmark**<br>4. Submit new report to AWS FTR |
 | **Owner** | Cloud Infrastructure + SecOps |
-| **Due Date** | **08/06/2026** (13 days — FTR blocker) |
+| **Due Date** | **08/08/2026** (13 days — FTR blocker) |
 | **Status** | 🔴 **Open — FTR Blocker** (AWS FTR #18) |
 | **Residual Risk** | **3** 🟢 (L=1, I=3) after fixes |
-| **Last Review** | 26/05/2026 |
+| **Last Review** | 08/08/2026 |
 
 ---
 
@@ -331,10 +331,10 @@ Este Risk Register documenta **todos os riscos identificados** para os ativos no
 | **Related Annex A Controls** | • A.6.3 (Information security awareness, education and training)<br>• A.5.10 (Acceptable use of information) |
 | **Actions (RTP)** | 1. **Select training platform** (KnowBe4, Udemy, custom)<br>2. **Enroll all employees** (mandatory)<br>3. Training content:<br>   - LGPD basics (1h)<br>   - Phishing awareness (1h)<br>   - Password security (30min)<br>   - Secure remote work (30min)<br>4. **Simulated phishing** campaigns (quarterly)<br>5. **Training log** (SGSI-TRAINING-LOG)<br>6. Annual refresher |
 | **Owner** | HR + Gestor SGSI |
-| **Due Date** | **30/06/2026** (35 days) |
+| **Due Date** | **30/08/2026** (35 days) |
 | **Status** | 🔴 **Open** (GAP-006 issue created) |
 | **Residual Risk** | **8** 🟡 (L=2, I=4) after training |
-| **Last Review** | 26/05/2026 |
+| **Last Review** | 08/08/2026 |
 
 ---
 
@@ -354,10 +354,10 @@ Este Risk Register documenta **todos os riscos identificados** para os ativos no
 | **Related Annex A Controls** | • **Clause 9.3** (Management review) — MANDATORY |
 | **Actions (RTP)** | 1. **Schedule first management review** (GAP-005)<br>2. Prepare review agenda (see Clause 9.3 requirements)<br>3. Collect KPIs: incidents, audit results, metrics<br>4. CEO/CTO attendance mandatory<br>5. Document minutes + action items<br>6. **Quarterly** reviews (calendar recurring) |
 | **Owner** | Gestor SGSI |
-| **Due Date** | **15/06/2026** (20 days) |
-| **Status** | 🔴 **Open** (GAP-005 issue created) |
-| **Residual Risk** | **3** 🟢 (L=1, I=3) after first review |
-| **Last Review** | 26/05/2026 |
+| **Due Date** | **15/08/2026** (20 days) |
+| **Status** | 🟢 **Mitigado** (Resolvido na Ata 001 - 08/08/2026) |
+| **Residual Risk** | **3** 🟢 (L=1, I=3) - Mitigado |
+| **Last Review** | 08/08/2026 |
 
 ---
 
@@ -377,10 +377,10 @@ Este Risk Register documenta **todos os riscos identificados** para os ativos no
 | **Related Annex A Controls** | • A.8.28 (Secure coding)<br>• A.8.32 (Change management)<br>• A.5.16 (Identity management) |
 | **Actions (RTP)** | 1. **Enforce MFA** on all GitHub accounts (org-wide)<br>2. **Branch protection** on main: require PR reviews (2 approvers)<br>3. **Signed commits** (GPG) — best practice<br>4. **CODEOWNERS** file (require specific approvers)<br>5. Enable **GitHub Advanced Security** (if budget allows)<br>6. Dependency scanning (Dependabot)<br>7. Assess **GitHub DPA** status |
 | **Owner** | CTO |
-| **Due Date** | **20/06/2026** (25 days) |
+| **Due Date** | **20/08/2026** (25 days) |
 | **Status** | 🔴 **Open** |
 | **Residual Risk** | **6** 🟡 (L=2, I=3) after controls |
-| **Last Review** | 26/05/2026 |
+| **Last Review** | 08/08/2026 |
 
 ---
 
@@ -400,10 +400,10 @@ Este Risk Register documenta **todos os riscos identificados** para os ativos no
 | **Related Annex A Controls** | • A.5.29 (Information security during disruption)<br>• A.5.30 (ICT readiness for BC) |
 | **Actions (RTP)** | **Accept** regional dependency (multi-region = high cost/complexity)<br>**Mitigate**:<br>1. Ensure DR region (us-west-2) is **kept in sync**<br>2. **Test cross-region failover** (GAP-007 DR drill)<br>3. Document RTO for region failover<br>4. Multi-AZ within region (already done ✅)<br>5. Monitor AWS Health Dashboard |
 | **Owner** | Cloud Infrastructure Lead |
-| **Due Date** | **30/06/2026** (acceptance + DR test) |
+| **Due Date** | **30/08/2026** (acceptance + DR test) |
 | **Status** | 🟡 **Em Tratamento** (linked to GAP-007) |
 | **Residual Risk** | **8** 🟡 (accept this level) |
-| **Last Review** | 26/05/2026 |
+| **Last Review** | 08/08/2026 |
 
 ---
 
@@ -423,10 +423,10 @@ Este Risk Register documenta **todos os riscos identificados** para os ativos no
 | **Related Annex A Controls** | • A.5.34 (Privacy and protection of PII)<br>• A.5.8 (Information security in project management) — DPIA |
 | **Actions (RTP)** | 1. **Designate DPO** formally (internal or external)<br>2. **Publish Privacy Policy** (website + API docs)<br>3. Implement **DSR process**: access, correction, deletion<br>4. Conduct **DPIA** (Data Protection Impact Assessment) for biometric processing<br>5. **LGPD training** for all employees (GAP-006)<br>6. Create **data processing register** (Art. 37) |
 | **Owner** | Legal + Gestor SGSI |
-| **Due Date** | **30/06/2026** (35 days) |
+| **Due Date** | **30/08/2026** (35 days) |
 | **Status** | 🔴 **Open** |
 | **Residual Risk** | **6** 🟡 (L=2, I=3) after compliance |
-| **Last Review** | 26/05/2026 |
+| **Last Review** | 08/08/2026 |
 
 ---
 
@@ -446,10 +446,10 @@ Este Risk Register documenta **todos os riscos identificados** para os ativos no
 | **Related Annex A Controls** | • A.5.24 (Information security incident planning and preparation)<br>• A.5.25 (Assessment and decision on information security events)<br>• A.5.26 (Response to information security incidents)<br>• A.5.27 (Learning from information security incidents) |
 | **Actions (RTP)** | 1. **Create IRP document** (SGSI-IRP-001)<br>2. Define incident **severity levels** (P0-P4)<br>3. Define **on-call rotation** (PagerDuty or similar)<br>4. Create **runbooks** for common scenarios<br>5. **LGPD breach notification** process (72h to ANPD)<br>6. **Tabletop exercise** (simulate incident)<br>7. Post-incident review template |
 | **Owner** | SecOps Lead + Gestor SGSI |
-| **Due Date** | **25/06/2026** (30 days) |
+| **Due Date** | **25/08/2026** (30 days) |
 | **Status** | 🔴 **Open** |
 | **Residual Risk** | **8** 🟡 (L=2, I=4) after IRP + drills |
-| **Last Review** | 26/05/2026 |
+| **Last Review** | 08/08/2026 |
 
 ---
 
@@ -469,10 +469,10 @@ Este Risk Register documenta **todos os riscos identificados** para os ativos no
 | **Related Annex A Controls** | • A.6.7 (Remote working)<br>• A.7.7 (Clear desk and clear screen)<br>• A.8.1 (User endpoint devices) |
 | **Actions (RTP)** | 1. **Enforce full disk encryption** (FileVault, BitLocker)<br>2. Create **SOP-003** (Remote Work Policy)<br>3. Consider **MDM** (Jamf, Intune) if budget allows<br>4. **Endpoint protection**: CrowdStrike, Sophos, or built-in (Defender)<br>5. Screen lock timeout (5 min)<br>6. VPN required for internal resources |
 | **Owner** | IT/DevOps Lead |
-| **Due Date** | **30/06/2026** (35 days) |
+| **Due Date** | **30/08/2026** (35 days) |
 | **Status** | 🔴 **Open** |
 | **Residual Risk** | **4** 🟢 (L=2, I=2) after controls |
-| **Last Review** | 26/05/2026 |
+| **Last Review** | 08/08/2026 |
 
 ---
 
@@ -486,7 +486,7 @@ Este Risk Register documenta **todos os riscos identificados** para os ativos no
 | **Risk Score** | **4** 🟢 (L=2, I=2) |
 | **Justification** | • Tools don't process production data<br>• Covered by vendor DPAs<br>• Cost of additional controls > benefit |
 | **Aceito By** | Gestor SGSI |
-| **Acceptance Date** | 26/05/2026 |
+| **Acceptance Date** | 08/08/2026 |
 | **Review Date** | Q2 2027 |
 
 ---
@@ -499,7 +499,7 @@ Este Risk Register documenta **todos os riscos identificados** para os ativos no
 | **Risk Score** | **4** 🟢 (L=2, I=2) |
 | **Justification** | • No production servers on-premises (100% cloud)<br>• Basic office security sufficient (access control, CCTV)<br>• Cost of datacenter-grade security not justified |
 | **Aceito By** | CTO |
-| **Acceptance Date** | 26/05/2026 |
+| **Acceptance Date** | 08/08/2026 |
 | **Review Date** | Q2 2027 |
 
 ---
@@ -508,25 +508,25 @@ Este Risk Register documenta **todos os riscos identificados** para os ativos no
 
 ### 🔴 CRÍTICO (Due < 20 days)
 
-1. **RISK-001** (S3 breach): Enable Block Public Access + SSE-KMS — Due: 15/06
-2. **RISK-003** (Root account): Delete keys + MFA + safe — Due: 05/06
-3. **RISK-006** (Access key rotation): Fix tmpsaasboost — Due: 08/06 🚨 FTR BLOCKER
-4. **RISK-011** (CIS controls): Fix 8 missing controls — Due: 08/06 🚨 FTR BLOCKER
+1. **RISK-001** (S3 breach): Enable Block Public Access + SSE-KMS — Due: 15/08
+2. **RISK-003** (Root account): Delete keys + MFA + safe — Due: 05/08
+3. **RISK-006** (Access key rotation): Fix tmpsaasboost — Due: 08/08 🚨 FTR BLOCKER
+4. **RISK-011** (CIS controls): Fix 8 missing controls — Due: 08/08 🚨 FTR BLOCKER
 
 ### 🟠 ALTO (Due < 35 days)
 
-5. **RISK-002** (AWS Config): Enable + rules — Due: 10/06
-6. **RISK-004** (IAM): Least privilege audit — Due: 30/06
-7. **RISK-005** (GuardDuty): Enable + alerts — Due: 12/06
-8. **RISK-007** (Ransomware): Container scanning + DR — Due: 30/06
-9. **RISK-008** (Legacy): Asset inventory + cleanup — Due: 20/06
-10. **RISK-009** (Backup test): Execute DR drill — Due: 15/06
-11. **RISK-010** (AWS Support): Make decision — Due: 10/06 🚨 FTR
-12. **RISK-012** (Training): Enroll employees — Due: 30/06
-13. **RISK-013** (Mgmt Review): Schedule + execute — Due: 15/06
-14. **RISK-014** (GitHub): MFA + branch protection — Due: 20/06
-15. **RISK-016** (LGPD): DPO + Privacy Policy — Due: 30/06
-16. **RISK-017** (IRP): Create plan + runbooks — Due: 25/06
+5. **RISK-002** (AWS Config): Enable + rules — Due: 10/08
+6. **RISK-004** (IAM): Least privilege audit — Due: 30/08
+7. **RISK-005** (GuardDuty): Enable + alerts — Due: 12/08
+8. **RISK-007** (Ransomware): Container scanning + DR — Due: 30/08
+9. **RISK-008** (Legacy): Asset inventory + cleanup — Due: 20/08
+10. **RISK-009** (Backup test): Execute DR drill — Due: 15/08
+11. **RISK-010** (AWS Support): Make decision — Due: 10/08 🚨 FTR
+12. **RISK-012** (Training): Enroll employees — Due: 30/08
+13. **RISK-013** (Mgmt Review): Schedule + execute — Due: 15/08
+14. **RISK-014** (GitHub): MFA + branch protection — Due: 20/08
+15. **RISK-016** (LGPD): DPO + Privacy Policy — Due: 30/08
+16. **RISK-017** (IRP): Create plan + runbooks — Due: 25/08
 
 ---
 
@@ -534,7 +534,7 @@ Este Risk Register documenta **todos os riscos identificados** para os ativos no
 
 | Data de Revisão | Revisor | Alterações |
 |-------------|----------|---------|
-| 26/05/2026 | Ricardo Esper (BEKAA) | Initial risk assessment (18 risks identified) |
+| 08/08/2026 | Ricardo Esper (BEKAA) | Initial risk assessment (18 risks identified) |
 
 ---
 

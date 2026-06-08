@@ -39,7 +39,7 @@ Por se tratar da **primeira reunião formal** do ciclo do SGSI para conformidade
 
 ### 3.1 Progresso dos Objetivos de Segurança da Informação
 
-| Objetivo | Meta | Status Atual (02/06/2026) | Em Dia? | Observações |
+| Objetivo | Meta | Status Atual (08/06/2026) | Em Dia? | Observações |
 |----------|------|---------------------------|---------|-------------|
 | **Certificação ISO 27001** | Q3 2026 | Documentação 100% concluída. Pendente de assinaturas e evidências técnicas. | 🟡 Parcial | No caminho para auditoria em Q3 2026. |
 | **Passar no AWS FTR** | Jun 2026 | Pendente de melhorias de infraestrutura (MFA root, AWS Config e chave tmpsaasboost). | 🟡 Parcial | Requer upgrade de suporte para AWS Business. |
@@ -82,7 +82,7 @@ As quatro ações corretivas essenciais para resolver os riscos críticos de inf
 ---
 
 ## 6. Resultados de Auditorias (Auditoria Interna IA-001)
--   **ID da Auditoria**: IA-001 (Finalizada em 02/06/2026)
+-   **ID da Auditoria**: IA-001 (Finalizada em 08/06/2026)
 -   **Escopo**: Avaliação documental e de processos do SGSI contra a ISO 27001:2022.
 -   **Resultado da Auditoria**:
     -   **Não-Conformidades Maiores (NCM)**: 7 (ausência de assinaturas, falta de revisão pela direção anterior, stubs de SOPs que foram resolvidos hoje, falta de registros de competência).

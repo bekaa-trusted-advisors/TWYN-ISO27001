@@ -66,7 +66,7 @@ O tratamento de dados biométricos é estritamente necessário para garantir o n
 As medidas técnicas e organizacionais adotadas para a plataforma Face ID da TWYN encontram-se adequadas ao nível de criticidade dos dados tratados. Os riscos residuais são aceitáveis frente às salvaguardas (criptografia e isolamento) que reduzem significativamente o impacto potencial aos titulares em caso de incidentes. O presente RIPD deverá ser revisado anualmente ou sempre que houver mudança significativa na arquitetura do tratamento.
 
 **Assinatura:** ___________________________ (Ricardo Esper)
-**Data:** 26/05/2026
+**Data:** 08/06/2026
 
 **Assinatura:** ___________________________ (Enes Fernando Degasperi)
-**Data:** 26/05/2026
+**Data:** 08/06/2026

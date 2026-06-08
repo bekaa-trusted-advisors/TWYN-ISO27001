@@ -163,7 +163,7 @@ A auditoria foi conduzida utilizando uma abordagem baseada em:
 
 - **Cláusula**: Anexo A — A.8.16 (Monitoramento de atividades), A.5.7 (Inteligência de ameaças)
 - **Descrição**: Os serviços AWS Config e Amazon GuardDuty não estão habilitados na conta AWS da TWYN (992382542028, região us-east-1). O AWS Config é necessário para monitoramento contínuo de conformidade de configurações, e o GuardDuty é essencial para detecção de ameaças em tempo real. Ambos são exigidos pelo CIS AWS Foundations Benchmark e são bloqueadores do AWS FTR.
-- **Evidência**: Documentado no Registro de Riscos como RISK-011 (sem monitoramento de conformidade, Score: 6) e RISK-016 (falta de logging centralizado, Score: 6). Registrado no Registro de Ações Corretivas como CAR-003 (Status: OPEN, Prioridade: HIGH). O Status Report de 26/05/2026 confirma esta lacuna como Blocker #4.
+- **Evidência**: Documentado no Registro de Riscos como RISK-011 (sem monitoramento de conformidade, Score: 6) e RISK-016 (falta de logging centralizado, Score: 6). Registrado no Registro de Ações Corretivas como CAR-003 (Status: OPEN, Prioridade: HIGH). O Status Report de 08/06/2026 confirma esta lacuna como Blocker #4.
 - **Impacto**: Sem AWS Config, não há monitoramento automatizado de desvios de configuração de segurança (por exemplo, abertura de Security Groups para 0.0.0.0/0, desativação de criptografia em buckets S3). Sem GuardDuty, a TWYN não possui capacidade de detecção de atividades maliciosas como mineração de criptomoedas, exfiltração de credenciais, ou acesso anômalo de regiões não autorizadas. Isto viola diretamente os controles A.8.16 (Monitoramento de atividades) e A.5.7 (Inteligência de ameaças).
 - **Causa Raiz**: Serviços não foram habilitados durante a configuração inicial da infraestrutura AWS. Falta de um baseline de segurança obrigatório para a conta.
 - **Ação Corretiva Requerida**: (1) Habilitar AWS Config em todas as regiões suportadas com regras do CIS AWS Foundations Benchmark; (2) Habilitar Amazon GuardDuty com detecção de ameaças para EC2, S3, EKS e IAM; (3) Configurar alertas via SNS para findings de severidade HIGH e CRITICAL; (4) Implementar Conformance Pack do CIS para verificação automatizada; (5) Documentar a implementação e gerar primeiro relatório de conformidade.
@@ -385,7 +385,7 @@ A matriz RACI (SGSI-RACI-001) é excepcionalmente detalhada, cobrindo:
 ### FORÇA-05: Reconhecimento Proativo de Lacunas e Auto-Correção
 
 A TWYN demonstra maturidade ao reconhecer proativamente suas lacunas:
-- O Status Report de 26/05/2026 identifica honestamente 5 problemas críticos (repositório na conta errada, issues não criados, documentos incompletos, README vazio, sem GitHub Projects)
+- O Status Report de 08/06/2026 identifica honestamente 5 problemas críticos (repositório na conta errada, issues não criados, documentos incompletos, README vazio, sem GitHub Projects)
 - Os SOPs incluem seções explícitas reconhecendo não-conformidades conhecidas (por exemplo, SOP-004 Seção 12.1 sobre a conta `tmpsaasboost`)
 - O Registro de Ações Corretivas (CAR-001 a CAR-004) documenta proativamente as ações necessárias antes mesmo desta auditoria
 - Esta transparência é um indicador positivo de cultura de melhoria contínua (Cláusula 10)
@@ -615,7 +615,7 @@ As seguintes não-conformidades devem ser registradas no Registro de Não-Confor
 |---|---|
 | **Relatório Preparado Por** | |
 | Nome: | Ricardo Esper — Gestor SGSI |
-| Data: | 02/06/2026 |
+| Data: | 08/06/2026 |
 | Assinatura: | _________________________________________ |
 | | |
 | **Revisado Por (Gestor SGSI)** | |
