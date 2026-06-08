@@ -79,7 +79,7 @@ A TWYN é uma provedora B2B de API de Reconhecimento Facial operando 100% remota
 | A.7.4 | Monitoramento de segurança física | **Não** | N/A | Excluído pelo escopo remoto. |
 | A.7.5 | Proteção contra ameaças externas e ambientais | **Não** | N/A | Excluído pelo escopo remoto. |
 | A.7.6 | Trabalho em áreas seguras | **Não** | N/A | Excluído pelo escopo remoto. (A.6.7 cobre o teletrabalho de forma lógica). |
-| A.7.7 | Mesas e telas limpas (Clear desk) | Sim | Parcial | Orientado para o home-office (SOP-003). |
+| A.7.7 | Mesas e telas limpas (Clear desk) | Sim | Implementado | Configurado auto-lock (5 min) e regras no SOP-003 e AUP. |
 | A.7.8 | Localização e proteção de equipamentos | **Não** | N/A | Apenas laptops; sem servidores físicos ou roteadores da empresa. |
 | A.7.9 | Segurança de equipamentos fora das instalações | Sim | Parcial | Laptops utilizados home-office devem usar FDE (Full Disk Encryption). |
 | A.7.10| Mídias de armazenamento (Storage media) | **Não** | N/A | Uso de pendrives ou HD externos proibido ou irrelevante (100% cloud). |
