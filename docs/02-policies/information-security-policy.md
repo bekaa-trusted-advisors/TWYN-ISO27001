@@ -160,7 +160,7 @@ A TWYN mantém contato ativo com autoridades reguladoras e fóruns especializado
 **Grupos Especiais e Fóruns de SI (A.5.6)**:
 - **Cloud Security Bulletins:** O DevOps Lead deve estar inscrito e monitorar ativamente os alertas de segurança da AWS e GitHub Security Advisories.
 - **Fóruns Profissionais:** O Gestor SGSI deve participar ativamente de comunidades como OWASP, Cloud Security Alliance (CSA) ou fóruns equivalentes.
-- **Inteligência de Ameaças:** Alertas de vulnerabilidades (CVEs) obtidos nesses grupos devem ser discutidos nas reuniões do CAB (Change Advisory Board) para acelerar a aplicação de patches críticos no EKS e Node.js.
+- **Inteligência de Ameaças:** Alertas de vulnerabilidades (CVEs) obtidos nesses grupos devem ser discutidos nas reuniões do CAB (Change Advisory Board) para acelerar a aplicação de patches críticos no EKS e nos serviços da plataforma.
 
 ---
 
