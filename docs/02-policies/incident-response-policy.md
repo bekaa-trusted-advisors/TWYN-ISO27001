@@ -103,13 +103,24 @@ Estabelecer procedimentos para detectar, responder, e recuperar de incidentes de
 
 ### Notificação à Autoridade Nacional de Proteção de Dados (ANPD)
 Se o incidente envolver vazamento ou acesso não autorizado a dados pessoais (biometria) que possa acarretar risco ou dano relevante aos titulares:
-1. **Prazo:** O DPO (Gestor SGSI) deve notificar a ANPD em até **2 dias úteis** contados da ciência do incidente (conforme diretrizes da ANPD).
-2. **Template de Notificação:**
+1. **Prazo:** O DPO (Ricardo Esper - resper@bekaa.eu) deve notificar a ANPD em até **2 dias úteis** contados da ciência do incidente (conforme diretrizes da ANPD).
+2. **Contatos Oficiais ANPD:**
+   - **Sistema de Peticionamento Eletrônico (Super.BR):** [Acessar Portal ANPD](https://www.gov.br/anpd/pt-br)
+   - **E-mail de Suporte Incidentes:** `incidentes@anpd.gov.br` (Apenas para dúvidas, a notificação oficial deve via formulário).
+3. **Template de Notificação (O que informar):**
    - Natureza dos dados pessoais afetados (biometria facial).
    - Informações sobre os titulares envolvidos.
    - Indicação das medidas técnicas e de segurança utilizadas para proteção.
    - Riscos relacionados ao incidente.
    - Medidas que foram ou serão adotadas para reverter ou mitigar os efeitos.
+
+### Contato com Autoridades Policiais (Delegacia de Crimes Cibernéticos)
+Em caso de ataque de ransomware, invasão extorsiva ou fraude cibernética, a ocorrência deve ser escalada pelo Jurídico/Diretoria para as autoridades legais.
+- **DCCIBER (Polícia Civil de SP):**
+  - **Endereço:** Av. São João, 1247 - Centro, São Paulo - SP
+  - **Telefones:** (11) 3311-3148 / 3311-3151
+  - **Registro Online:** Delegacia Eletrônica (Crimes Cibernéticos)
+- **Atenção:** Qualquer evidência forense (logs de invasão) deve ser preservada intocada antes da entrega às autoridades.
 
 ### Comunicação com a Mídia
 - Somente o CEO ou porta-voz designado (em coordenação com o departamento jurídico) está autorizado a falar publicamente sobre o incidente.
