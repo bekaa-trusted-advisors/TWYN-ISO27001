@@ -24,7 +24,7 @@ A TWYN é uma provedora B2B de API de Reconhecimento Facial operando 100% remota
 | A.5.5 | Contato com autoridades | Sim | Implementado | Contatos da ANPD mantidos pelo DPO (Pol. de SI Seç 4.6). |
 | A.5.6 | Contato com grupos especiais | Sim | Implementado | Gestor SGSI e DevOps participam de fóruns e monitoram CVEs (Pol. de SI Seç 4.6). |
 | A.5.7 | Inteligência de ameaças (Threat Intel) | Sim | Parcial | Assinaturas de feeds no GuardDuty e GitHub advisories. |
-| A.5.8 | Segurança em gerenciamento de projetos | Sim | Implementado | Integrado no SDLC e Jira/Linear. |
+| A.5.8 | Segurança em gerenciamento de projetos | Sim | Implementado | Integrado no ciclo de projetos de infraestrutura (Jira/Linear). |
 | A.5.9 | Inventário de informações e outros ativos | Sim | Implementado | Ativos AWS listados (SGSI-ASSET-001). |
 | A.5.10 | Uso aceitável da informação e ativos | Sim | Implementado | AUP policy estabelecida (SGSI-POLICY-007). |
 | A.5.11 | Devolução de ativos | Sim | Implementado | Processo listado no SOP-001 (Offboarding). |
@@ -95,7 +95,7 @@ A TWYN é uma provedora B2B de API de Reconhecimento Facial operando 100% remota
 | A.8.1 | Dispositivos de endpoint (User devices) | Sim | Parcial | MDM e Endpoint Security recomendado no SOP-003. |
 | A.8.2 | Direitos de acesso a informações | Sim | Implementado | RBAC definido para Banco e API na AWS. |
 | A.8.3 | Restrição de acesso a informações | Sim | Implementado | Somente portas essenciais (HTTPS) expostas publicamente. |
-| A.8.4 | Acesso ao código-fonte | Sim | Implementado | GitHub restrito via repositórios privados e role-based access. |
+| A.8.4 | Acesso ao código-fonte | Sim | Implementado | Acesso de Operação restrito aos repositórios de IaC (Terraform). Código da API é gerido pela Engenharia (Fora do Escopo). |
 | A.8.5 | Autenticação segura | Sim | Implementado | MFA mandatório e políticas de senhas rigorosas. |
 | A.8.6 | Gerenciamento de capacidade | Sim | Implementado | Autoscaling e métricas no CloudWatch monitoram capacidades. |
 | A.8.7 | Proteção contra malware | Sim | Parcial | Container scanning (Trivy) ativado nas pipelines CI/CD. |
@@ -121,7 +121,7 @@ A TWYN é uma provedora B2B de API de Reconhecimento Facial operando 100% remota
 | A.8.27| Princípios de arquitetura segura | **Não** | N/A | Excluído pelo escopo. |
 | A.8.28| Codificação segura (Secure coding) | **Não** | N/A | Excluído pelo escopo. |
 | A.8.29| Teste de segurança no desenvolvimento | **Não** | N/A | Excluído pelo escopo. |
-| A.8.30| Engenharia terceirizada (Outsourced dev) | **Não** | N/A | A TWYN utiliza equipe interna para o desenvolvimento da API. |
+| A.8.30| Engenharia terceirizada (Outsourced dev) | Sim | Implementado | A equipe interna de Engenharia atua fora do escopo, sendo tratada via Política de Fornecedores (SLA de Segurança). |
 | A.8.31| Separação dos ambientes (Dev/Test/Prod)| Sim | Implementado | Isolamento lógico via contas/VPCs distintas (SOP-002). |
 | A.8.32| Gerenciamento de mudanças (Change Mgmt)| Sim | Implementado | Alterações seguem o fluxo de Pull Request (SOP-002). |
 | A.8.33| Dados de teste | Sim | Implementado | Estritamente proibido usar dados biométricos reais em DEV. |

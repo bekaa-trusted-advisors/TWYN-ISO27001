@@ -13,9 +13,8 @@ related_policies:
   - SGSI-POLICY-001
   - SGSI-POLICY-002
 annex_a_controls:
-  - "A.5.17 — Informações de autenticação"
-  - "A.8.24 — Uso de criptografia"
-  - "A.8.25 — Ciclo de vida de desenvolvimento seguro — gestão de chaves"
+  - "A.5.17 - Authentication information"
+  - "A.8.24 - Use of cryptography"
 tags:
   - secrets-management
   - key-rotation
