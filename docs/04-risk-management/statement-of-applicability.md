@@ -21,8 +21,8 @@ A TWYN é uma provedora B2B de API de Reconhecimento Facial operando 100% remota
 | A.5.2 | Funções e responsabilidades da segurança | Sim | Implementado | Matriz RACI estabelecida (SGSI-RACI-001). |
 | A.5.3 | Segregação de funções | Sim | Parcial | Regras de RBAC ativas, porém há SPOF em cargos chave (GAP). |
 | A.5.4 | Responsabilidades da direção | Sim | Implementado | Revisão da direção executada e orçamento garantido. |
-| A.5.5 | Contato com autoridades | Sim | Implementado | Fluxo de comunicação com ANPD no Incident Response. |
-| A.5.6 | Contato com grupos especiais | Sim | Parcial | O Gestor SGSI interage com fóruns de cibersegurança. |
+| A.5.5 | Contato com autoridades | Sim | Implementado | Contatos da ANPD mantidos pelo DPO (Pol. de SI Seç 4.6). |
+| A.5.6 | Contato com grupos especiais | Sim | Implementado | Gestor SGSI e DevOps participam de fóruns e monitoram CVEs (Pol. de SI Seç 4.6). |
 | A.5.7 | Inteligência de ameaças (Threat Intel) | Sim | Parcial | Assinaturas de feeds no GuardDuty e GitHub advisories. |
 | A.5.8 | Segurança em gerenciamento de projetos | Sim | Implementado | Integrado no SDLC e Jira/Linear. |
 | A.5.9 | Inventário de informações e outros ativos | Sim | Implementado | Ativos AWS listados (SGSI-ASSET-001). |

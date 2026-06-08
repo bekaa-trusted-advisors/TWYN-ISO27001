@@ -149,6 +149,19 @@ Garantir que informações e sistemas estejam **disponíveis** quando necessári
 - ✅ Notificar TWYN de incidentes que afetem nossos dados
 - ✅ Submeter-se a avaliações de segurança periódicas
 
+### 4.6 Contato com Autoridades e Grupos Especiais (A.5.5 e A.5.6)
+
+A TWYN mantém contato ativo com autoridades reguladoras e fóruns especializados em cibersegurança para garantir atualização sobre ameaças (Threat Intelligence) e rápida resposta legal a incidentes.
+
+**Autoridades (A.5.5)**:
+- **ANPD (Autoridade Nacional de Proteção de Dados):** Contato exclusivo do DPO em caso de violação de dados biométricos/pessoais.
+- **Autoridades Legais:** Apenas a Diretoria e o setor Jurídico estão autorizados a notificar infrações criminais.
+
+**Grupos Especiais e Fóruns de SI (A.5.6)**:
+- **Cloud Security Bulletins:** O DevOps Lead deve estar inscrito e monitorar ativamente os alertas de segurança da AWS e GitHub Security Advisories.
+- **Fóruns Profissionais:** O Gestor SGSI deve participar ativamente de comunidades como OWASP, Cloud Security Alliance (CSA) ou fóruns equivalentes.
+- **Inteligência de Ameaças:** Alertas de vulnerabilidades (CVEs) obtidos nesses grupos devem ser discutidos nas reuniões do CAB (Change Advisory Board) para acelerar a aplicação de patches críticos no EKS e Node.js.
+
 ---
 
 ## 5. Information Security Objectives (Objetivos de SI)
