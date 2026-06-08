@@ -47,8 +47,8 @@ A TWYN é uma provedora B2B de API de Reconhecimento Facial operando 100% remota
 | A.5.28 | Coleta de evidências | Sim | Parcial | Não há exclusão de logs em instâncias sob ataque. |
 | A.5.29 | Segurança durante interrupções | Sim | Implementado | Descrito no BCP (SGSI-POLICY-006). |
 | A.5.30 | Prontidão das TIC para continuidade | Sim | Parcial | BCP elaborado, testes semestrais de restore *nunca realizados* (RISK-009). |
-| A.5.31 | Requisitos legais e regulamentares | Sim | Implementado | Conformidade com LGPD Art. 11 (Dados Sensíveis). |
-| A.5.32 | Direitos de propriedade intelectual | Sim | Parcial | Políticas de uso de software licenciado apenas. |
+| A.5.31 | Requisitos legais, estatutários e regulatórios | Sim | Implementado | Mapeados no LGPD (Ata DPO) e Compliance Framework. |
+| A.5.32 | Direitos de propriedade intelectual | Sim | Implementado | Política de Uso de Software e Licenciamento (SGSI-POLICY-010). |
 | A.5.33 | Proteção de registros organizacionais | Sim | Implementado | Registros vitais em S3 versionado e logs imutáveis. |
 | A.5.34 | Privacidade e dados pessoais | Sim | Implementado | Execução do RIPD (SGSI-RIPD-001) para dados biométricos. |
 | A.5.35 | Análise crítica independente | Sim | Implementado | Auditorias internas planejadas semestralmente. |
