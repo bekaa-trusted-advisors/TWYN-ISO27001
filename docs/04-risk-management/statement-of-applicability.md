@@ -19,7 +19,7 @@ A TWYN é uma provedora B2B de API de Reconhecimento Facial operando 100% remota
 |---|---|---|---|---|
 | A.5.1 | Políticas para segurança da informação | Sim | Implementado | SGSI-POLICY-001 aprovada pela diretoria. |
 | A.5.2 | Funções e responsabilidades da segurança | Sim | Implementado | Matriz RACI estabelecida (SGSI-RACI-001). |
-| A.5.3 | Segregação de funções | Sim | Parcial | Regras de RBAC ativas, porém há SPOF em cargos chave (GAP). |
+| A.5.3 | Segregação de funções | Sim | Implementado | Segregação plena inviável pelo tamanho da equipe (10 pessoas). Mitigado via controles compensatórios: logs imutáveis (CloudTrail) e aprovação de PR obrigatória. |
 | A.5.4 | Responsabilidades da direção | Sim | Implementado | Revisão da direção executada e orçamento garantido. |
 | A.5.5 | Contato com autoridades | Sim | Implementado | Contatos da ANPD mantidos pelo DPO (Pol. de SI Seç 4.6). |
 | A.5.6 | Contato com grupos especiais | Sim | Implementado | Gestor SGSI e DevOps participam de fóruns e monitoram CVEs (Pol. de SI Seç 4.6). |
