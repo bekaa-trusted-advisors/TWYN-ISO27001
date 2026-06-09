@@ -62,6 +62,11 @@ next_review: Trimestral
 ## 8. Necessidade de Mudanças no SGSI
 - Nenhuma mudança adicional de escopo é requerida. O modelo atual (Operações AWS) será defendido junto ao auditor externo.
 
+## 8.1. Questões de RH, Capacitação e Treinamento
+- **Treinamento e Conscientização de Segurança (A.6.3)**: A diretoria aprovou o orçamento para aquisição de uma plataforma de *Security Awareness Training* (simulação de phishing e quizzes). A meta de 100% de conclusão deve ser atingida neste trimestre.
+- **Treinamento Especializado (GAP-007)**: Aprovado o orçamento para a certificação oficial "ISO 27001 Lead Implementer" para o Gestor SGSI (Ricardo Esper) visando manter a competência técnica interna exigida (cláusula 7.2).
+- **Alocação de Pessoal (GAP-008)**: Foi discutida a necessidade de contratação de um Engenheiro DevOps/SRE Júnior para mitigar o risco de SPOF na operação da infraestrutura (Risco de Continuidade de Negócios). A contratação foi aprovada para o Q3.
+
 ## 9. Decisões Oficiais da Direção (Blockers Resolvidos)
 1. **Aprovação de Políticas**: O CEO aprova formalmente todo o conjunto de políticas documentadas na pasta `docs/02-policies/`, alterando o status de todas de "Draft" para "Approved" (Isto resolve o GAP-006 / NC-MAJOR-02).
 2. **Aprovação de Riscos**: O CEO aprova formalmente o Risk Treatment Plan (Plano de Tratamento de Riscos) e a Declaração de Aplicabilidade (SoA) em sua versão atual.
