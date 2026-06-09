@@ -39,6 +39,18 @@ Não podemos acessar a AWS a partir de computadores inseguros (A.8.1).
 - **Decisão**: Todos os notebooks usados para acesso root/Admin na AWS devem estar encriptados.
 - **Implementação Técnica**: Gerar evidências (capturas de tela) demonstrando o BitLocker ativado no Windows ou FileVault no macOS.
 
+### Ação Técnica 5: Habilitação de MFA na Conta Root (GAP-001)
+- **Decisão**: A conta AWS Root é o maior vetor de risco. Deve ser protegida por Hardware MFA (A.5.17, A.8.5).
+- **Implementação Técnica**: Registrar um YubiKey físico na conta Root. O token deve ser guardado em um cofre físico na sede da empresa (Break Glass procedure).
+
+### Ação Técnica 6: Rotação de Chaves Vazadas/Antigas (GAP-002)
+- **Decisão**: Chaves IAM com mais de 90 dias (como o usuário `tmpsaasboost`) violam o controle criptográfico e de acesso (A.5.18, A.8.24).
+- **Implementação Técnica**: Identificar o serviço usando `tmpsaasboost`, gerar nova Access Key, injetar no serviço via Secrets Manager e deletar a chave antiga.
+
+### Ação Técnica 7: SLA de Suporte AWS (GAP-005)
+- **Decisão**: O plano "Developer" não atende ao RTO/SLA necessário para BCP (A.5.30).
+- **Implementação Técnica**: Fazer o upgrade do plano de suporte AWS para "Business" garantindo atendimento telefônico e SLA de resposta em menos de 1 hora para incidentes críticos.
+
 ## 3. Cronograma de Deploy (Hands-on)
 | Tarefa Técnica | Ferramenta | Responsável | Prazo |
 |----------------|------------|-------------|-------|
