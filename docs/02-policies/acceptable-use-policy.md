@@ -1,66 +1,76 @@
 ---
 document_id: SGSI-POLICY-007
-title: Acceptable Use Policy (AUP)
-version: 1.0  
-annex_a_controls: "A.5.10, A.6.2"
+title: Política de Uso Aceitável (AUP)
+version: 1.0
+date: 2026-06-09
+classification: Interno
+owner: Gestor SGSI
+approved_by: CEO (Aprovado)
+next_review: Anual
+iso_clause: "A.5.10, A.6.2"
 ---
-# Acceptable Use Policy
-## 1. Purpose
-Definir uso aceitável de ativos TWYN por colaboradores e terceiros.
-## 2. Permitted Use
-✅ Trabalho relacionado a TWYN
-✅ Uso pessoal razoável (email, occasional browsing)
-✅ Acesso dentro de role permissions
-✅ Professional communication
-## 3. Prohibited Activities
-❌ Illegal activities (piracy, hacking, fraud)
-❌ Harassment, discrimination, offensive content
-❌ Unauthorized access ("just curious")
-❌ Sharing credentials  
-❌ Installing unauthorized software
-❌ Cryptocurrency mining
-❌ Spam or phishing
-❌ Bypass security controls (VPN, firewalls)
-❌ Downloading RESTRICTED data to personal devices
-## 4. Internet & Email Use
-**Acceptable**:
-- Work-related research
-- Professional networking (LinkedIn)
-- Occasional personal email
-**Unacceptable**:  
-- Pornography or adult content
-- Gambling sites
-- Torrenting/file sharing illegal content
-- Excessive personal use (>1h/day)
-## 5. Social Media
-- Personal accounts: Não representar oficialmente TWYN
-- Company accounts: Apenas pessoas autorizadas
-- Não divulgar informação CONFIDENTIAL/RESTRICTED
-## 6. Software Installation
-- Pre-approved list: VS Code, Docker, Postman, etc.
-- Approval required: Database tools, VPNs, security tools
-- Prohibited: Cracked software, unapproved cloud services
-## 7. Remote Work
-- VPN required para acesso interno
-- Secure WiFi (WPA2/WPA3, not public WiFi sem VPN)  
-- Physical security (lock screen when away)
-- Details: SOP-003 (Remote Work Security)
-## 8. Monitoring & Privacy
-TWYN reserva direito de monitorar:
-- Network traffic (firewalls, proxy logs)
-- Email (spot checks for security)
-- System logs (CloudTrail, access logs)
-Monitoring é para security/compliance, não surveillance.
-## 9. Consequences
-- 1st violation: Warning + re-training
-- 2nd violation: Written warning + access review
-- 3rd violation: Suspension or termination
-- Serious violations: Immediate termination + legal action
-## 10. Acknowledgment
-Todos colaboradores devem assinar AUP:
-- Day 1 (onboarding)
-- Anualmente (refresh)
-- Após policy updates
-Stored in: `docs/05-evidence/competence/[name]/aup-signed-YYYY.pdf`
-## 11. Approval
-Owner: Gestor SGSI | Approved: CEO (Pendente) | Review: Anual
+
+# Política de Uso Aceitável (AUP)
+
+## 1. Propósito
+Definir as regras para o uso aceitável de ativos da TWYN (equipamentos, redes, contas) por todos os colaboradores, estagiários e terceiros.
+
+## 2. Uso Permitido
+- Trabalho e atividades estritamente relacionadas às funções na TWYN.
+- Uso pessoal razoável (acesso a e-mail pessoal, navegação ocasional), desde que não impacte a produtividade ou a segurança da rede.
+- Acesso restrito às permissões concedidas pelo papel (Role-Based Access Control).
+- Comunicação profissional através dos canais oficiais (ex: Slack, E-mail corporativo).
+
+## 3. Atividades Proibidas
+- Atividades ilegais (pirataria, invasão de sistemas, fraudes).
+- Assédio, discriminação ou consumo/criação de conteúdo ofensivo.
+- Acesso não autorizado a sistemas ou dados (apenas "por curiosidade").
+- Compartilhamento de credenciais e senhas com qualquer pessoa.
+- Instalação de software não autorizado (Shadow IT).
+- Mineração de criptomoedas em ativos da empresa.
+- Envio de Spam ou atividades de Phishing.
+- Contornar controles de segurança (desativar VPN, antivírus ou firewalls).
+- Fazer download de dados RESTRITOS (ex: biometria) para dispositivos pessoais não criptografados.
+
+## 4. Uso de Internet e E-mail
+**Aceitável**:
+- Pesquisa relacionada ao trabalho.
+- Redes profissionais (LinkedIn).
+- Uso esporádico de e-mail pessoal.
+
+**Inaceitável**:
+- Conteúdo adulto ou pornografia.
+- Sites de apostas ou jogos de azar.
+- Torrent e compartilhamento de arquivos ilegais.
+- Uso pessoal excessivo durante o horário de trabalho.
+
+## 5. Mídias Sociais
+- **Contas Pessoais**: Os colaboradores não devem falar em nome da TWYN sem autorização prévia da diretoria.
+- **Contas Corporativas**: Apenas o time de Marketing/Comunicação está autorizado a postar.
+- **Estritamente Proibido**: Divulgar informações classificadas como CONFIDENCIAL ou RESTRITO nas redes sociais (ex: fotos de arquitetura, telas com dados de clientes).
+
+## 6. Instalação de Softwares
+- **Pré-aprovados**: VS Code, Docker, Postman, navegadores padrão, ferramentas do Office.
+- **Requerem Aprovação**: Ferramentas de banco de dados, extensões de navegador não homologadas, VPNs de terceiros.
+- **Proibidos**: Softwares piratas, ativadores, serviços de nuvem não aprovados (ex: salvar dados em Dropbox pessoal).
+
+## 7. Trabalho Remoto
+- O uso de VPN é obrigatório para acessar a rede interna e ambientes de produção AWS.
+- É proibido o uso de redes Wi-Fi públicas ou abertas (ex: cafés, aeroportos) sem a VPN ativada.
+- O colaborador deve garantir a segurança física do dispositivo (bloquear a tela - Win+L / Cmd+L sempre que se ausentar).
+- Para mais detalhes, consulte o documento **SGSI-SOP-003 (Procedimento de Trabalho Remoto)**.
+
+## 8. Monitoramento e Privacidade
+A TWYN reserva-se o direito de monitorar o uso de seus equipamentos e redes corporativas para proteger seus ativos e dados. Isso inclui:
+- Tráfego de rede (logs de firewall e DNS).
+- Sistemas e acessos à AWS (CloudTrail).
+*Nota: O monitoramento é exclusivamente para conformidade e segurança, não para vigilância invasiva.*
+
+## 9. Consequências por Violação
+- **1ª Violação**: Advertência verbal e retreinamento de segurança.
+- **2ª Violação**: Advertência formal por escrito e revisão dos acessos.
+- **3ª Violação**: Suspensão.
+- **Violações Graves**: Demissão por justa causa imediata e possíveis ações legais, especialmente em caso de vazamento de dados biométricos.
+
+## 10. Termo de Aceite
+Todos os colaboradores e terceiros com acesso à rede da TWYN devem ler e assinar este documento no momento da contratação (Onboarding) e anualmente.

@@ -1,235 +1,82 @@
 ---
 document_id: SGSI-POLICY-004
-title: Asset Management Policy
+title: Política de Gestão de Ativos
 version: 1.0
-date: 2026-05-26
-annex_a_controls: "A.5.9, A.5.10, A.5.11, A.5.12"
+date: 2026-06-09
+classification: Interno
+owner: Gestor SGSI
+approved_by: CEO (Aprovado)
+next_review: Anual
+annex_a_controls: "A.5.9, A.5.10, A.5.11, A.5.12, A.5.13"
 ---
 
-# Asset Management Policy
+# Política de Gestão de Ativos
 
-## 1. Purpose
-Identificar, classificar, e proteger ativos de informação conforme seu valor de negócio e criticidade.
+## 1. Propósito
+Identificar, classificar e proteger os ativos de informação da TWYN de acordo com seu valor de negócio e criticidade para a organização.
 
-## 2. Scope
-Todos os ativos no escopo ISMS:
-- **Information Assets**: Dados biométricos, código-fonte, documentação ISO, credentials
-- **Infrastructure**: AWS resources (EC2, RDS, S3, EKS)
-- **Software**: Aplicações, libraries, containers
-- **People**: Colaboradores com conhecimento crítico
+## 2. Escopo
+Todos os ativos pertencentes ao escopo do SGSI da TWYN:
+- **Ativos de Informação**: Dados biométricos, códigos-fonte, documentação do SGSI, credenciais, segredos, chaves de API.
+- **Infraestrutura**: Recursos na AWS (EC2, RDS, S3, EKS).
+- **Software**: Aplicações, bibliotecas de terceiros, containers.
+- **Pessoas**: Colaboradores com conhecimento crítico do negócio.
 
-## 3. Asset Inventory
-**Mandatory**: Manter inventory atualizado em SGSI-ASSETS-001
+## 3. Inventário de Ativos
+É obrigatório manter o inventário de ativos atualizado.
+- **Campos obrigatórios**: ID do Ativo, Nome, Tipo, Proprietário (Owner), Custodiante, Classificação, Localização, Status e Riscos associados.
+- **Frequência de Atualização**:
+  - *Imediata*: Para novos ativos críticos ou mudanças de proprietário.
+  - *Trimestral*: Auditoria geral do inventário.
 
-**Campos obrigatórios**:
-- Asset ID, Nome, Tipo, Owner, Custodian
-- Classification, Location, Status
-- Last update, Dependencies, Risks
+## 4. Classificação da Informação (A.5.12)
 
-**Update frequency**:
-- Imediatamente: Novos ativos, mudanças de owner
-- Mensal: Validação geral
-- Trimestral: Deep audit
+### Níveis de Classificação
+1. **PÚBLICO (PUBLIC)**:
+   - Informações que podem ser divulgadas externamente sem restrição (ex: site público, manuais abertos).
+2. **INTERNO (INTERNAL)**:
+   - Documentos internos, e-mails corporativos, processos não-sensíveis.
+   - Acesso restrito a colaboradores e contratados da TWYN.
+3. **CONFIDENCIAL (CONFIDENTIAL)**:
+   - Repositórios de código (Terraform), configurações arquiteturais, senhas e credenciais, dados financeiros.
+   - Controle estrito de acesso (menor privilégio).
+4. **RESTRITO (RESTRICTED)**:
+   - **Dados biométricos (Sensíveis - LGPD Art. 11)**.
+   - Acesso exclusivo via VPN para o time de infraestrutura autorizado pelo Gestor do SGSI.
+   - Obrigatória criptografia em repouso e em trânsito (AES-256 ou superior).
 
-## 4. Information Classification
+## 5. Manuseio de Ativos (A.5.10, A.5.13)
 
-### Levels
-**PUBLIC**: 
-- Informação pública (website, marketing)
-- Nenhuma proteção especial
+### Armazenamento
+- **INTERNO**: Google Workspace (Drive), Slack corporativo.
+- **CONFIDENCIAL/RESTRITO**: Armazenamento exclusivo em serviços de nuvem controlados (ex: AWS S3 com criptografia KMS ativada, AWS Secrets Manager).
 
-**INTERNAL**: 
-- Documentos internos, emails, código não-sensível
-- Acesso apenas colaboradores TWYN
-- Encryption in transit
+### Transmissão
+- Dados **RESTRITOS** não devem ser enviados por e-mail ou Slack em nenhuma circunstância. Devem ser geradas URLs temporárias do S3 (Pre-Signed URLs).
+- Proibido o uso de pendrives ou HDs externos para arquivos Confidenciais ou Restritos.
 
-**CONFIDENTIAL**:
-- Repositórios de IaC (Terraform), configurações AWS, credenciais
-- Access control (least privilege)
-- Encryption at-rest + in-transit
-- Audit logging
+### Descarte e Destruição
+- **Dados**: Exclusão segura (remoção de chaves KMS ou substituição criptográfica) quando o período de retenção expirar.
+- **Hardware**: O descarte de discos (se houver infraestrutura local, o que não é o caso padrão do SaaS) exige sanitização com ferramenta de wiping.
 
-**RESTRICTED** (categoria especial LGPD):
-- **Dados biométricos** (embeddings faciais)
-- Strict access control (DevOps + autorização Gestor SGSI)
-- Encryption AES-256
-- Geographic restrictions (data residency)
-- Retention limits (delete após X dias se não mais necessário)
-- Pseudonymization quando possível
+## 6. Papéis e Responsabilidades
 
-### Labeling
-- Documentos: Header/footer "CONFIDENTIAL - TWYN"
-- Emails: Subject prefix [CONFIDENTIAL]
-- Files: Metadata tags
-- S3 buckets: Tags (Classification: Restricted)
+- **Proprietário do Ativo (Owner)**: Define a classificação da informação, aprova acessos e estabelece os períodos de retenção (ex: CEO, CTO).
+- **Custodiante**: Implementa os controles técnicos de segurança sobre o ativo (ex: DevOps Lead aplica regras no S3).
+- **Usuário**: Utiliza o ativo em conformidade com as regras de manuseio.
 
-## 5. Asset Handling
+## 7. Dispositivos Físicos e Laptops (A.8.1)
+- **Criptografia**: Todos os notebooks utilizados pela equipe da TWYN que acessam a AWS devem ter o disco totalmente criptografado (FDE - BitLocker ou FileVault).
+- **Bloqueio de Tela**: Configurado para travamento automático após 15 minutos de inatividade.
+- **Antivírus**: Solução de endpoint protection sempre atualizada e ativa.
+- O uso de dispositivos pessoais (BYOD) para acessar o ambiente de produção da AWS é proibido.
 
-### Storage
-- **INTERNAL+**: Google Drive corporativo, Slack
-- **CONFIDENTIAL**: GitHub (private repos), AWS
-- **RESTRICTED**: S3 com KMS encryption, RDS com encryption at-rest
+## 8. Ativos em Nuvem (AWS) e Uso de Software
+- Todos os recursos criados na nuvem devem utilizar **Tags obrigatórias** (`Environment`, `Owner`, `Classification`).
+- A infraestrutura deve ser gerenciada como código (Terraform). Alterações manuais em produção são proibidas sem ticket de mudança.
+- Todos os softwares utilizados pelos colaboradores devem ser devidamente licenciados e aprovados pela diretoria.
 
-### Transmission
-- Email: CONFIDENTIAL ou menos (TLS)
-- RESTRICTED: Nunca via email (usar signed S3 URLs temporários)
-- USB drives: Proibido para CONFIDENTIAL/RESTRICTED
-
-### Disposal
-- **Dados**: Secure delete (overwrite 3x ou AWS KMS key deletion)
-- **Hardware**: Wiping certificado ou destruição física
-- **Paper**: Shredding
-- **Logs de deletion**: Manter evidência
-
-## 6. Asset Ownership
-
-### Roles
-**Asset Owner**: 
-- Responsável por classificação
-- Aprova access requests
-- Define retention period
-- Exemplo: CEO (business data), CTO (technical assets)
-
-**Asset Custodian**: 
-- Implementa proteções técnicas
-- Monitora compliance
-- Exemplo: DevOps Lead (AWS infra), Gestor SGSI (docs ISO)
-
-**Users**: 
-- Seguem handling rules
-- Reportam problemas
-
-### RACI
-Detalhado em SGSI-RACI-001
-
-## 7. Acceptable Use
-
-### Permitted
-- Uso para fins de trabalho TWYN
-- Acesso dentro de role permissions
-- Personal use razoável (email, occasional browsing)
-
-### Prohibited
-- Download de software não autorizado
-- Uso de ativos TWYN para negócios pessoais
-- Sharing de credenciais
-- Acesso não autorizado (mesmo "only looking")
-- Bypass de security controls
-
-### BYOD
-- Permitido se: Full disk encryption + screen lock + antivirus
-- Não armazenar RESTRICTED em devices pessoais
-- Wipe remoto habilitado (MDM se necessário)
-
-## 8. Physical Assets
-
-### Laptops
-- Encryption obrigatória (BitLocker/FileVault)
-- Screen lock após 5 min
-- Antivirus atualizado
-- Reportar perda/roubo imediatamente (remote wipe)
-
-### Mobile Devices
-- MFA setup
-- Passcode obrigatório
-- Company data em app containerizado (se possível)
-
-### Office Equipment
-- Não aplicável (cloud-only, trabalho remoto)
-
-## 9. Lifecycle Management
-
-### Acquisition
-- Approval process (requisition → manager → procurement)
-- Add to inventory upon arrival
-- Onboarding setup (encryption, monitoring)
-
-### Operation
-- Regular patching/updates
-- Monitoring (CloudWatch, GuardDuty)
-- Access reviews (quarterly)
-
-### Decommissioning
-- Remove from inventory
-- Revoke all access
-- Secure disposal
-- Document in Asset Inventory (status: Decommissioned)
-
-## 10. Cloud Assets (AWS)
-
-### Tagging Strategy
-Obrigatório para todos recursos AWS:
-- `Environment`: prod/staging/dev
-- `Owner`: email do owner
-- `Classification`: public/internal/confidential/restricted
-- `CostCenter`: budget allocation
-- `ManagedBy`: terraform/manual
-
-### Resource Management
-- Use IaC (Terraform) sempre que possível
-- No manual changes in prod without change ticket
-- Unused resources deleted monthly (cost optimization)
-
-## 11. Software Assets
-
-### Licensing
-- Only licensed software
-- Track licenses in Asset Inventory
-- Audit annually (compliance)
-
-### Open Source
-- Approved licenses only (permissive: MIT, Apache 2.0)
-- No GPL in proprietary code (contamination risk)
-- SBOM (Software Bill of Materials) maintained
-
-### Dependencies
-- Automated vulnerability scanning (Dependabot)
-- Patch HIGH/CRITICAL within 30 days
-
-## 12. Intellectual Property
-
-### Ownership
-- Infraestrutura como Código (Terraform): Propriedade TWYN
-- Contratos de trabalho incluem IP assignment clause
-- Consultores: Work-for-hire agreements
-
-### Protection
-- Non-disclosure agreements (NDAs) para terceiros
-- Code não open-sourced sem approval CEO
-- Patents/trademarks registrados quando aplicável
-
-## 13. Media Handling
-
-### Removable Media
-- USB drives: Encrypted, approved only
-- External HDDs: Prohibited para RESTRICTED data
-- CDs/DVDs: Not used (legacy)
-
-### Backups
-- S3 versioning (logical backups)
-- RDS automated snapshots (7 days)
-- Cross-region replication (DR)
-- Test restoration quarterly (GAP-004)
-
-## 14. Monitoring & Compliance
-
-### Audit
-- Trimestral: Asset inventory accuracy
-- Anual: Classification review (over/under classified?)
-- Ad-hoc: Após incidents
-
-### Metrics
-- % assets with classification: Target 100%
-- % assets with defined owner: Target 100%
-- Assets >1 year without review: Target 0
-
-## 15. Related Documents
-- SGSI-ASSETS-001: Asset Inventory (full list)
-- SGSI-POLICY-001: Information Security Policy
-- SOP-001: Onboarding (asset assignment)
-- SOP-004: Secrets Management (credential assets)
-
-## 16. Approval
-- **Owner**: Gestor SGSI
-- **Approved By**: CEO (Pendente)
-- **Next Review**: 2026-12-31
+## 9. Histórico de Revisão
+| Data | Versão | Autor | Descrição |
+|------|--------|-------|-----------|
+| 2026-06-09 | 1.0 | Gestor SGSI | Tradução e adaptação estrutural para certificação (PT-BR). |

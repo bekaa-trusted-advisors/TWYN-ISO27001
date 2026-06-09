@@ -1,140 +1,60 @@
 ---
 document_id: SGSI-POLICY-003
-title: Incident Response Policy
+title: Política de Resposta a Incidentes
 version: 2.0
-date: 2026-06-02
-annex_a_controls: "A.5.24, A.5.25, A.5.26, A.5.27, A.5.28"
+date: 2026-06-09
+classification: Interno
 owner: Gestor SGSI
-approved_by: CEO (Aprovado - Ata 001)
+approved_by: CEO (Aprovado)
+next_review: Anual
+annex_a_controls: "A.5.24, A.5.25, A.5.26, A.5.27, A.5.28"
 ---
 
-# Incident Response Policy
+# Política de Resposta a Incidentes
 
-## 1. Purpose
-Estabelecer procedimentos para detectar, responder, e recuperar de incidentes de segurança da informação, em conformidade com a ISO 27001 e os requisitos de notificação de incidentes da Lei Geral de Proteção de Dados Pessoais (LGPD).
+## 1. Propósito
+Estabelecer procedimentos para detectar, responder e se recuperar de incidentes de segurança da informação, em conformidade com a ISO 27001 e com os requisitos de notificação de incidentes da Lei Geral de Proteção de Dados Pessoais (LGPD - vazamento de biometria).
 
-## 2. Scope
-- Todos os incidentes afetando a confidencialidade, integridade ou disponibilidade da informação.
-- Plataforma Face ID (Face ID Platform API), infraestrutura AWS e dados biométricos.
-- Aplicável a todos os colaboradores, contratados e terceiros da TWYN.
+## 2. Escopo
+Aplica-se a todos os colaboradores, prestadores de serviço e fornecedores que interagem com o ambiente tecnológico da TWYN (AWS, GitHub, sistemas corporativos) e tratam dados da empresa ou de seus clientes.
 
-## 3. Incident Classification (Severity Levels)
+## 3. Fases da Resposta a Incidentes (A.5.26)
 
-**CRITICAL (P0)**:
-- Vazamento confirmado de dados biométricos (Data Breach).
-- Infecção ativa por Ransomware.
-- Indisponibilidade total do ambiente de produção.
-- **Tempo de Resposta (SLA):** < 15 minutos
+### Fase 1: Preparação
+- Manutenção de canais de alerta (CloudWatch, GuardDuty, alertas do GitHub).
+- Treinamento anual da equipe técnica sobre identificação de anomalias.
+- Realização de simulação de incidentes de segurança pelo menos uma vez por ano.
 
-**HIGH (P1)**:
-- Acesso não autorizado confirmado ao ambiente de produção ou banco de dados.
-- Malware detectado em sistemas críticos (ex: containers EKS, instâncias EC2).
-- Degradação severa de performance impactando múltiplos clientes.
-- **Tempo de Resposta (SLA):** < 1 hora
-
-**MEDIUM (P2)**:
-- Campanha de phishing bem-sucedida (credenciais de colaboradores comprometidas).
-- Vulnerabilidade HIGH/CRITICAL descoberta em produção sem exploit ativo.
-- **Tempo de Resposta (SLA):** < 4 horas
-
-**LOW (P3)**:
-- Tentativas de login falhadas (brute force) bloqueadas.
-- Alertas de anomalia isolada no GuardDuty / WAF.
-- **Tempo de Resposta (SLA):** < 24 horas
-
-**INFORMATIONAL (P4)**:
-- Scans de rede passivos bloqueados pelo firewall.
-- E-mails de phishing reportados e não clicados.
-- **Tempo de Resposta (SLA):** Revisão semanal
-
-## 4. Processo de Resposta a Incidentes
-
-### Fase 1: Detecção & Reporte
-**Fontes de Detecção**:
-- Alertas automatizados (AWS GuardDuty, AWS Security Hub, CloudWatch).
-- Notificações de usuários ou clientes (email: security@twyn.com).
-- Revisão contínua de logs e relatórios de auditoria.
-
-**Reporte Interno**:
-- Qualquer colaborador que suspeitar de um incidente deve contatar imediatamente o email `security@twyn.com` ou utilizar o canal do Slack `#security-incidents`.
-- Emergências (P0/P1) devem ser escaladas por telefone para o Gestor SGSI e DevOps Lead.
-
-### Fase 2: Classificação & Escalada
-**Gerente do Incidente (Incident Commander):** Gestor SGSI (Ricardo Esper)
-**Líder Técnico:** DevOps Lead
-
-**Fluxo de Escalada**:
-1. **Triagem Inicial:** O DevOps Lead analisa o alerta e classifica a severidade (P0 a P4).
-2. **Notificação P0/P1:** O CEO e o Gestor SGSI são acionados em até 15 minutos via telefone. Um "War Room" (sala de crise virtual) é estabelecido.
-3. **Notificação P2:** O Gestor SGSI é notificado via Slack/Email para acompanhamento.
-4. **Notificação P3/P4:** O ticket é registrado no sistema para investigação em horário comercial.
+### Fase 2: Identificação e Relato (A.5.24)
+- **Obrigação de relatar**: Qualquer colaborador que suspeitar de um incidente (phishing, acesso não autorizado, credenciais vazadas) deve relatar imediatamente ao Gestor SGSI através do e-mail oficial (security@twyn) ou canal designado no Slack (#security-alerts).
+- O Gestor do SGSI fará a triagem inicial e ativará o Comitê de Resposta a Incidentes, caso o impacto seja confirmado.
 
 ### Fase 3: Contenção
-**Ações Imediatas (P0/P1):**
-1. Isolar sistemas afetados (desconectar EC2 da rede via Security Groups, desligar containers K8s comprometidos).
-2. Preservar evidências (capturar snapshots de disco/RDS antes de qualquer reinicialização).
-3. Revogar imediatamente credenciais suspeitas (IAM, banco de dados, VPN).
-4. Bloquear IPs maliciosos no AWS WAF.
-5. Invocar o Plano de Continuidade de Negócios (BCP) se a contenção resultar em downtime prolongado.
+- **Contenção a Curto Prazo**: Isolar imediatamente o ativo comprometido (ex: desativar credencial IAM vazada, revogar token GitHub, isolar instância EC2 em um Security Group restrito).
+- **Contenção a Longo Prazo**: Remoção temporária do serviço do ar se houver risco contínuo à base de dados biométrica (RESTRICTED).
 
-### Fase 4: Erradicação
-- Identificar e remover a causa raiz (malware, backdoor, credencial exposta).
-- Aplicar patches de segurança para vulnerabilidades exploradas.
-- Resetar e forçar a rotação de todas as senhas/chaves associadas ao vetor de ataque.
-- Reconstruir a infraestrutura afetada a partir de imagens imutáveis limpas (IaC via Terraform).
+### Fase 4: Erradicação e Avaliação de Vulnerabilidades (A.5.25)
+- Eliminar a causa raiz (ex: correção de bug em código, remoção de malware).
+- Analisar os logs (CloudTrail, Access Logs) para entender a extensão do dano e se houve exfiltração de dados (vazamento).
 
 ### Fase 5: Recuperação
-- Restaurar dados a partir do último backup validado.
-- Iniciar os serviços de forma gradual, monitorando logs de perto por 72 horas para garantir que não há reinfecção.
-- Validar a eficácia dos novos controles de segurança implementados.
+- Restaurar sistemas a partir de backups limpos e testados (conforme SGSI-POLICY-005 - Política de Backup).
+- Validar se o sistema está operando de forma normal e segura antes de reabrir os acessos aos usuários finais.
 
-### Fase 6: Revisão Pós-Incidente (Post-Mortem)
-- **Prazo:** Em até 48 horas após a contenção final.
-- **Entregáveis:** Relatório Post-Mortem contendo causa raiz, cronograma dos eventos, lições aprendidas e Ações Corretivas (CARs).
-- **Armazenamento:** `docs/05-evidence/incidents/YYYY-MM-incident-name.md`
+### Fase 6: Lições Aprendidas (Post-Mortem) (A.5.28)
+- Um relatório post-mortem deve ser redigido num prazo máximo de 5 dias úteis após a resolução do incidente.
+- O relatório deve documentar a causa raiz, tempo de detecção, impacto gerado e medidas para evitar recorrência.
 
-## 5. Plano de Comunicação e Notificação à ANPD
+## 4. Gestão de Crise e LGPD (Notificações Legais)
+- **Incidente envolvendo Dados Biométricos (LGPD Art. 11)**:
+  - Caso haja confirmação de vazamento de dados biométricos, a Autoridade Nacional de Proteção de Dados (ANPD) e os titulares dos dados afetados devem ser comunicados no prazo máximo legal estipulado pela legislação (via DPO).
+- Comunicações externas (imprensa e clientes corporativos) devem ser aprovadas exclusivamente pelo CEO.
 
-### Comunicação Interna
-- **P0/P1:** Updates a cada 2 horas para o Board (CEO, Gestor SGSI). Reunião All-hands pós-incidente.
+## 5. Coleta e Preservação de Evidências (A.5.28)
+- Antes de reconstruir a máquina/ambiente comprometido, a equipe técnica (DevOps) deve garantir a coleta de logs, snapshot de disco e do estado do sistema.
+- As evidências devem ser guardadas de forma segura (armazenamento criptografado no S3) caso seja necessária perícia legal futura.
 
-### Comunicação com Clientes
-- Notificar clientes afetados em até 24 horas se houver comprometimento de disponibilidade ou confidencialidade dos seus dados.
-
-### Notificação à Autoridade Nacional de Proteção de Dados (ANPD)
-Se o incidente envolver vazamento ou acesso não autorizado a dados pessoais (biometria) que possa acarretar risco ou dano relevante aos titulares:
-1. **Prazo:** O DPO (Ricardo Esper - resper@bekaa.eu) deve notificar a ANPD em até **2 dias úteis** contados da ciência do incidente (conforme diretrizes da ANPD).
-2. **Contatos Oficiais ANPD:**
-   - **Sistema de Peticionamento Eletrônico (Super.BR):** [Acessar Portal ANPD](https://www.gov.br/anpd/pt-br)
-   - **E-mail de Suporte Incidentes:** `incidentes@anpd.gov.br` (Apenas para dúvidas, a notificação oficial deve via formulário).
-3. **Template de Notificação (O que informar):**
-   - Natureza dos dados pessoais afetados (biometria facial).
-   - Informações sobre os titulares envolvidos.
-   - Indicação das medidas técnicas e de segurança utilizadas para proteção.
-   - Riscos relacionados ao incidente.
-   - Medidas que foram ou serão adotadas para reverter ou mitigar os efeitos.
-
-### Contato com Autoridades Policiais (Delegacia de Crimes Cibernéticos)
-Em caso de ataque de ransomware, invasão extorsiva ou fraude cibernética, a ocorrência deve ser escalada pelo Jurídico/Diretoria para as autoridades legais.
-- **DCCIBER (Polícia Civil de SP):**
-  - **Endereço:** Av. São João, 1247 - Centro, São Paulo - SP
-  - **Telefones:** (11) 3311-3148 / 3311-3151
-  - **Registro Online:** Delegacia Eletrônica (Crimes Cibernéticos)
-- **Atenção:** Qualquer evidência forense (logs de invasão) deve ser preservada intocada antes da entrega às autoridades.
-
-### Comunicação com a Mídia
-- Somente o CEO ou porta-voz designado (em coordenação com o departamento jurídico) está autorizado a falar publicamente sobre o incidente.
-
-## 6. Preservação de Evidências
-- Nunca desligar máquinas virtuais ou excluir logs sem antes realizar uma cópia forense.
-- Manter a cadeia de custódia documentada (quem acessou a evidência e quando).
-- Evidências de incidentes P0/P1 devem ser retidas por no mínimo 5 anos.
-
-## 7. Exercícios e Testes (Drills)
-- Exercícios de mesa (Tabletop) anuais simulando incidentes P0 (ex: ataque de ransomware e vazamento de banco de dados).
-- Campanhas de phishing simulado trimestrais para todos os colaboradores.
-
-## 8. Aprovação
-- **Proprietário:** Gestor SGSI
-- **Aprovado Por:** CEO (Pendente)
-- **Próxima Revisão:** 2026-12-31
+## 6. Histórico de Revisão
+| Data | Versão | Autor | Descrição |
+|------|--------|-------|-----------|
+| 2026-06-09 | 2.0 | Gestor SGSI | Tradução integral para PT-BR, adequação da estrutura de YAML e refinamento de controles ISO 27001. |

@@ -1,61 +1,47 @@
 ---
-**Document Control**
-| Campo | Valor |
-|-------|-------|
-| **Document ID** | SGSI-POLICY-011 |
-| **Version** | 1.0 |
-| **Author** | BEKAA Consultoria — Ricardo Esper |
-| **Approved By** | **CEO (Ata 001)** |
-| **Approval Date** | 2026-06-08 |
-| **Effective Date** | 2026-06-08 |
-| **Próxima Revisão** | Anual após aprovação |
-| **ISO 27001:2022 Mapping** | **A.8.24**, **A.8.25** |
-| **Classification** | **PUBLIC** |
+document_id: SGSI-POLICY-011
+title: Política de Criptografia
+version: 1.0
+date: 2026-06-09
+classification: Público
+owner: Gestor SGSI
+approved_by: CEO (Aprovado)
+next_review: Anual
+annex_a_controls: "A.8.24, A.8.25"
 ---
 
 # Política de Criptografia
-## Cryptography Policy — TWYN
-
----
 
 ## 1. Propósito
-
-Garantir a confidencialidade, a integridade e a autenticidade das informações protegidas pela TWYN, formalizando o uso obrigatório de controles criptográficos efetivos e robustos em repouso e em trânsito. Esta política assegura a aderência legal à privacidade de dados biométricos exigida pela LGPD.
-
----
+Garantir a confidencialidade, integridade e autenticidade das informações tratadas pela TWYN, formalizando o uso obrigatório de controles criptográficos robustos (em repouso e em trânsito). Esta política é essencial para aderência à proteção de dados biométricos exigida pela LGPD.
 
 ## 2. Escopo
+Aplica-se a toda a infraestrutura (Servidores, Bancos de Dados, Buckets S3), aplicações da Face ID Platform API, comunicações de rede e dispositivos de usuários que manipulem dados classificados como CONFIDENCIAL ou RESTRITO.
 
-Aplica-se a toda infraestrutura (Servidores, Bancos de Dados, Buckets S3), aplicações da Plataforma Face ID, comunicações de rede e endpoints de usuários que manipulem dados classificados como CONFIDENTIAL ou RESTRICTED.
-
----
-
-## 3. Diretrizes de Uso da Criptografia
+## 3. Diretrizes de Uso da Criptografia (A.8.24)
 
 ### 3.1 Criptografia em Trânsito
-Todas as comunicações envolvendo sistemas da TWYN, clientes da API e ambientes internos, incluindo tráfego público e autenticação, devem ocorrer através de protocolos seguros.
-- O uso de **TLS 1.2** é o mínimo obrigatório, sendo o **TLS 1.3** a recomendação padrão (Default).
-- É estritamente proibido o tráfego HTTP em texto claro ou uso de protocolos legados (SSLv3, TLS 1.0/1.1) para expor a API Face ID na internet.
+Todas as comunicações envolvendo sistemas da TWYN, clientes da API e ambientes internos devem ocorrer através de protocolos seguros.
+- O uso de **TLS 1.2** é o mínimo obrigatório, sendo o **TLS 1.3** a recomendação padrão.
+- É estritamente proibido o tráfego HTTP em texto claro ou uso de protocolos obsoletos (SSLv3, TLS 1.0/1.1) para exposição na internet.
 - Chaves SSH seguras (ED25519 ou RSA ≥ 2048-bit) devem ser usadas para acessos administrativos.
 
 ### 3.2 Criptografia em Repouso
-Dados biométricos e operacionais da TWYN armazenados fisicamente (discos, bancos e nuvem) devem ser encriptados para evitar o acesso não autorizado por agentes físicos ou invasores.
-- **Armazenamento em Nuvem:** Bancos de dados (Amazon RDS) e objetos (S3) devem estar 100% criptografados utilizando algoritmos simétricos robustos, preferencialmente **AES-256**.
-- **Dispositivos Físicos:** Os laptops e workstations dos colaboradores que possuam qualquer nível de acesso aos sistemas da TWYN devem possuir criptografia total de disco nativa (FDE - Full Disk Encryption), como BitLocker para Windows ou FileVault para macOS (Controle A.8.1).
+Dados biométricos e dados operacionais da TWYN armazenados fisicamente devem ser encriptados para evitar o acesso não autorizado.
+- **Armazenamento em Nuvem:** Bancos de dados (Amazon RDS) e objetos (S3) devem estar obrigatoriamente criptografados utilizando algoritmos simétricos robustos (ex: **AES-256**) combinados ao AWS KMS.
+- **Dispositivos Físicos:** Os notebooks e estações de trabalho dos colaboradores com acesso aos sistemas da TWYN devem possuir criptografia total de disco (FDE - Full Disk Encryption), como BitLocker para Windows ou FileVault para macOS.
 
----
-
-## 4. Gestão de Chaves Criptográficas (Key Management)
-
-Os processos detalhados para a operação do ciclo de vida das chaves estão definidos no *SGSI-SOP-004 - Gestão de Segredos*. Os princípios fundamentais ditados por esta política incluem:
-- **Separação de Funções:** As chaves (KMS) que criptografam as bases biométricas não podem ser livremente exportadas ou acessadas por desenvolvedores.
-- **Rotação:** Todas as chaves e segredos em nuvem devem ser rotacionados regularmente de acordo com as metodologias do provedor AWS.
-- **Perda e Comprometimento:** O comprometimento de uma chave privada ou KMS Master Key configurará um Incidente de Segurança Crítico e acionará os mecanismos do *Incident Response Plan*.
-
----
+## 4. Gestão de Chaves Criptográficas (A.8.25)
+Os processos detalhados para a gestão do ciclo de vida das chaves estão definidos no documento de procedimento técnico (SGSI-SOP-004 - Gestão de Segredos).
+- **Separação de Funções:** As chaves (KMS) que criptografam as bases biométricas não podem ser exportadas livremente ou acessadas por desenvolvedores.
+- **Rotação:** Todas as chaves e segredos em nuvem devem ser rotacionados regularmente de acordo com as diretrizes de segurança da nuvem AWS.
+- **Perda e Comprometimento:** O comprometimento de uma chave privada ou KMS Master Key configura um Incidente de Segurança Crítico.
 
 ## 5. Exceções e Algoritmos Obsoletos
+- É expressamente proibido à equipe de engenharia criar rotinas próprias de "hash" ou implementar algoritmos caseiros. Apenas bibliotecas criptográficas validadas e de amplo uso de mercado são permitidas.
+- O uso de funções de hash consideradas fracas para armazenamento de senhas (ex: MD5, SHA-1) é proibido. Deve-se utilizar algoritmos robustos com sal e derivação lenta (ex: Argon2, bcrypt ou PBKDF2).
 
-É expressamente proibido aos desenvolvedores criar rotinas próprias de "hash" ou implementar algoritmos caseiros. Somente bibliotecas criptográficas de amplo uso de mercado são permitidas.
-
-O uso de funções de Hash consideradas fracas para armazenamento de senhas (ex: MD5 ou SHA-1 isolados) é proibido, devendo-se utilizar algoritmos robustos com *Salt* e *Key Stretching* (como Argon2, bcrypt ou PBKDF2).
+## 6. Histórico de Revisão
+| Data | Versão | Autor | Descrição |
+|------|--------|-------|-----------|
+| 2026-06-09 | 1.0 | Gestor SGSI | Conversão do cabeçalho para YAML padrão e padronização (PT-BR). |
