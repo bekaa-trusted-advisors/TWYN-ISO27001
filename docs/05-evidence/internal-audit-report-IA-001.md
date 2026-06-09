@@ -424,7 +424,7 @@ A utilização de GitHub como repositório do SGSI e Terraform como ferramenta d
 | 3 | Habilitar AWS Config e GuardDuty com regras CIS | NC-MAJOR-04, CAR-003 | DevOps Lead | 15/06/2026 |
 | 4 | Aprovar formalmente todos os documentos do SGSI (atualizar status de Draft para Approved) | NC-MAJOR-02 | Gestor SGSI + CEO | 15/06/2026 |
 | 5 | Agendar e conduzir a primeira Management Review | NC-MAJOR-01 | CEO + Gestor SGSI | 30/06/2026 |
-| 6 | Designar formalmente o DPO com comunicação à ANPD | NC-MAJOR-06 | CEO | 30/06/2026 |
+| 6 | Designar formalmente o DPO com comunicação à ANPD | NC-MAJOR-06 | CEO | Concluído |
 | 7 | Iniciar Track 1 do programa de treinamento (Universal — todos os colaboradores) | NC-MINOR-01 | Gestor SGSI | 30/06/2026 |
 | 8 | Coletar aceite formal da AUP de todos os colaboradores | NC-MINOR-05 | Gestor SGSI | 30/06/2026 |
 
@@ -507,7 +507,7 @@ As seguintes não-conformidades devem ser registradas no Registro de Não-Confor
 | NCR-007 | Major | NC-MAJOR-03 — tmpsaasboost (referência existente: NCR-002/CAR-002) | OPEN |
 | NCR-008 | Major | NC-MAJOR-04 — AWS Config/GuardDuty (referência existente: CAR-003) | OPEN |
 | NCR-009 | Major | NC-MAJOR-05 — DR Testing (referência existente: CAR-004) | OPEN |
-| NCR-010 | Major | NC-MAJOR-06 — Designação DPO | OPEN |
+| NCR-010 | Major | NC-MAJOR-06 — Designação DPO | CLOSED |
 | NCR-011 | Major | NC-MAJOR-07 — Independência do Auditor | OPEN |
 | NCR-012 | Minor | NC-MINOR-01 — Treinamento | OPEN |
 | NCR-013 | Minor | NC-MINOR-02 — Registros NCR | OPEN |
@@ -524,7 +524,7 @@ As seguintes não-conformidades devem ser registradas no Registro de Não-Confor
 | CAR-004 | NC-MAJOR-05 (DR Testing) | OPEN | MEDIUM |
 | CAR-005 (novo) | NC-MAJOR-01 (Management Review) | CLOSED | CRITICAL |
 | CAR-006 (novo) | NC-MAJOR-02 (Aprovação de Documentos) | CLOSED | CRITICAL |
-| CAR-007 (novo) | NC-MAJOR-06 (Designação DPO) | OPEN | HIGH |
+| CAR-007 (novo) | NC-MAJOR-06 (Designação DPO) | CLOSED | HIGH |
 
 ### 8.3 Próximas Auditorias
 
@@ -574,7 +574,7 @@ As seguintes não-conformidades devem ser registradas no Registro de Não-Confor
 | 4.1, 4.2, 4.3 | Escopo bem definido, partes interessadas identificadas | ✅ Conforme |
 | 5.1 | Sem evidência de comprometimento da liderança (Management Review pendente) | ❌ NC-MAJOR-01 |
 | 5.2 | Política sem aprovação formal | ❌ NC-MAJOR-02 |
-| 5.3 | Papéis definidos (RACI), mas DPO sem designação formal | ❌ NC-MAJOR-06 |
+| 5.3 | Papéis definidos (RACI) e DPO nomeado formalmente | ✅ Conforme |
 | 6.1 | Gestão de riscos robusta e contextualizada | ✅ Conforme |
 | 6.2 | Objetivos de segurança definidos e mensuráveis | ✅ Conforme |
 | 7.1 | Recursos alocados. SPOF inicial (OBS-01) justificado via controles compensatórios e aprovado pela diretoria. | ✅ Conforme |
