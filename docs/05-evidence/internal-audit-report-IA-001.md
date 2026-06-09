@@ -299,7 +299,7 @@ A auditoria foi conduzida utilizando uma abordagem baseada em:
 #### OBS-01: Single Point of Failure (SPOF) no Papel de DevOps Lead
 
 - **Descrição**: O DevOps Lead (Ricardo Esper) acumula simultaneamente os papéis de Gestor SGSI, DPO, DevOps Lead e único administrador da infraestrutura AWS. Este cenário configura um Single Point of Failure (SPOF) significativo, documentado no Registro de Riscos como RISK-015 (Score: 12 — CRITICAL).
-- **Recomendação**: Contratar um DevOps Junior ou SRE para distribuir responsabilidades operacionais e reduzir o risco de indisponibilidade em caso de ausência do titular. Alternativamente, estabelecer procedimento documentado de break-glass para acesso de contingência por outro membro da equipe. Este item está previsto no orçamento como investimento de €40-50k/ano para Q3 2026.
+- **Recomendação**: O tamanho atual da equipe (10 pessoas) inviabiliza a segregação plena exigida pelo controle A.5.3. Recomenda-se a mitigação via controles compensatórios: rastreabilidade absoluta (CloudTrail/logs imutáveis) e obrigatoriedade de aprovação por terceiros nas requisições de mudança (Pull Requests). O risco foi aceito pela diretoria nestas condições.
 
 ---
 
@@ -444,7 +444,7 @@ A utilização de GitHub como repositório do SGSI e Terraform como ferramenta d
 
 | # | Ação | Referência | Responsável | Prazo |
 |---|---|---|---|---|
-| 16 | Contratar DevOps Junior/SRE para mitigar SPOF | OBS-01 | CEO | Q4 2026 |
+| 16 | Formalizar controles compensatórios para A.5.3 (SPOF mitigado via IaC/CloudTrail) | OBS-01 | CEO | Concluído |
 | 17 | Codificar 100% dos controles de segurança AWS em Terraform | OBS-03 | DevOps Lead | Q4 2026 |
 | 18 | Implementar pentesting anual da plataforma Face ID | SoA — A.8.8 | Gestor SGSI | Q3 2026 |
 | 19 | Organizar estrutura de evidências por trimestre | OBS-05 | Gestor SGSI | Contínuo |
@@ -577,7 +577,7 @@ As seguintes não-conformidades devem ser registradas no Registro de Não-Confor
 | 5.3 | Papéis definidos (RACI), mas DPO sem designação formal | ❌ NC-MAJOR-06 |
 | 6.1 | Gestão de riscos robusta e contextualizada | ✅ Conforme |
 | 6.2 | Objetivos de segurança definidos e mensuráveis | ✅ Conforme |
-| 7.1 | Recursos alocados, mas SPOF identificado | 🟡 OBS-01 |
+| 7.1 | Recursos alocados. SPOF inicial (OBS-01) justificado via controles compensatórios e aprovado pela diretoria. | ✅ Conforme |
 | 7.2, 7.3 | Treinamento planejado mas não executado | 🟡 NC-MINOR-01 |
 | 7.5 | Documentação abrangente, mas sem aprovação formal | ❌ NC-MAJOR-02 |
 | 8.1 | Processos operacionais definidos (SOPs) | ✅ Conforme |
@@ -605,7 +605,7 @@ As seguintes não-conformidades devem ser registradas no Registro de Não-Confor
 | A.8.13 | Backup | Política definida, teste não realizado | ❌ NC-MAJOR-05 |
 | A.8.16 | Monitoramento de atividades | AWS Config não habilitado | ❌ NC-MAJOR-04 |
 | A.8.24 | Uso de criptografia | KMS CMK configurada, política definida | ✅ Conforme |
-| A.8.25 | Ciclo de vida de dev seguro | GitHub Actions com OIDC, IaC com Terraform | ✅ Conforme |
+| A.8.25 | Ciclo de vida de dev seguro | Controle excluído (N/A) do escopo (foco estrito em Operação SaaS) | ➖ N/A |
 
 ---
 
