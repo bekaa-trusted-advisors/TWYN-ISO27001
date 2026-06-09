@@ -1,11 +1,13 @@
 ---
 document_id: SGSI-POLICY-005
-title: Backup & Recovery Policy
+title: Política de Backup e Recuperação
 version: 2.0
-date: 2026-06-02
-annex_a_controls: "A.8.13"
+date: 2026-06-09
+classification: Interno
 owner: DevOps Lead
-approved_by: CEO (Aprovado - Ata 001)
+approved_by: CEO (Aprovado)
+next_review: Anual
+annex_a_controls: "A.8.13"
 ---
 
 # Política de Backup e Recuperação
@@ -58,5 +60,7 @@ A eficácia dos backups deve ser provada por meio de exercícios práticos (A.8.
 - **Gestor SGSI:** Auditar se a configuração técnica corresponde às obrigações legais, contratuais (ISO/LGPD) e se os testes semestrais estão em dia e bem-sucedidos.
 - **Colaboradores:** Salvar todos os documentos e códigos corporativos nos repositórios oficiais (GitHub, Google Workspace). Máquinas locais (Laptops) não são contempladas por backup corporativo da TWYN.
 
----
-*Política de Backup estabelecida para proteger os ativos críticos, aprovada em conformidade com o SGSI.*
+## 7. Histórico de Revisão
+| Data | Versão | Autor | Descrição |
+|------|--------|-------|-----------|
+| 2026-06-09 | 2.0 | Gestor SGSI | Padronização de cabeçalho YAML e rodapé (PT-BR). |

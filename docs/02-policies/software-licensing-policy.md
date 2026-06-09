@@ -2,10 +2,11 @@
 document_id: SGSI-POLICY-010
 title: Política de Uso de Software e Licenciamento
 version: 1.0
-date: 2026-06-08
-classification: INTERNAL
-owner: Gestor SGSI / CTO
-approved_by: CEO (Pendente)
+date: 2026-06-09
+classification: Interno
+owner: Gestor SGSI
+approved_by: CEO (Aprovado)
+next_review: Anual
 annex_a_controls: "A.5.32, A.8.19"
 ---
 
@@ -50,8 +51,7 @@ A TWYN reserva-se o direito de auditar os equipamentos corporativos e ambientes 
 ## 8. Violações
 A violação desta política configura falta grave, sujeita a medidas disciplinares (conforme a Política de Segurança da Informação [SGSI-POLICY-001]), incluindo rescisão contratual e responsabilização civil ou criminal por danos de propriedade intelectual repassados à TWYN.
 
----
-**Histórico de Revisões**
-| Versão | Data | Alteração | Autor |
-|--------|------|-----------|-------|
-| 1.0 | 2026-06-08 | Criação da política de uso de software licenciado | Gestor SGSI |
+## 9. Histórico de Revisão
+| Data | Versão | Autor | Descrição |
+|------|--------|-------|-----------|
+| 2026-06-09 | 1.0 | Gestor SGSI | Formatação de cabeçalho e rodapé padronizada (PT-BR). |

@@ -1,11 +1,13 @@
 ---
 document_id: SGSI-POLICY-006
-title: Business Continuity & Disaster Recovery Plan
+title: Plano de Continuidade de Negócios e Disaster Recovery (BCP/DR)
 version: 2.0
-date: 2026-06-02
-annex_a_controls: "A.5.29, A.5.30, A.8.14"
+date: 2026-06-09
+classification: Interno
 owner: Gestor SGSI
-approved_by: CEO (Aprovado - Ata 001)
+approved_by: CEO (Aprovado)
+next_review: Anual
+annex_a_controls: "A.5.29, A.5.30, A.8.14"
 ---
 
 # Plano de Continuidade de Negócios e Disaster Recovery (BCP/DR)
@@ -45,7 +47,7 @@ A Análise de Impacto nos Negócios identifica as funções críticas da TWYN e 
 - **Estratégia (Mitigação Nativa):** A arquitetura da TWYN roda nativamente com o Amazon EKS em *Multi-AZ* e o RDS também configurado como *Multi-AZ*. A transição (failover) deve ocorrer automaticamente sem intervenção manual. O impacto real será apenas latência e tempo de failover DNS (geralmente < 5 minutos).
 - **Procedimento DR:** A equipe apenas monitora via CloudWatch e verifica a restauração do *health check*.
 
-### Cenário 2: Perda de Dados (Ransomware ou Corrupção Acidental de Banco de Dados)
+### Cenário 2: Perda de Dados (Ransomware ou Corrupção Acidental)
 - **Probabilidade:** Baixa.
 - **Impacto:** Crítico (Violação de Integridade).
 - **Estratégia:** Restauração a partir do Snapshot automatizado da AWS ou Point-In-Time-Recovery (PITR).
@@ -68,30 +70,28 @@ A Análise de Impacto nos Negócios identifica as funções críticas da TWYN e 
 ### Cenário 4: Indisponibilidade Prolongada do Time Técnico
 - **Probabilidade:** Baixa.
 - **Impacto:** Alto (Impossibilidade de reagir a incidentes).
-- **Estratégia:** Documentação abrangente e eliminação de SPOFs (Single Points of Failure) operacionais. Todo o provisionamento de infraestrutura é mantido como código no GitHub. A credencial de root "Break Glass" no cofre físico permite recuperação de acesso emergencial pelo CEO.
+- **Estratégia:** Documentação abrangente e eliminação de SPOFs operacionais. O provisionamento de infraestrutura é mantido como código no GitHub. A credencial de root "Break Glass" no cofre físico permite recuperação de acesso emergencial.
 
 ## 5. Equipe e Comitê de Continuidade (DRT - Disaster Recovery Team)
 | Papel | Nome / Função | Responsabilidades Durante Crise | Contato de Emergência |
 |-------|---------------|----------------------------------|------------------------|
-| **Comandante de Crise** | Enes / CEO | Aprova failovers, comunica clientes e mídia. Toma decisões finais. | Celular cadastrado no AD |
+| **Comandante de Crise** | CEO | Aprova failovers, comunica clientes e mídia. Toma decisões finais. | Celular cadastrado no AD |
 | **Coordenador de DR** | DevOps Lead | Executa as tarefas técnicas de restauração de banco, roteamento e IaC. | Celular e Slack / PagerDuty |
-| **Avaliador de Impacto / Compliance** | Ricardo / Gestor SGSI | Garante que a restauração obedece às exigências de privacidade (KMS/LGPD) e reporta incidentes à ANPD. | Email / Telefone |
+| **Avaliador de Impacto / Compliance** | Gestor SGSI | Garante que a restauração obedece às exigências de privacidade (KMS/LGPD) e reporta incidentes à ANPD. | Email / Telefone |
 
 ## 6. Procedimento Geral de Declaração de Desastre
 1. **Ativação:** Qualquer alerta de P0 durando mais de 30 minutos ininterruptos aciona a análise técnica para BCP.
 2. **Declaração:** Apenas o CEO e o Gestor SGSI (em consenso) podem declarar formalmente um desastre para executar um *Cross-Region Failover*.
 3. **Comunicação:** O Comitê notifica os clientes (SLA de notificação: < 2h a partir do evento).
-4. **Recuperação:** O Coordenador de DR (DevOps Lead) atua conforme Seção 4.
-5. **Retorno à Normalidade (Failback):** Quando a infraestrutura principal (ou região original) voltar, planeja-se uma janela de manutenção para retornar o tráfego em estado seguro.
+4. **Recuperação:** O Coordenador de DR atua conforme Seção 4.
+5. **Retorno à Normalidade (Failback):** Quando a infraestrutura principal voltar, planeja-se uma janela de manutenção para retornar o tráfego em estado seguro.
 
 ## 7. Exercícios e Testes de BCP
-O plano de continuidade de negócios da TIC (A.5.30) não é eficaz se não for testado.
+O plano de continuidade de negócios não é eficaz se não for testado.
 - **Tabletop Exercise (Simulação de Mesa):** Ocorre anualmente com o Comitê (CEO, Gestor, DevOps) para validar fluxos de comunicação.
-- **Teste de Restauração de Backup (Restore Test):** Ocorre semestralmente. A equipe DevOps deverá subir o banco de dados a partir do PITR em um ambiente isolado (Staging) para validar a integridade e cronometrar o RTO real.
-- As atas dos testes ficam arquivadas na pasta `docs/05-evidence/dr-tests/`.
+- **Teste de Restauração de Backup (Restore Test):** Ocorre semestralmente. A equipe DevOps deverá subir o banco de dados a partir do PITR em um ambiente isolado.
 
-## 8. Manutenção do Plano
-Este plano deve ser atualizado pelo menos uma vez por ano, ou quando houver mudanças arquiteturais significativas (ex: migração de nuvem, refatoração severa de banco de dados).
-
----
-*Revisado e Aprovado nos termos do Sistema de Gestão de Segurança da Informação da TWYN.*
+## 8. Histórico de Revisão
+| Data | Versão | Autor | Descrição |
+|------|--------|-------|-----------|
+| 2026-06-09 | 2.0 | Gestor SGSI | Padronização de cabeçalho YAML e rodapé (PT-BR). |
