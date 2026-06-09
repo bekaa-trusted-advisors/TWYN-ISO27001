@@ -82,7 +82,7 @@ A TWYN é uma provedora B2B de API de Reconhecimento Facial operando 100% remota
 | A.7.7 | Mesas e telas limpas (Clear desk) | Sim | Implementado | Configurado auto-lock (5 min) e regras no SOP-003 e AUP. |
 | A.7.8 | Localização e proteção de equipamentos | **Não** | N/A | Apenas laptops; sem servidores físicos ou roteadores da empresa. |
 | A.7.9 | Segurança de equipamentos fora das instalações | Sim | Parcial | FDE (Full Disk Encryption) exigido APENAS nos laptops da equipe de Operações. Endpoints de Dev fora de escopo. |
-| A.7.10| Mídias de armazenamento (Storage media) | **Não** | N/A | Uso de pendrives ou HD externos proibido ou irrelevante (100% cloud). |
+| A.7.10| Mídias de armazenamento (Storage media) | Sim | Implementado | Uso proibido por política (AUP) e inviável pela arquitetura 100% em nuvem. |
 | A.7.11| Utilidades (Fornecimento de energia, AC) | **Não** | N/A | Excluído pelo escopo. DC gerenciado pela AWS. |
 | A.7.12| Segurança no cabeamento | **Não** | N/A | Excluído pelo escopo remoto. |
 | A.7.13| Manutenção de equipamentos | **Não** | N/A | Excluído. Manutenção de servidores é da AWS. Laptops são trocados. |
@@ -117,10 +117,10 @@ A TWYN é uma provedora B2B de API de Reconhecimento Facial operando 100% remota
 | A.8.23| Filtragem para web (Web filtering) | **Não** | N/A | TWYN não filtra navegação corporativa por ser 100% remoto BYOD. |
 | A.8.24| Uso de criptografia | Sim | Implementado | Criptografia AWS KMS AES-256 in-rest e TLS 1.3 in-transit. |
 | A.8.25| Ciclo de vida de dev. seguro (SDLC) | **Não** | N/A | Excluído: Desenvolvimento de software fora do escopo do SGSI (foco apenas em operação/hosting). |
-| A.8.26| Requisitos de segurança em aplicações | **Não** | N/A | Excluído pelo escopo. |
-| A.8.27| Princípios de arquitetura segura | **Não** | N/A | Excluído pelo escopo. |
+| A.8.26| Requisitos de segurança em aplicações | Sim | Implementado | A Operação atua como Gatekeeper e impõe requisitos de segurança em infraestrutura para aceitar a aplicação da Engenharia. |
+| A.8.27| Princípios de arquitetura segura | Sim | Implementado | Aplicado via arquitetura em nuvem (AWS Well-Architected Framework) e infraestrutura imutável (Terraform). |
 | A.8.28| Codificação segura (Secure coding) | **Não** | N/A | Excluído pelo escopo. |
-| A.8.29| Teste de segurança no desenvolvimento | **Não** | N/A | Excluído pelo escopo. |
+| A.8.29| Teste de segurança no desenvolvimento | Sim | Implementado | Testes de aceitação automatizados via CI/CD Gatekeeper (Snyk/Trivy) antes do deploy. |
 | A.8.30| Engenharia terceirizada (Outsourced dev) | Sim | Implementado | A equipe interna de Engenharia atua fora do escopo, sendo tratada via Política de Fornecedores (SLA de Segurança). |
 | A.8.31| Separação dos ambientes (Dev/Test/Prod)| Sim | Implementado | Isolamento lógico via contas/VPCs distintas (SOP-002). |
 | A.8.32| Gerenciamento de mudanças (Change Mgmt)| Sim | Implementado | Alterações seguem o fluxo de Pull Request (SOP-002). |
