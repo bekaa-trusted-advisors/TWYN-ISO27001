@@ -93,7 +93,7 @@ Este Risk Register documenta **todos os riscos identificados** para os ativos no
 | **Category** | Compliance / Monitoring |
 | **Asset** | AWS Account 992382542028 (production) |
 | **Threat** | Configuration drift, non-compliant resources go undetected |
-| **Vulnerability** | • **AWS Config NOT enabled** (GAP-001)<br>• No automated compliance rules<br>• Manual checks only (error-prone) |
+| **Vulnerability** | • **AWS Config NOT enabled** ([SGSI-GAP-001](../06-implementation-guides/gap-001-mfa-root-account.md))<br>• No automated compliance rules<br>• Manual checks only (error-prone) |
 | **Likelihood** | 4 (High) — Drift happens constantly in cloud |
 | **Impact** | 4 (High) — Failed audit, FTR rejection, non-compliance with CIS Benchmark |
 | **Risk Score** | **16** 🟠 **ALTO** |
@@ -139,13 +139,13 @@ Este Risk Register documenta **todos os riscos identificados** para os ativos no
 | **Category** | Access Control / Insider Threat |
 | **Asset** | AWS IAM roles and policies |
 | **Threat** | Disgruntled employee or compromised account deletes/modifies infrastructure |
-| **Vulnerability** | • **IAM policies too permissive** (GAP-003)<br>• Many users have `AdministratorAccess`<br>• No quarterly access review process<br>• No segregation of duties |
+| **Vulnerability** | • **IAM policies too permissive** ([SGSI-GAP-003](../06-implementation-guides/gap-003-aws-config-cis.md))<br>• Many users have `AdministratorAccess`<br>• No quarterly access review process<br>• No segregation of duties |
 | **Likelihood** | 4 (High) — Insider threats are common |
 | **Impact** | 4 (High) — Service outage, data loss, financial damage |
 | **Risk Score** | **16** 🟠 **ALTO** |
 | **Treatment** | **MITIGATE** |
 | **Related Annex A Controls** | • A.5.18 (Access rights)<br>• A.6.4 (Disciplinary process)<br>• A.8.2 (Privileged access rights) |
-| **Actions (RTP)** | 1. **IAM audit**: Review all users/roles (GAP-003)<br>2. Implement **least privilege** (remove AdministratorAccess)<br>3. Create **custom IAM policies** per job function<br>4. Enable **MFA delete** on S3 critical buckets<br>5. Implement **SOP-005** (quarterly IAM recertification)<br>6. Segregation: separate Dev/Ops/Security roles |
+| **Actions (RTP)** | 1. **IAM audit**: Review all users/roles ([SGSI-GAP-003](../06-implementation-guides/gap-003-aws-config-cis.md))<br>2. Implement **least privilege** (remove AdministratorAccess)<br>3. Create **custom IAM policies** per job function<br>4. Enable **MFA delete** on S3 critical buckets<br>5. Implement **SOP-005** (quarterly IAM recertification)<br>6. Segregation: separate Dev/Ops/Security roles |
 | **Owner** | Cloud Infrastructure Lead + SecOps |
 | **Due Date** | **30/08/2026** (35 days) |
 | **Status** | 🔴 **Open** (GAP-003 issue created) |
@@ -162,7 +162,7 @@ Este Risk Register documenta **todos os riscos identificados** para os ativos no
 | **Category** | Security Monitoring |
 | **Asset** | AWS Account 992382542028 |
 | **Threat** | Malicious activity (crypto mining, data exfiltration) goes undetected |
-| **Vulnerability** | • **AWS GuardDuty NOT enabled** (GAP-002)<br>• No threat intelligence<br>• Reactive vs. proactive security |
+| **Vulnerability** | • **AWS GuardDuty NOT enabled** ([SGSI-GAP-002](../06-implementation-guides/gap-002-rotate-iam-key.md))<br>• No threat intelligence<br>• Reactive vs. proactive security |
 | **Likelihood** | 3 (Medium) — Attacks happen but may not target TWYN specifically |
 | **Impact** | 5 (Very High) — Prolonged breach, data loss, compliance failure |
 | **Risk Score** | **15** 🟠 **ALTO** |
@@ -208,13 +208,13 @@ Este Risk Register documenta **todos os riscos identificados** para os ativos no
 | **Category** | Malware / Business Continuity |
 | **Asset** | EKS clusters (Face ID API workloads) |
 | **Threat** | Ransomware encrypts container images, pods, or underlying EBS volumes |
-| **Vulnerability** | • Container images not regularly scanned<br>• No malware protection at runtime<br>• Backup exists but **not tested** (GAP-007) |
+| **Vulnerability** | • Container images not regularly scanned<br>• No malware protection at runtime<br>• Backup exists but **not tested** ([SGSI-GAP-007](../06-implementation-guides/gap-007-iso-certification.md)) |
 | **Likelihood** | 4 (High) — Ransomware targeting cloud infra growing |
 | **Impact** | 5 (Very High) — Complete service outage, data loss, ransom payment |
 | **Risk Score** | **20** 🔴 **CRÍTICO** |
 | **Treatment** | **MITIGATE** + **TRANSFER** (cyber insurance) |
 | **Related Annex A Controls** | • A.8.7 (Protection against malware)<br>• A.8.13 (Information backup)<br>• A.5.29 (Information security during disruption)<br>• A.5.30 (ICT readiness for business continuity) |
-| **Actions (RTP)** | 1. **Container image scanning** (Trivy/ECR scanning)<br>2. Enable **GuardDuty EKS protection**<br>3. Implement **pod security policies**<br>4. **Test DR quarterly** (GAP-007)<br>5. Purchase **cyber insurance** (ransomware coverage)<br>6. Incident response playbook for ransomware |
+| **Actions (RTP)** | 1. **Container image scanning** (Trivy/ECR scanning)<br>2. Enable **GuardDuty EKS protection**<br>3. Implement **pod security policies**<br>4. **Test DR quarterly** ([SGSI-GAP-007](../06-implementation-guides/gap-007-iso-certification.md))<br>5. Purchase **cyber insurance** (ransomware coverage)<br>6. Incident response playbook for ransomware |
 | **Owner** | Cloud Infrastructure Lead + SecOps |
 | **Due Date** | **30/08/2026** (35 days) |
 | **Status** | 🟡 **Em Tratamento** (GAP-007 for backup testing) |
@@ -231,13 +231,13 @@ Este Risk Register documenta **todos os riscos identificados** para os ativos no
 | **Category** | Asset Management |
 | **Asset** | Unused EC2 instances, old S3 buckets, orphaned snapshots |
 | **Threat** | Forgotten resources contain sensitive data or have vulnerabilities |
-| **Vulnerability** | • **No asset inventory** (GAP-004)<br>• Resources created ad-hoc not tracked<br>• No decommissioning process |
+| **Vulnerability** | • **No asset inventory** ([SGSI-GAP-004](../06-implementation-guides/gap-004-backup-testing.md))<br>• Resources created ad-hoc not tracked<br>• No decommissioning process |
 | **Likelihood** | 4 (High) — Legacy resources very common in cloud |
 | **Impact** | 3 (Medium) — Data leakage, unnecessary attack surface, cost |
 | **Risk Score** | **12** 🟠 **ALTO** |
 | **Treatment** | **MITIGATE** |
 | **Related Annex A Controls** | • A.5.9 (Inventory of information and other associated assets)<br>• A.5.12 (Classification of information)<br>• A.8.10 (Information deletion) |
-| **Actions (RTP)** | 1. **Full AWS asset discovery** (AWS Config, scripts)<br>2. **Tag all resources** (owner, project, lifecycle)<br>3. **Identify orphaned** resources (no tags, old)<br>4. **Decommission** legacy resources (GAP-004)<br>5. Create **asset inventory** (SGSI-ASSETS-001)<br>6. Implement tagging policy (mandatory) |
+| **Actions (RTP)** | 1. **Full AWS asset discovery** (AWS Config, scripts)<br>2. **Tag all resources** (owner, project, lifecycle)<br>3. **Identify orphaned** resources (no tags, old)<br>4. **Decommission** legacy resources ([SGSI-GAP-004](../06-implementation-guides/gap-004-backup-testing.md))<br>5. Create **asset inventory** (SGSI-ASSETS-001)<br>6. Implement tagging policy (mandatory) |
 | **Owner** | Cloud Infrastructure Lead |
 | **Due Date** | **20/08/2026** (25 days) |
 | **Status** | 🔴 **Open** (GAP-004 issue created) |
@@ -254,13 +254,13 @@ Este Risk Register documenta **todos os riscos identificados** para os ativos no
 | **Category** | Business Continuity |
 | **Asset** | RDS databases, S3 buckets (backup copies) |
 | **Threat** | Disaster occurs but backup restore fails (corrupted, incomplete) |
-| **Vulnerability** | • **Backups never tested** (GAP-007)<br>• Unknown RTO/RPO actual values<br>• No documented DR procedure |
+| **Vulnerability** | • **Backups never tested** ([SGSI-GAP-007](../06-implementation-guides/gap-007-iso-certification.md))<br>• Unknown RTO/RPO actual values<br>• No documented DR procedure |
 | **Likelihood** | 3 (Medium) — Untested backups often fail when needed |
 | **Impact** | 5 (Very High) — Data loss, prolonged outage, business failure |
 | **Risk Score** | **15** 🟠 **ALTO** |
 | **Treatment** | **MITIGATE** |
 | **Related Annex A Controls** | • A.8.13 (Information backup)<br>• A.5.30 (ICT readiness for BC) |
-| **Actions (RTP)** | 1. **Execute DR drill** immediately (GAP-007)<br>2. Document **actual RTO/RPO** achieved<br>3. Create **DR playbook** (SGSI-DRP-001)<br>4. **Quarterly DR tests** (calendar reminders)<br>5. Automate restore testing (scripted) |
+| **Actions (RTP)** | 1. **Execute DR drill** immediately ([SGSI-GAP-007](../06-implementation-guides/gap-007-iso-certification.md))<br>2. Document **actual RTO/RPO** achieved<br>3. Create **DR playbook** (SGSI-DRP-001)<br>4. **Quarterly DR tests** (calendar reminders)<br>5. Automate restore testing (scripted) |
 | **Owner** | Cloud Infrastructure Lead |
 | **Due Date** | **15/08/2026** (20 days — AWS FTR evidence) |
 | **Status** | 🔴 **Open** (GAP-007 + AWS FTR #16) |
@@ -323,7 +323,7 @@ Este Risk Register documenta **todos os riscos identificados** para os ativos no
 | **Category** | Human Resources Security |
 | **Asset** | All TWYN employees |
 | **Threat** | Phishing, social engineering, accidental data leak by employees |
-| **Vulnerability** | • **No formal SI training** (GAP-006)<br>• No phishing simulations<br>• No training records |
+| **Vulnerability** | • **No formal SI training** ([SGSI-GAP-006](../06-implementation-guides/gap-006-ceo-signature.md))<br>• No phishing simulations<br>• No training records |
 | **Likelihood** | 4 (High) — Human error is #1 security risk |
 | **Impact** | 4 (High) — Credential theft, data breach, compliance failure |
 | **Risk Score** | **16** 🟠 **ALTO** |
@@ -346,13 +346,13 @@ Este Risk Register documenta **todos os riscos identificados** para os ativos no
 | **Category** | Governance |
 | **Asset** | SGSI itself (management system) |
 | **Threat** | SGSI becomes stale, not aligned with business, audit failure |
-| **Vulnerability** | • **No management review yet** (GAP-005)<br>• No formal KPI tracking<br>• Top management not engaged |
+| **Vulnerability** | • **No management review yet** ([SGSI-GAP-005](../06-implementation-guides/gap-005-aws-support-decision.md))<br>• No formal KPI tracking<br>• Top management not engaged |
 | **Likelihood** | 5 (Very High) — New SGSI, first review overdue |
 | **Impact** | 3 (Medium) — Audit finding, certification delay |
 | **Risk Score** | **15** 🟠 **ALTO** |
 | **Treatment** | **MITIGATE** |
 | **Related Annex A Controls** | • **Clause 9.3** (Management review) — MANDATORY |
-| **Actions (RTP)** | 1. **Schedule first management review** (GAP-005)<br>2. Prepare review agenda (see Clause 9.3 requirements)<br>3. Collect KPIs: incidents, audit results, metrics<br>4. CEO/CTO attendance mandatory<br>5. Document minutes + action items<br>6. **Quarterly** reviews (calendar recurring) |
+| **Actions (RTP)** | 1. **Schedule first management review** ([SGSI-GAP-005](../06-implementation-guides/gap-005-aws-support-decision.md))<br>2. Prepare review agenda (see Clause 9.3 requirements)<br>3. Collect KPIs: incidents, audit results, metrics<br>4. CEO/CTO attendance mandatory<br>5. Document minutes + action items<br>6. **Quarterly** reviews (calendar recurring) |
 | **Owner** | Gestor SGSI |
 | **Due Date** | **15/08/2026** (20 days) |
 | **Status** | 🟢 **Mitigado** (Resolvido na Ata 001 - 08/08/2026) |
@@ -421,7 +421,7 @@ Este Risk Register documenta **todos os riscos identificados** para os ativos no
 | **Risk Score** | **15** 🟠 **ALTO** |
 | **Treatment** | **MITIGATE** |
 | **Related Annex A Controls** | • A.5.34 (Privacy and protection of PII)<br>• A.5.8 (Information security in project management) — DPIA |
-| **Actions (RTP)** | 1. **Designate DPO** formally (internal or external)<br>2. **Publish Privacy Policy** (website + API docs)<br>3. Implement **DSR process**: access, correction, deletion<br>4. Conduct **DPIA** (Data Protection Impact Assessment) for biometric processing<br>5. **LGPD training** for all employees (GAP-006)<br>6. Create **data processing register** (Art. 37) |
+| **Actions (RTP)** | 1. **Designate DPO** formally (internal or external)<br>2. **Publish Privacy Policy** (website + API docs)<br>3. Implement **DSR process**: access, correction, deletion<br>4. Conduct **DPIA** (Data Protection Impact Assessment) for biometric processing<br>5. **LGPD training** for all employees ([SGSI-GAP-006](../06-implementation-guides/gap-006-ceo-signature.md))<br>6. Create **data processing register** (Art. 37) |
 | **Owner** | Legal + Gestor SGSI |
 | **Due Date** | **30/08/2026** (35 days) |
 | **Status** | 🔴 **Open** |

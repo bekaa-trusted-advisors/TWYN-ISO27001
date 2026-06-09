@@ -61,3 +61,12 @@ Garantir que o acesso à informação e aos recursos de processamento da TWYN se
 | Data | Versão | Autor | Descrição |
 |------|--------|-------|-----------|
 | 2026-06-09 | 1.0 | Gestor SGSI | Tradução, síntese e padronização para o escopo da auditoria ISO 27001 (PT-BR). |
+
+
+## 8. Procedimentos Relacionados (SOPs)
+
+O controle de acesso descrito nesta política é aplicado na prática pelos seguintes procedimentos:
+
+- **[SGSI-SOP-001](../03-procedures/sop-001-onboarding-offboarding.md)**: Procedimento de Onboarding e Offboarding (Provisionamento)
+- **[SGSI-SOP-004](../03-procedures/sop-004-secrets-management.md)**: Gestão de Segredos e Chaves (Acesso Programático)
+- **[SGSI-SOP-005](../03-procedures/sop-005-iam-recertification.md)**: Recertificação Trimestral de Acessos (Auditoria de Privilégios)

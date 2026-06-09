@@ -62,3 +62,14 @@ Esta Política será revisada anualmente, ou sempre que ocorrerem mudanças sign
 | Data | Versão | Autor | Descrição |
 |------|--------|-------|-----------|
 | 2026-06-09 | 1.0 | Gestor SGSI | Versão inicial aprovada - Consolidação da Política para conformidade ISO 27001 (PT-BR). |
+
+
+## 9. Procedimentos Relacionados (SOPs)
+
+Esta política mestre é operacionalizada através dos seguintes procedimentos formais (SOPs):
+
+- **[SGSI-SOP-001](../03-procedures/sop-001-onboarding-offboarding.md)**: Procedimento de Onboarding e Offboarding
+- **[SGSI-SOP-002](../03-procedures/sop-002-change-management.md)**: Gestão de Mudanças
+- **[SGSI-SOP-003](../03-procedures/sop-003-remote-work.md)**: Trabalho Remoto (Teletrabalho)
+- **[SGSI-SOP-004](../03-procedures/sop-004-secrets-management.md)**: Gestão de Segredos e Chaves
+- **[SGSI-SOP-005](../03-procedures/sop-005-iam-recertification.md)**: Recertificação Trimestral de Acessos

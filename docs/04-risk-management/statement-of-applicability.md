@@ -35,12 +35,12 @@ A TWYN é uma provedora B2B de API de Reconhecimento Facial operando 100% remota
 | A.5.16 | Gestão de identidade | Sim | Implementado | Contas baseadas no IAM e GitHub (SOP-001). |
 | A.5.17 | Informação de autenticação | Sim | Parcial | AWS Secrets Manager (SOP-004). Chave 'tmpsaasboost' não rotacionada. |
 | A.5.18 | Direitos de acesso | Sim | Implementado | Recertificação trimestral (SOP-005). |
-| A.5.19 | Segurança em relacionamentos com fornecedores | Sim | Implementado | TPRA process, Supplier Security Questionnaire. |
+|  Security Questionnaire (SGSI-POLICY-009). |
 | A.5.20 | Abordagem à segurança em contratos de fornecedores| Sim | Implementado | Cláusulas de DPAs assinadas em NDA. |
 | A.5.21 | Gestão da cadeia de suprimento de TI | Sim | Parcial | Análise baseada no GitHub/AWS TPRAs (SGSI-TPRA). |
 | A.5.22 | Monitoramento dos serviços de fornecedores | Sim | Parcial | Monitoramento de SLAs de uptime dos hiperescaladores. |
 | A.5.23 | Segurança no uso de serviços em nuvem | Sim | Implementado | Modelo Shared Responsibility, uso do AWS Config/Security Hub. |
-| A.5.24 | Gestão de incidentes de segurança | Sim | Parcial | Incident Response Policy criado, pendente testes. |
+|  Response Policy (SGSI-POLICY-003) criado, pendente testes. |
 | A.5.25 | Avaliação de eventos de segurança | Sim | Implementado | Classificação de P0 a P4 implementada. |
 | A.5.26 | Resposta a incidentes | Sim | Parcial | IRP necessita formalização prática de runbooks. |
 | A.5.27 | Aprendizado com incidentes | Sim | Implementado | Requisito de Post-Mortem (CARs gerados após crise). |
@@ -59,9 +59,9 @@ A TWYN é uma provedora B2B de API de Reconhecimento Facial operando 100% remota
 
 | Ref. | Controle | Aplicável? | Status | Justificativa / Implementação |
 |---|---|---|---|---|
-| A.6.1 | Triagem de antecedentes (Background checks) | Sim | Parcial | Realizado para posições técnicas de alto nível no Onboarding. |
+|  Onboarding (SGSI-SOP-001). |
 | A.6.2 | Termos e condições de contratação | Sim | Implementado | Acordos de confidencialidade (NDA) obrigatórios. |
-| A.6.3 | Conscientização, educação e treinamento | Sim | Parcial | Programa de treinamento (TRAINING-PROGRAM) documentado. |
+| (SGSI-TRAIN-001) documentado. |
 | A.6.4 | Processo disciplinar | Sim | Implementado | Listado na IS Policy (cláusula de sanções). |
 | A.6.5 | Responsabilidades após término | Sim | Implementado | NDAs permanecem vigentes e acessos removidos (SOP-001). |
 | A.6.6 | Acordos de confidencialidade | Sim | Implementado | Contratos exigem confidencialidade com penalidades explícitas. |
@@ -104,7 +104,7 @@ A TWYN é uma provedora B2B de API de Reconhecimento Facial operando 100% remota
 | A.8.10| Eliminação de informações (Deletion) | Sim | Implementado | Regras de Lifecycle de S3 e scripts de sanitização de vetores. |
 | A.8.11| Mascaramento de dados | Sim | Implementado | Logs são limpos de PII; banco de dados de dev mascarado. |
 | A.8.12| Prevenção contra vazamento (DLP) | Sim | Parcial | DLP aplicado na borda (IAM, S3 policies, Macie). Endpoints tradicionais estão fora de escopo. |
-| A.8.13| Backup da informação | Sim | Parcial | Política de Backup (005), RDS e S3 ativos. Restores nunca testados. |
+|  de Backup (SGSI-POLICY-005), RDS e S3 ativos. Restores nunca testados. |
 | A.8.14| Redundância de instalações | Sim | Implementado | Arquitetura Cloud-Native hospedada em Multi-AZ. |
 | A.8.15| Geração de registros de log (Logging) | Sim | Implementado | Centralizado no CloudWatch; AWS CloudTrail ativo. |
 | A.8.16| Monitoramento de atividades | Sim | Parcial | GuardDuty NÃO habilitado e Security Hub incompleto (RISK-005). |

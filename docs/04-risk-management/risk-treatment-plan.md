@@ -225,12 +225,12 @@ Este documento define o **plano de ação** para tratar cada risco identificado 
 
 | RTP | Risk | Score | Responsável | Prazo | Key Actions |
 |-----|------|-------|-------|----------|-------------|
-| **RTP-008** | Legacy resources | 12 🟠 | Cloud Infra | 20/06/2026 | Asset inventory → tag/cleanup (GAP-004) |
-| **RTP-009** | No backup testing | 15 🟠 | Cloud Infra | 15/06/2026 | Execute DR drill (GAP-007) |
+| **RTP-008** | Legacy resources | 12 🟠 | Cloud Infra | 20/06/2026 | Asset inventory → tag/cleanup ([SGSI-GAP-004](../06-implementation-guides/gap-004-backup-testing.md)) |
+| **RTP-009** | No backup testing | 15 🟠 | Cloud Infra | 15/06/2026 | Execute DR drill ([SGSI-GAP-007](../06-implementation-guides/gap-007-iso-certification.md)) |
 | **RTP-010** | No AWS Biz Support | 8 🟡 | CTO + Finance | 10/06/2026 | Decision: upgrade or accept |
 | **RTP-011** | CIS 8 controls missing | 15 🟠 🚨 FTR | Cloud + SecOps | 08/06/2026 | Fix IAM.4/5/15/16, EC2.2/53/54, ACCOUNT.1 |
-| **RTP-012** | No SI training | 16 🟠 | HR + SGSI | 30/06/2026 | Enroll all employees (GAP-006) |
-| **RTP-013** | No mgmt review | 15 🟠 | Gestor SGSI | 15/06/2026 | Schedule first review (GAP-005) |
+| **RTP-012** | No SI training | 16 🟠 | HR + SGSI | 30/06/2026 | Enroll all employees ([SGSI-GAP-006](../06-implementation-guides/gap-006-ceo-signature.md)) |
+| **RTP-013** | No mgmt review | 15 🟠 | Gestor SGSI | 15/06/2026 | Schedule first review ([SGSI-GAP-005](../06-implementation-guides/gap-005-aws-support-decision.md)) |
 | **RTP-014** | GitHub compromise | 15 🟠 | CTO | 20/06/2026 | MFA + branch protection |
 | **RTP-015** | Single region dependency | 8 🟡 | Cloud Infra | 30/06/2026 | Accept + test failover |
 | **RTP-016** | LGPD non-compliance | 15 🟠 | Legal + SGSI | 30/06/2026 | DPO + Privacy Policy + DPIA |
