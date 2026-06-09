@@ -12,6 +12,19 @@ annex_a_controls: "A.5.15, A.5.16, A.5.17, A.5.18, A.8.2, A.8.3"
 
 # Política de Controle de Acesso
 
+## Controle de Documento
+
+| Propriedade | Detalhe |
+|---|---|
+| **ID do Documento** | SGSI-POLICY-002 |
+| **Versão** | 1.0 |
+| **Data de Aprovação** | 2026-06-09 |
+| **Classificação** | Interno |
+| **Elaborado por** | Gestor SGSI |
+| **Aprovado por** | CEO (Aprovado) |
+| **Próxima Revisão** | Anual |
+
+
 ## 1. Propósito
 Garantir que o acesso à informação e aos recursos de processamento da TWYN seja autorizado, controlado e restrito às necessidades de negócio, protegendo contra acessos não autorizados.
 
@@ -57,16 +70,16 @@ Garantir que o acesso à informação e aos recursos de processamento da TWYN se
 - As atividades de logon e falhas de autenticação são registradas centralizadamente (CloudTrail/Log Management) e armazenadas de forma segura.
 - Violações aos controles de acesso podem gerar sanções disciplinares, incluindo justa causa.
 
-## 9. Histórico de Revisão
-| Data | Versão | Autor | Descrição |
-|------|--------|-------|-----------|
-| 2026-06-09 | 1.0 | Gestor SGSI | Tradução, síntese e padronização para o escopo da auditoria ISO 27001 (PT-BR). |
-
-
-## 8. Procedimentos Relacionados (SOPs)
+## 9. Procedimentos Relacionados (SOPs)
 
 O controle de acesso descrito nesta política é aplicado na prática pelos seguintes procedimentos:
 
 - **[SGSI-SOP-001](../03-procedures/sop-001-onboarding-offboarding.md)**: Procedimento de Onboarding e Offboarding (Provisionamento)
 - **[SGSI-SOP-004](../03-procedures/sop-004-secrets-management.md)**: Gestão de Segredos e Chaves (Acesso Programático)
 - **[SGSI-SOP-005](../03-procedures/sop-005-iam-recertification.md)**: Recertificação Trimestral de Acessos (Auditoria de Privilégios)
+
+## 10. Histórico de Revisão
+| Data | Versão | Autor | Descrição |
+|------|--------|-------|-----------|
+| 2026-06-09 | 1.0 | Gestor SGSI | Tradução, síntese e padronização para o escopo da auditoria ISO 27001 (PT-BR). |
+

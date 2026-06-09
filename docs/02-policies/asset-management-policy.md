@@ -12,6 +12,19 @@ annex_a_controls: "A.5.9, A.5.10, A.5.11, A.5.12, A.5.13"
 
 # Política de Gestão de Ativos
 
+## Controle de Documento
+
+| Propriedade | Detalhe |
+|---|---|
+| **ID do Documento** | SGSI-POLICY-004 |
+| **Versão** | 1.0 |
+| **Data de Aprovação** | 2026-06-09 |
+| **Classificação** | Interno |
+| **Elaborado por** | Gestor SGSI |
+| **Aprovado por** | CEO (Aprovado) |
+| **Próxima Revisão** | Anual |
+
+
 ## 1. Propósito
 Identificar, classificar e proteger os ativos de informação da TWYN de acordo com seu valor de negócio e criticidade para a organização.
 

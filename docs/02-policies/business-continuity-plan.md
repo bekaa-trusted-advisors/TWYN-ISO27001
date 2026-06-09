@@ -12,6 +12,19 @@ annex_a_controls: "A.5.29, A.5.30, A.8.14"
 
 # Plano de Continuidade de Negócios e Disaster Recovery (BCP/DR)
 
+## Controle de Documento
+
+| Propriedade | Detalhe |
+|---|---|
+| **ID do Documento** | SGSI-POLICY-006 |
+| **Versão** | 2.0 |
+| **Data de Aprovação** | 2026-06-09 |
+| **Classificação** | Interno |
+| **Elaborado por** | Gestor SGSI |
+| **Aprovado por** | CEO (Aprovado) |
+| **Próxima Revisão** | Anual |
+
+
 ## 1. Objetivo e Escopo
 O objetivo deste documento é estabelecer os procedimentos, funções e responsabilidades para garantir que a TWYN continue a operar suas funções críticas e consiga recuperar a "Face ID Platform API" em níveis aceitáveis dentro dos prazos definidos após um desastre, crise ou incidente grave.
 

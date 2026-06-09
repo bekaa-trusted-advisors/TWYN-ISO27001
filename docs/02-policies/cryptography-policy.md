@@ -12,6 +12,19 @@ annex_a_controls: "A.8.24, A.8.25"
 
 # Política de Criptografia
 
+## Controle de Documento
+
+| Propriedade | Detalhe |
+|---|---|
+| **ID do Documento** | SGSI-POLICY-011 |
+| **Versão** | 1.0 |
+| **Data de Aprovação** | 2026-06-09 |
+| **Classificação** | Público |
+| **Elaborado por** | Gestor SGSI |
+| **Aprovado por** | CEO (Aprovado) |
+| **Próxima Revisão** | Anual |
+
+
 ## 1. Propósito
 Garantir a confidencialidade, integridade e autenticidade das informações tratadas pela TWYN, formalizando o uso obrigatório de controles criptográficos robustos (em repouso e em trânsito). Esta política é essencial para aderência à proteção de dados biométricos exigida pela LGPD.
 

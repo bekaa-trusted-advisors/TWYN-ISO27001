@@ -12,6 +12,19 @@ annex_a_controls: "A.5.19, A.5.20, A.5.21, A.5.22, A.5.23"
 
 # Política de Segurança em Fornecedores
 
+## Controle de Documento
+
+| Propriedade | Detalhe |
+|---|---|
+| **ID do Documento** | SGSI-POLICY-009 |
+| **Versão** | 1.0 |
+| **Data de Aprovação** | 2026-06-09 |
+| **Classificação** | Público |
+| **Elaborado por** | Gestor SGSI |
+| **Aprovado por** | CEO (Aprovado) |
+| **Próxima Revisão** | Anual |
+
+
 ## 1. Propósito
 Esta política estabelece os controles de Segurança da Informação a serem aplicados no relacionamento da TWYN com fornecedores, contratados terceirizados e provedores de nuvem (CSP). O objetivo é mitigar os riscos associados ao acesso de terceiros aos ativos organizacionais, preservando a segurança, a continuidade dos negócios e a adequação à LGPD.
 

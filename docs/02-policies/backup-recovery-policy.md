@@ -12,6 +12,19 @@ annex_a_controls: "A.8.13"
 
 # Política de Backup e Recuperação
 
+## Controle de Documento
+
+| Propriedade | Detalhe |
+|---|---|
+| **ID do Documento** | SGSI-POLICY-005 |
+| **Versão** | 2.0 |
+| **Data de Aprovação** | 2026-06-09 |
+| **Classificação** | Interno |
+| **Elaborado por** | DevOps Lead |
+| **Aprovado por** | CEO (Aprovado) |
+| **Próxima Revisão** | Anual |
+
+
 ## 1. Propósito e Escopo
 Esta política visa garantir que a TWYN possua mecanismos e regras estritas para cópias de segurança (backup) e restauração, prevenindo a perda acidental ou maliciosa de dados e garantindo a continuidade do negócio em linha com a ISO 27001 (Anexo A.8.13).
 **Escopo:** Sistemas críticos, bancos de dados em nuvem, dados biométricos de clientes e arquivos corporativos de infraestrutura.

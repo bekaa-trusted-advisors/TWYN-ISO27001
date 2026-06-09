@@ -13,6 +13,19 @@ annex_a_controls: "A.5.1"
 
 # Política de Segurança da Informação (PSI)
 
+## Controle de Documento
+
+| Propriedade | Detalhe |
+|---|---|
+| **ID do Documento** | SGSI-POLICY-001 |
+| **Versão** | 1.0 |
+| **Data de Aprovação** | 2026-06-09 |
+| **Classificação** | Público |
+| **Elaborado por** | Gestor SGSI |
+| **Aprovado por** | CEO (Aprovado - Ata 001) |
+| **Próxima Revisão** | Anual |
+
+
 ## 1. Declaração de Comprometimento da Alta Direção
 A Alta Direção da **TWYN** reconhece a Segurança da Informação como um pilar fundamental para o negócio, especialmente por tratarmos dados sensíveis (biometria facial) sob o rigor da Lei Geral de Proteção de Dados (LGPD). 
 
@@ -58,12 +71,6 @@ O descumprimento intencional ou por negligência das regras estabelecidas nesta 
 ## 8. Revisão e Melhoria Contínua
 Esta Política será revisada anualmente, ou sempre que ocorrerem mudanças significativas no ambiente de negócios, infraestrutura tecnológica ou cenário de ameaças. A TWYN se compromete a buscar ativamente a melhoria contínua do SGSI através de auditorias internas, análise de métricas e lições aprendidas de incidentes.
 
-## 9. Histórico de Revisão
-| Data | Versão | Autor | Descrição |
-|------|--------|-------|-----------|
-| 2026-06-09 | 1.0 | Gestor SGSI | Versão inicial aprovada - Consolidação da Política para conformidade ISO 27001 (PT-BR). |
-
-
 ## 9. Procedimentos Relacionados (SOPs)
 
 Esta política mestre é operacionalizada através dos seguintes procedimentos formais (SOPs):
@@ -73,3 +80,9 @@ Esta política mestre é operacionalizada através dos seguintes procedimentos f
 - **[SGSI-SOP-003](../03-procedures/sop-003-remote-work.md)**: Trabalho Remoto (Teletrabalho)
 - **[SGSI-SOP-004](../03-procedures/sop-004-secrets-management.md)**: Gestão de Segredos e Chaves
 - **[SGSI-SOP-005](../03-procedures/sop-005-iam-recertification.md)**: Recertificação Trimestral de Acessos
+
+## 10. Histórico de Revisão
+| Data | Versão | Autor | Descrição |
+|------|--------|-------|-----------|
+| 2026-06-09 | 1.0 | Gestor SGSI | Versão inicial aprovada - Consolidação da Política para conformidade ISO 27001 (PT-BR). |
+

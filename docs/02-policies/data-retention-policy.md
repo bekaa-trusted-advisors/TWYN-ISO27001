@@ -12,6 +12,19 @@ annex_a_controls: "A.8.10, A.8.12, A.8.14"
 
 # Política de Retenção e Descarte Seguro de Dados
 
+## Controle de Documento
+
+| Propriedade | Detalhe |
+|---|---|
+| **ID do Documento** | SGSI-POLICY-010 |
+| **Versão** | 1.0 |
+| **Data de Aprovação** | 2026-06-09 |
+| **Classificação** | Público |
+| **Elaborado por** | Gestor SGSI |
+| **Aprovado por** | CEO (Aprovado) |
+| **Próxima Revisão** | Anual |
+
+
 ## 1. Propósito
 Assegurar que os dados armazenados e processados pela TWYN, especialmente informações biométricas classificadas como RESTRITO (altamente sensíveis), não sejam retidos por mais tempo do que o estritamente necessário para o propósito da coleta, e que o seu descarte seja executado de forma irreversível e segura, em conformidade com a **Lei Geral de Proteção de Dados Pessoais (LGPD)** e ISO 27001.
 

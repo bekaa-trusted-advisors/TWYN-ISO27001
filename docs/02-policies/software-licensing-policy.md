@@ -12,6 +12,19 @@ annex_a_controls: "A.5.32, A.8.19"
 
 # Política de Uso de Software e Licenciamento (Software Licensing Policy)
 
+## Controle de Documento
+
+| Propriedade | Detalhe |
+|---|---|
+| **ID do Documento** | SGSI-POLICY-010 |
+| **Versão** | 1.0 |
+| **Data de Aprovação** | 2026-06-09 |
+| **Classificação** | Interno |
+| **Elaborado por** | Gestor SGSI |
+| **Aprovado por** | CEO (Aprovado) |
+| **Próxima Revisão** | Anual |
+
+
 ## 1. Propósito
 Garantir que todo o software utilizado pela **TWYN** em seus ambientes operacionais e corporativos esteja em estrita conformidade com as leis de propriedade intelectual, direitos autorais e termos contratuais de licenciamento, mitigando riscos legais, financeiros e de segurança da informação (como malwares atrelados a softwares piratas).
 

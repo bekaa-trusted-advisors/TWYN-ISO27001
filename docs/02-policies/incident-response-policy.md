@@ -12,6 +12,19 @@ annex_a_controls: "A.5.24, A.5.25, A.5.26, A.5.27, A.5.28"
 
 # Política de Resposta a Incidentes
 
+## Controle de Documento
+
+| Propriedade | Detalhe |
+|---|---|
+| **ID do Documento** | SGSI-POLICY-003 |
+| **Versão** | 2.0 |
+| **Data de Aprovação** | 2026-06-09 |
+| **Classificação** | Interno |
+| **Elaborado por** | Gestor SGSI |
+| **Aprovado por** | CEO (Aprovado) |
+| **Próxima Revisão** | Anual |
+
+
 ## 1. Propósito
 Estabelecer procedimentos para detectar, responder e se recuperar de incidentes de segurança da informação, em conformidade com a ISO 27001 e com os requisitos de notificação de incidentes da Lei Geral de Proteção de Dados Pessoais (LGPD - vazamento de biometria).
 

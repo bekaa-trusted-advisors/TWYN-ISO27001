@@ -12,6 +12,19 @@ annex_a_controls: "A.5.19, A.5.21, A.5.22, A.8.25"
 
 # Adendo de Segurança para Fornecedores (Supplier Security Addendum)
 
+## Controle de Documento
+
+| Propriedade | Detalhe |
+|---|---|
+| **ID do Documento** | SGSI-POLICY-011 |
+| **Versão** | 1.0 |
+| **Data de Aprovação** | 2026-06-09 |
+| **Classificação** | Interno |
+| **Elaborado por** | Gestor SGSI |
+| **Aprovado por** | CEO (Aprovado) |
+| **Próxima Revisão** | Anual |
+
+
 ## 1. Propósito e Escopo
 Este Adendo de Segurança define os requisitos obrigatórios de Segurança da Informação e Privacidade de Dados que devem ser cumpridos por todos os fornecedores da TWYN, com foco especial nas **Equipes de Engenharia e Desenvolvimento de Software (Tratadas como Fornecedores Internos do SGSI)**.
 

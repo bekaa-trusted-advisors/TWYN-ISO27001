@@ -12,6 +12,19 @@ iso_clause: "A.5.10, A.6.2"
 
 # Política de Uso Aceitável (AUP)
 
+## Controle de Documento
+
+| Propriedade | Detalhe |
+|---|---|
+| **ID do Documento** | SGSI-POLICY-007 |
+| **Versão** | 1.0 |
+| **Data de Aprovação** | 2026-06-09 |
+| **Classificação** | Interno |
+| **Elaborado por** | Gestor SGSI |
+| **Aprovado por** | CEO (Aprovado) |
+| **Próxima Revisão** | Anual |
+
+
 ## 1. Propósito
 Definir as regras para o uso aceitável de ativos da TWYN (equipamentos, redes, contas) por todos os colaboradores, estagiários e terceiros.
 
@@ -74,3 +87,9 @@ A TWYN reserva-se o direito de monitorar o uso de seus equipamentos e redes corp
 
 ## 10. Termo de Aceite
 Todos os colaboradores e terceiros com acesso à rede da TWYN devem ler e assinar este documento no momento da contratação (Onboarding) e anualmente.
+
+## 11. Histórico de Revisão
+
+| Data | Versão | Autor | Descrição |
+|---|---|---|---|
+| 2026-06-09 | 1.0 | Gestor SGSI | Criação do documento. |
