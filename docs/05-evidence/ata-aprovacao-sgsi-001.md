@@ -5,6 +5,7 @@ version: 1.0
 date: 2026-06-02
 owner: Gestor SGSI
 classification: INTERNAL
+annex_a_controls: "A.5.1, A.5.37"
 ---
 
 # Ata de Reunião da Diretoria - Aprovação Documental do SGSI
