@@ -13,6 +13,10 @@ Face ID Platform API + AWS Infrastructure
 
 [📋 Project Board](https://github.com/bekaa-trusted-advisors/TWYN-ISO27001/projects) • [🐛 Issues](https://github.com/bekaa-trusted-advisors/TWYN-ISO27001/issues) • [📊 Linear](https://linear.app/bekaa/project/aegis-compliance-1218ffb6780f)
 
+---
+### 🌐 [Acessar o Compliance Dashboard (Portal do Auditor)](https://twyn-iso-dashboard.vercel.app/)
+*O repositório do GitHub atua como a Fonte da Verdade (Compliance-as-Code). A visualização interativa do SoA, Políticas e Evidências para fins de auditoria deve ser feita exclusivamente através do Dashboard acima.*
+
 </div>
 
 ---
@@ -221,8 +225,8 @@ For questions: **Ricardo Esper** (resper@bekaa.eu)
 
 <div align="center">
 
-**Last Updated**: 2026-05-26  
-**Version**: 1.0  
+**Last Updated**: 2026-06-11  
+**Version**: 1.1  
 **Compliance Status**: 🟡 85% Ready
 
 Made with 🔐 by [Bekaa Trusted Advisors](https://bekaa.eu)
