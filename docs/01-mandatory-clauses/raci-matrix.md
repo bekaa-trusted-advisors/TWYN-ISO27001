@@ -394,9 +394,9 @@ Esta matriz cobre todas as atividades relacionadas ao SGSI ISO 27001:2022, inclu
 
 | Papel | Nome | Email | Telefone | Disponibilidade |
 |-------|------|-------|----------|-----------------|
-| CEO | A definir | - | - | 24/7 (crítico) |
+| CEO | Kacio Lopes | kacio.lopes@t4isb.com | - | 24/7 (crítico) |
 | Gestor SGSI | Ricardo Esper (Bekaa Trusted Advisors) | resper@bekaa.eu | - | Horário comercial; estendida para incidentes críticos |
-| DevOps Lead | A definir | - | - | 24/7 (on-call) |
+| CTO (DevOps Lead) | Nizar Elouaer | nizar.elouaer@t4isb.com | - | 24/7 (on-call) |
 | DPO/Legal | A definir | - | - | Horário comercial |
 | AWS Support | AWS | via Console | - | 24/7 (Business Support) |
 

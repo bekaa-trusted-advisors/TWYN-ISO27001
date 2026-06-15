@@ -22,17 +22,18 @@ Abaixo estão as 3 trilhas oficiais de treinamento da TWYN, cobrindo governança
 ### 2.1 Trilha: Liderança 📊
 **Foco:** Governança de TI, auditoria, gestão de riscos e alinhamento estratégico da ISO 27001 / LGPD.
 **Público (C-Levels com visão macro de compliance):**
-- Kacio Lopes (CEO)
+- Kacio Lopes (CEO) — kacio.lopes@t4isb.com
 - Rosa Correia (COO - Chief Operating Officer)
-- Enes Degasperi (CFO - Chief Financial Officer)
-- Humberto Oliveira (CPO - Chief Product Officer)
+- Enes Degasperi (CFO - Chief Financial Officer) — enes.degasperi@t4isb.com
+- Humberto Oliveira (CPO - Chief Product Officer) — humberto.osf@t4isb.com
 - Bianca Lopes (CIO - Chief Identity Officer)
 **Frequência:** Anual.
 
 ### 2.2 Trilha: Técnico 💻
 **Foco:** Segurança técnica, controles operacionais, desenvolvimento seguro e infraestrutura.
 **Público:**
-- Nizar Elouaer (CTO - Chief Technology Officer)
+- Nizar Elouaer (CTO - Chief Technology Officer) — nizar.elouaer@t4isb.com
+- Rafael Aleo — rafael.aleo@t4isb.com
 - Equipe Tech (Desenvolvedores, DevOps, Arquitetos)
 - Equipe Identidade e Segurança (Analistas/Engenheiros de Segurança)
 **Frequência:** Semestral.
