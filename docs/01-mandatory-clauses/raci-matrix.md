@@ -52,12 +52,13 @@ Esta matriz cobre todas as atividades relacionadas ao SGSI ISO 27001:2022, inclu
 
 | Papel | Descrição | Pessoa/Equipe |
 |-------|-----------|---------------|
-| **CEO** | Chief Executive Officer - Autoridade máxima, responsável por aprovar políticas e alocar recursos | A definir |
-| **DevOps Lead** | Líder técnico responsável pela infraestrutura AWS, segurança de rede, e implementação de controles técnicos. Atua como ponto focal técnico interno do SGSI, reportando ao Gestor SGSI em assuntos de segurança da informação | A definir |
-| **Dev Team** | Equipe de desenvolvimento responsável pelo código da Face ID Platform API | A definir |
-| **DPO/Legal** | Data Protection Officer / Jurídico - Responsável por LGPD, contratos, e compliance legal | A definir (pode ser externo) |
-| **HR/People Ops** | Recursos Humanos - Responsável por onboarding/offboarding, treinamentos, e controles de pessoal | A definir |
-| **Finance** | Financeiro - Responsável por contratos de fornecedores, seguros, e orçamento de SI | A definir |
+| **CEO** | Chief Executive Officer - Autoridade máxima | Kacio Lopes |
+| **CFO / Finance** | Chief Financial Officer - Orçamento, contratos, seguros | Enes Degasperi (Equipe Financeira) |
+| **CTO / Tech Lead** | Chief Technology Officer - Infraestrutura AWS, DevOps, redes | Nizar Elouaer (Equipe Tech) |
+| **CPO / Product** | Chief Product Officer - Segurança no ciclo de vida do produto | Humberto Oliveira (Equipe Produto) |
+| **COO / HR & Ops** | Chief Operating Officer - Operações, onboarding, treinamentos | Rosa Correia (Equipe Operacional) |
+| **CIO** | Chief Identity Officer - Segurança, acessos e identidades (Face ID) | Bianca Lopes (Equipe Identidade e Segurança) |
+| **DPO/Legal** | Data Protection Officer / Jurídico - LGPD e compliance | A definir (pode ser externo) |
 
 ### 4.2 Papéis Externos (inclui Gestor SGSI — modelo híbrido)
 
