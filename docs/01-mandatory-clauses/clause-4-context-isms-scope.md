@@ -1,15 +1,12 @@
 ---
-**Document Control**
-| Campo | Valor |
-|-------|-------|
-| **Document ID** | SGSI-SCOPE-001 |
-| **Version** | 1.0 |
-| **Author** | BEKAA Consultoria — Ricardo Esper |
-| **Approved By** | [CEO TWYN / Gestor SGSI] |
-| **Approval Date** | 2026-06-08 |
-| **Effective Date** | 2026-06-08 |
-| **Próxima Revisão** | [Anual após aprovação] |
-| **ISO 27001:2022 Mapping** | Clause 4.3 — Context of the Organization |
+document_id: SGSI-SCOPE-001
+title: Documento de Escopo do SGSI
+version: 1.0
+date: 2026-06-08
+iso_clause: "4.3"
+classification: INTERNAL
+owner: BEKAA Consultoria — Ricardo Esper
+approved_by: CEO TWYN
 ---
 
 # Documento de Escopo do SGSI
@@ -208,7 +205,7 @@ Este escopo foi revisado e aprovado pelos seguintes responsáveis:
 |------|------|-----------|------|
 | **CEO / Top Management** | Enes Fernando Degasperi | _______________ | ___/___/2026 |
 | **Gestor SGSI** | Ricardo Esper (Bekaa Trusted Advisors) | _______________ | ___/___/2026 |
-| **CTO** | Enes Fernando Degasperi | _______________ | ___/___/2026 |
+| **CTO** | Augusto Ferronato | _______________ | ___/___/2026 |
 
 ---
 

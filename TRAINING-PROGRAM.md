@@ -32,7 +32,7 @@ Abaixo estão as 3 trilhas oficiais de treinamento da TWYN, cobrindo governança
 ### 2.2 Trilha: Técnico 💻
 **Foco:** Segurança técnica, controles operacionais, desenvolvimento seguro e infraestrutura.
 **Público:**
-- Nizar Elouaer (CTO - Chief Technology Officer) — nizar.elouaer@t4isb.com
+- Augusto Ferronato (CTO - Chief Technology Officer) — augusto.ferronato@t4isb.com
 - Rafael Aleo — rafael.aleo@t4isb.com
 - Equipe Tech (Desenvolvedores, DevOps, Arquitetos)
 - Equipe Identidade e Segurança (Analistas/Engenheiros de Segurança)

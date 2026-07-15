@@ -54,7 +54,7 @@ Esta matriz cobre todas as atividades relacionadas ao SGSI ISO 27001:2022, inclu
 |-------|-----------|---------------|
 | **CEO** | Chief Executive Officer - Autoridade máxima | Kacio Lopes |
 | **CFO / Finance** | Chief Financial Officer - Orçamento, contratos, seguros | Enes Degasperi (Equipe Financeira) |
-| **CTO / Tech Lead** | Chief Technology Officer - Infraestrutura AWS, DevOps, redes | Nizar Elouaer (Equipe Tech) |
+| **CTO / Tech Lead** | Chief Technology Officer - Infraestrutura AWS, DevOps, redes | Augusto Ferronato (Equipe Tech) |
 | **CPO / Product** | Chief Product Officer - Segurança no ciclo de vida do produto | Humberto Oliveira (Equipe Produto) |
 | **COO / HR & Ops** | Chief Operating Officer - Operações, onboarding, treinamentos | Rosa Correia (Equipe Operacional) |
 | **CIO** | Chief Identity Officer - Segurança, acessos e identidades (Face ID) | Bianca Lopes (Equipe Identidade e Segurança) |
@@ -396,7 +396,7 @@ Esta matriz cobre todas as atividades relacionadas ao SGSI ISO 27001:2022, inclu
 |-------|------|-------|----------|-----------------|
 | CEO | Kacio Lopes | kacio.lopes@t4isb.com | - | 24/7 (crítico) |
 | Gestor SGSI | Ricardo Esper (Bekaa Trusted Advisors) | resper@bekaa.eu | - | Horário comercial; estendida para incidentes críticos |
-| CTO (DevOps Lead) | Nizar Elouaer | nizar.elouaer@t4isb.com | - | 24/7 (on-call) |
+| CTO (DevOps Lead) | Augusto Ferronato | augusto.ferronato@t4isb.com | - | 24/7 (on-call) |
 | DPO/Legal | A definir | - | - | Horário comercial |
 | AWS Support | AWS | via Console | - | 24/7 (Business Support) |
 
